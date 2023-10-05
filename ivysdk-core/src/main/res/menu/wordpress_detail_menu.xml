@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:universal="http://schemas.android.com/apk/res-auto" >
+
+    <item
+        android:id="@+id/menu_share"
+        android:icon="@drawable/ic_action_share"
+        universal:showAsAction="ifRoom"
+        android:title="@string/share"/>
+    <item
+        android:id="@+id/menu_view"
+       	universal:showAsAction="never"
+        android:title="@string/open_button"/>
+
+</menu>

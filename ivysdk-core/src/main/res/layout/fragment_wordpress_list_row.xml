@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:padding="@dimen/spacing_xl">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/thumbImage"
+            android:layout_toLeftOf="@+id/thumbImage"
+            android:paddingRight="@dimen/spacing_l"
+            android:paddingEnd="@dimen/spacing_l"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/title"
+                style="@style/listTitleStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:color="@color/grey_darker"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/empty_textview"
+                android:textSize="@dimen/textsize_m" />
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_m"
+                android:layout_below="@+id/title"
+                android:text="@string/empty_textview"
+                android:textColor="@color/grey_dark"
+                android:textSize="@dimen/textsize_xs"
+                android:textDirection="locale"/>
+        </RelativeLayout>
+
+        <com.sherdle.universal.util.layout.RoundedImageView
+            android:id="@+id/thumbImage"
+            android:layout_width="@dimen/thumbnail_size"
+            android:layout_height="@dimen/thumbnail_size"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/rounded_placeholder"
+            android:scaleType="centerCrop" />
+
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="@dimen/spacing_l"
+        android:layout_marginRight="@dimen/spacing_l"
+        android:background="@color/grey_lighter" />
+</LinearLayout>

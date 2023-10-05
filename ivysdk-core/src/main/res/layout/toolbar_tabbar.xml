@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.sherdle.universal.util.layout.CustomAppBarLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/ToolBarStyle"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_scrollFlags="scroll|enterAlways|snap"
+        app:popupTheme="@style/Toolbar_Popup" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:visibility="gone"
+        app:popupTheme="@style/Toolbar_Popup"
+        app:tabGravity="fill"
+        app:tabIndicatorColor="?toolbarForeground"
+        app:tabMode="scrollable"
+        app:tabSelectedTextColor="?toolbarForeground"
+        app:tabTextColor="?toolbarForeground" />
+
+</com.sherdle.universal.util.layout.CustomAppBarLayout>

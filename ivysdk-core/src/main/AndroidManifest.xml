@@ -1,0 +1,128 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.adsfall">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <uses-feature android:name="android.hardware.location.network" />
+
+
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
+
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+
+    <!-- 如果有视频相关的广告且使用textureView播放，请务必添加，否则黑屏 -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <queries>
+        <provider android:authorities="com.facebook.katana.provider.PlatformProvider" />
+        <package android:name="com.merge.elves" />
+        <package android:name="com.merge.inn" />
+        <package android:name="com.merge.farmtown" />
+        <package android:name="com.merge.romance" />
+        <package android:name="com.puzzle.matchtile" />
+        <package android:name="com.merge.farmharvest" />
+    </queries>
+
+    <application
+        android:hardwareAccelerated="true"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:usesCleartextTraffic="true">
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <provider
+            android:name="com.ivy.internal.IvyInitProvider"
+            android:authorities="${applicationId}.IvyInitProvider"
+            android:exported="false" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.gms.games.APP_ID"
+            android:value="${gms_games_app_id}\" />
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="${google_admob_application_id}" />
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="${facebook_appId}\" />
+
+        <meta-data
+            android:name="com.facebook.sdk.ClientToken"
+            android:value="${facebook_clientToken}" />
+
+        <provider
+            android:name="com.facebook.FacebookContentProvider"
+            android:authorities="com.facebook.app.FacebookContentProvider${facebook_appId}"
+            android:exported="true" />
+
+        <meta-data
+            android:name="din"
+            android:value="${din}" />
+        <meta-data
+            android:name="ivy.debug"
+            android:value="${ivy_debug}" />
+        <meta-data
+            android:name="parfka.appToken"
+            android:value="${parfka_appToken}" />
+        <meta-data
+            android:name="applovin.sdk.key"
+            android:value="${applovin_sdk_key}" />
+
+        <activity
+            android:name="com.ivy.internal.WebViewActivity"
+            android:theme="@style/Theme.AppCompat.Light" />
+
+        <meta-data
+            android:name="com.google.android.gms.ads.AD_MANAGER_APP"
+            android:value="true" />
+
+        <meta-data
+            android:name="com.google.android.gms.ads.flag.OPTIMIZE_INITIALIZATION"
+            android:value="true" />
+        <meta-data
+            android:name="com.google.android.gms.ads.flag.OPTIMIZE_AD_LOADING"
+            android:value="true" />
+
+
+        <service
+            android:name="com.ivy.fcm.AOEFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name="com.sherdle.universal.MainActivity"
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/AppTheme.Launcher"
+            android:exported="false">
+        </activity>
+        <activity android:name="com.sherdle.universal.providers.videos.ui.VideoDetailActivity" android:exported="false"/>
+        <activity android:name="com.sherdle.universal.providers.wordpress.ui.WordpressDetailActivity" android:exported="false"/>
+        <activity
+            android:name="com.sherdle.universal.comments.CommentsActivity"
+            android:configChanges="orientation|screenSize" android:exported="false" />
+        <activity
+            android:name="com.sherdle.universal.HolderActivity"
+            android:configChanges="orientation|screenSize" android:exported="false" />
+        <activity
+            android:name="com.sherdle.universal.attachmentviewer.ui.AttachmentActivity"
+            android:configChanges="orientation|screenSize" android:exported="false"/>
+        <activity
+            android:name="com.sherdle.universal.attachmentviewer.ui.VideoPlayerActivity"
+            android:configChanges="orientation|screenSize" android:exported="false"/>
+
+    </application>
+</manifest>

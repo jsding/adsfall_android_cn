@@ -1,0 +1,120 @@
+[
+  {
+    "title":"Home",
+    "drawable":"",
+    "submenu":"",
+    "iap":false,
+    "tabs":[
+      {
+        "title":"Support",
+        "image": "Online-32",
+        "provider":"webview",
+        "arguments":[
+          "https://widget.adsfall.com/assets/twp/index.html"
+        ]
+      },
+      {
+        "title":"Games",
+        "image": "Domain-32",
+        "provider":"wordpress",
+        "arguments":[
+          "https://www.lisgame.com/wp-json/wp/v2/",
+          "226"
+        ]
+      },
+      {
+        "title":"News",
+        "image": "News-32",
+        "provider":"wordpress",
+        "arguments":[
+          "https://www.lisgame.com/wp-json/wp/v2/",
+          "90"
+        ]
+      },
+      {
+        "title":"FAQ",
+        "image": "Flickr-32",
+        "provider":"wordpress",
+        "arguments":[
+          "https://www.lisgame.com/wp-json/wp/v2/",
+          "232"
+        ]
+      }
+    ]
+  },
+  {
+    "title":"Merge Elves",
+    "drawable":"",
+    "submenu":"Favorite Games",
+    "iap":false,
+    "tabs":[
+      {
+        "title":"Merge Elves",
+        "provider":"custom",
+        "arguments":[
+          "https://mergeelves.onelink.me/Rpan/8boqr6se", "url"
+        ]
+      }
+    ]
+  },
+  {
+    "title":"Merge Farmtown",
+    "drawable":"",
+    "submenu":"Favorite Games",
+    "iap":false,
+    "tabs":[
+      {
+        "title":"Merge Farmtown",
+        "provider":"custom",
+        "arguments":[
+          "https://mergefarmtown.onelink.me/885h/dqf9ux5d", "url"
+        ]
+      }
+    ]
+  },
+  {
+    "title":"Matchscapes",
+    "drawable":"",
+    "submenu":"Favorite Games",
+    "iap":false,
+    "tabs":[
+      {
+        "title":"Matchscapes",
+        "provider":"custom",
+        "arguments":[
+          "https://lisgame.onelink.me/n8jN/9sy5hn1l", "url"
+        ]
+      }
+    ]
+  },
+  {
+    "title":"Merge Love",
+    "drawable":"",
+    "submenu":"Favorite Games",
+    "iap":false,
+    "tabs":[
+      {
+        "title":"Merge Love",
+        "provider":"custom",
+        "arguments":[
+          "https://grandinnstory.onelink.me/Abbv/g4d9rxk1", "url"
+        ]
+      }
+    ]
+  },
+  {
+    "title":"Merge Romance",
+    "drawable":"",
+    "submenu":"Favorite Games",
+    "iap":false,
+    "tabs":[
+      {
+        "title":"Merge Romance",
+        "provider":"custom",
+        "arguments":[
+          "https://lisgame.onelink.me/XetQ/n5p6m1s7", "url"
+        ]
+      }
+    ]
+  }
+]

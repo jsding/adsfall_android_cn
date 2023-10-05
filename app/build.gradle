@@ -1,0 +1,80 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 33
+
+    defaultConfig {
+        applicationId "com.merge.elves"
+        minSdkVersion 21
+        targetSdkVersion 33
+        versionCode 100
+        versionName "0.9.10"
+        multiDexEnabled true
+
+        //  Sample AdMob App ID: ca-app-pub-3940256099942544~3347511713
+        manifestPlaceholders = [
+            parfkaUrl: 'http://192.168.0.109:8091',
+            ivy_debug: true,
+            din: true,
+            parfka_appToken: 'ap1000000996',
+            gms_games_app_id  : "1029434097331",
+            google_admob_application_id: 'ca-app-pub-1914768831611213~6542996856',
+            facebook_appId             : '1476385969233721',
+            facebook_clientToken: 'cb06d33633f1acf69cbc054317d196f0',
+            applovin_sdk_key           : 'E8pVhU9mykQd3y0TD0Ksoq4vpf_Muat6ifcP9m96UakTWk5klQaWEeQ2IPOA-GHgxu54eEA8pvgKcn2MBdtQGH'
+        ]
+    }
+
+    signingConfigs {
+        debug {
+            storeFile file('../configs/com.merge.elves.keystore')
+            storePassword 'wangshiwei'
+            keyAlias 'mergeelves'
+            keyPassword 'wangshiwei'
+        }
+        release {
+            storeFile file('../configs/com.merge.elves.keystore')
+            storePassword 'wangshiwei'
+            keyAlias 'mergeelves'
+            keyPassword 'wangshiwei'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            // proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    packagingOptions {
+        exclude("META-INF/DEPENDENCIES")
+        exclude("META-INF/LICENSE")
+        exclude("META-INF/LICENSE.txt")
+        exclude("META-INF/license.txt")
+        exclude("META-INF/NOTICE")
+        exclude("META-INF/NOTICE.txt")
+        exclude("META-INF/notice.txt")
+        exclude("META-INF/ASL2.0")
+        exclude("META-INF/*.kotlin_module")
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+}
+
+dependencies {
+    implementation project(":ivysdk-core")
+    implementation project(':xiaomi')
+}
+
+apply plugin: 'com.google.gms.google-services'
+

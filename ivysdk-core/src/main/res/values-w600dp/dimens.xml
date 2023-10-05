@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <!-- preferenceFragment -->
+    <dimen name="preference_fragment_padding_side">64dp</dimen>
+    
+    <!-- Defaults -->
+    <dimen name="activity_horizontal_margin">64dp</dimen>
+    <dimen name="activity_detail_horizontal_margin">64dp</dimen>
+    <bool name="isTablet">true</bool>
+    <bool name="isWideTablet">false</bool>
+
+    <!-- DetailLayouts -->
+    <dimen name="detail_margin">96dp</dimen>
+    <dimen name="image_height_wordpress">300dp</dimen>
+    <dimen name="image_height_youtube">300dp</dimen>
+
+    <!-- Drawer -->
+    <dimen name="drawer_width">320dp</dimen>
+
+
+</resources>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#000000</color>
+    <color name="btn_div">#e9eaed</color>
+    <color name="buttonGray">#555555</color>
+    <color name="buttonLightGray">#bbbbbb</color>
+    <color name="buttonVeryLightGray">#ddd</color>
+    <color name="button_text_style_black">#000000</color>
+    <color name="button_text_style_gold">#423600</color>
+    <color name="button_text_style_grey">#333333</color>
+    <color name="button_text_style_nobutton">#000000</color>
+    <color name="button_text_style_sky">#3d4243</color>
+    <color name="button_text_style_white">#000000</color>
+    <color name="button_text_style_white_black">#000000</color>
+    <color name="button_text_style_white_red">#ff0000</color>
+    <color name="button_text_style_yellow">#423600</color>
+    <color name="cardview_dark_background">#ff424242</color>
+    <color name="cardview_light_background">#ffffffff</color>
+    <color name="cardview_shadow_end_color">#03000000</color>
+    <color name="cardview_shadow_start_color">#37000000</color>
+    <color name="com_smart_login_code">#3c6499</color>
+    <color name="continue_click">#6d737b</color>
+    <color name="dark_bg_color">#ebecf0</color>
+    <color name="exo_edit_mode_background_color">#fff4f3f0</color>
+    <color name="exo_error_message_background_color">#aa000000</color>
+    <color name="free_button_color">#000000</color>
+    <color name="gray_color">#7d7d7d</color>
+    <color name="green">#008000</color>
+    <color name="grey">#5f6061</color>
+    <color name="lollipop_notification_color">#1987e1</color>
+    <color name="red_color">#d63633</color>
+    <color name="text_color">#373f54</color>
+    <color name="video_controls_bg">#4d000000</color>
+    <color name="view_color">#b9b9b9</color>
+    <color name="white">#ffffff</color>
+    <color name="white_color">#ffffff</color>
+
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="colorInfo">#41c4f4</color>
+
+    <color name="link_color">#34B2E7</color>
+
+    <!-- Android -->
+    <color name="myPrimaryColor">#2196f3</color>
+    <color name="myPrimaryDarkColor">#1976d2</color>
+    <color name="myPrimaryColorTransparent">#1F2196f3</color>
+    <color name="myAccentColor">#00bcd4</color>
+    <color name="myDrawerBackground">#ffffff</color>
+    <color name="myWindowBackground">#ffffff</color>
+    <color name="myTextPrimaryColor">@color/black</color>
+    <color name="myNavigationColor">@color/black</color>
+
+    <color name="btnGray">#ffdbdbdb</color>
+
+    <!-- Regular colors -->
+    <color name="dark_gray">#292929</color>
+    <color name="dim_gray">#696969</color>
+    <color name="gray">#A9A9A9</color>
+    <color name="light_gray">#BDBDBD</color>
+    <color name="extra_light_gray">#ffdbdbdb</color>
+
+    <!-- SoundCloud Shades of Gray-->
+    <color name="grey_darker">#424242</color>
+    <color name="grey_dark">#606060</color>
+    <color name="grey_light">#eeeeee</color>
+    <color name="grey_lighter">#ededed</color>
+
+    <!-- Translucent -->
+    <color name="black_translucent">#aa000000</color>
+    <color name="black_more_translucent">#99000000</color>
+    <color name="black_almost_translucent">#50000000</color>
+
+    <!-- SoundCloud -->
+    <color name="playback_view_track_name">@android:color/white</color>
+    <color name="playback_view_track_artwork_filter">@color/black_translucent</color>
+    <color name="playback_view_track_time">@color/grey_light</color>
+
+    <color name="track_view_track">@color/grey_darker</color>
+    <color name="track_view_artist">@color/gray</color>
+    <color name="track_view_duration">@color/grey_dark</color>
+    <color name="track_view_track_selected">@android:color/white</color>
+    <color name="track_view_artist_selected">@color/grey_lighter</color>
+    <color name="track_view_duration_selected">@android:color/white</color>
+
+    <color name="progress_color">@color/grey_light</color>
+
+    <color name="notification_button_pressed">#55777777</color>
+    <color name="notification_icon_background">#737373</color>
+    <color name="notification_background">@color/grey_darker</color>
+    <color name="simple_sound_cloud_notification_title">#ffffff</color>
+    <color name="simple_sound_cloud_notification_subtitle">#979797</color>
+
+    <!-- Radio -->
+    <color name="radio_bg_color">#0277bd</color>
+    <array name="radio_colors">
+        <!--<item>#4fc3f7</item>
+        <item>#29b6f6</item>-->
+        <item>#016fb1</item>
+        <item>#005aa1</item>
+        <item>#014b86</item>
+        <item>#003d6e</item>
+    </array>
+
+</resources>

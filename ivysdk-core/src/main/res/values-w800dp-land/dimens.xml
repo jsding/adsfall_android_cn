@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Defaults -->
+    <bool name="isTablet">true</bool>
+    <bool name="isWideTablet">true</bool>
+
+    <!-- DetailLayouts -->
+    <dimen name="detail_margin">128dp</dimen>
+
+
+</resources>

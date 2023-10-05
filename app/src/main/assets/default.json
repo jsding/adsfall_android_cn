@@ -1,0 +1,1616 @@
+{
+  "domain": "http://api2.papermobi.com/api/edata?v_api=slg12&appid=1000000996&key=",
+  "parfkaUrl": "http://gateway-3.hierugo.com",
+  "parfkaUrl.2": "http://gateway-3.hierugo.com",
+  "debug": false,
+  "preFetchRewardDelaySecs": 10,
+  "preFetchInterstitialDelaySecs": 60,
+  "preFetchNativeDelaySecs": 30,
+  "snapshotSave": false,
+  "event.conversion.url": "https://us-central1-merge-elves-38816766.cloudfunctions.net/admin-event_conversion",
+  "inapp.review.url": "https://docs.google.com/forms/d/e/1FAIpQLSeOV9E2txOwLJNMnXA5GCbTSX_jVYsWGIQE9Bhvgq8ykIgR9w/viewform?usp=sf_link",
+  "user.attribute.url": "https://us-central1-merge-elves-38816766.cloudfunctions.net/admin-save_attr",
+  "google.order.prefix": "GPA.",
+  "enableInAppMessage": true,
+  "appflyers.devkey": "J6ejjnUP9fMkv29PqBuYzR",
+  "checkGoogleAccountAuthCode": true,
+  "ad_remoteconfig": true,
+  "google_web_client_id": "1029434097331-uub69mbc5tscbssai2b6olh5tdq6kq7m.apps.googleusercontent.com",
+  "helpengage.appId": "62e201caadc4923788aaeaec",
+  "providers": [],
+  "checkUpdate": true,
+  "data": {
+    "push": [
+      {
+        "api": "firebase",
+        "manual": 0,
+        "topic": "",
+        "push-server-url": "http://push.papermobi.com:7778/fcmpush"
+      }
+    ]
+  },
+  "full": [
+    {
+      "provider": "admob",
+      "p": {
+        "placement": "ca-app-pub-7060301790325714/9793442383"
+      }
+    }
+  ],
+  "video": [
+    {
+      "provider": "admob",
+      "p": {
+        "placement": "ca-app-pub-7060301790325714/9578054078"
+      }
+    }
+  ],
+  "preFillNative": false,
+  "preFillBanner": false,
+  "preFillInterstitial": false,
+  "requireFriends": false,
+  "remoteconfig": {
+    "off_annoymous": 0
+  },
+  "google": {
+    "leaderboard": {
+      "world_elf_rank": {
+        "id": "CgkIs_22-PodEAIQAQ"
+      }
+    },
+    "achievement": {
+      "Score_1000": {
+        "id": "CgkIs_22-PodEAIQAg",
+        "incremental": false
+      },
+      "Score_3000": {
+        "id": "CgkIs_22-PodEAIQBA",
+        "incremental": false
+      },
+      "Score_5000": {
+        "id": "CgkIs_22-PodEAIQBQ",
+        "incremental": false
+      },
+      "Score_10000": {
+        "id": "CgkIs_22-PodEAIQBg",
+        "incremental": false
+      },
+      "Score_20000": {
+        "id": "CgkIs_22-PodEAIQBw",
+        "incremental": false
+      },
+      "Score_50000": {
+        "id": "CgkIs_22-PodEAIQCA",
+        "incremental": false
+      },
+      "Score_100000": {
+        "id": "CgkIs_22-PodEAIQCQ",
+        "incremental": false
+      },
+      "Score_200000": {
+        "id": "CgkIs_22-PodEAIQCg",
+        "incremental": false
+      },
+      "Score_500000": {
+        "id": "CgkIs_22-PodEAIQCw",
+        "incremental": false
+      },
+      "Score_1000000": {
+        "id": "CgkIs_22-PodEAIQDA",
+        "incremental": false
+      },
+      "GoalStars_3": {
+        "id": "CgkIs_22-PodEAIQDQ",
+        "incremental": false
+      },
+      "GoalStars_10": {
+        "id": "CgkIs_22-PodEAIQDg",
+        "incremental": false
+      },
+      "GoalStars_15": {
+        "id": "CgkIs_22-PodEAIQDw",
+        "incremental": false
+      },
+      "GoalStars_20": {
+        "id": "CgkIs_22-PodEAIQEA",
+        "incremental": false
+      },
+      "GoalStars_25": {
+        "id": "CgkIs_22-PodEAIQEQ",
+        "incremental": false
+      },
+      "GoalStars_50": {
+        "id": "CgkIs_22-PodEAIQEg",
+        "incremental": false
+      },
+      "GoalStars_100": {
+        "id": "CgkIs_22-PodEAIQEw",
+        "incremental": false
+      },
+      "GoalStars_200": {
+        "id": "CgkIs_22-PodEAIQFA",
+        "incremental": false
+      },
+      "GoalStars_500": {
+        "id": "CgkIs_22-PodEAIQFQ",
+        "incremental": false
+      },
+      "GoalStars_1000": {
+        "id": "CgkIs_22-PodEAIQFg",
+        "incremental": false
+      },
+      "MagicElves_5": {
+        "id": "CgkIs_22-PodEAIQFw",
+        "incremental": false
+      },
+      "MagicElves_10": {
+        "id": "CgkIs_22-PodEAIQGA",
+        "incremental": false
+      },
+      "MagicElves_20": {
+        "id": "CgkIs_22-PodEAIQGQ",
+        "incremental": false
+      },
+      "MagicElves_50": {
+        "id": "CgkIs_22-PodEAIQGg",
+        "incremental": false
+      },
+      "MagicElves_100": {
+        "id": "CgkIs_22-PodEAIQGw",
+        "incremental": false
+      },
+      "MagicElves_200": {
+        "id": "CgkIs_22-PodEAIQHA",
+        "incremental": false
+      },
+      "Wonder_1": {
+        "id": "CgkIs_22-PodEAIQHQ",
+        "incremental": false
+      },
+      "Wonder_2": {
+        "id": "CgkIs_22-PodEAIQHg",
+        "incremental": false
+      },
+      "Wonder_3": {
+        "id": "CgkIs_22-PodEAIQHw",
+        "incremental": false
+      },
+      "Wonder_4": {
+        "id": "CgkIs_22-PodEAIQIA",
+        "incremental": false
+      },
+      "Wonder_5": {
+        "id": "CgkIs_22-PodEAIQIQ",
+        "incremental": false
+      },
+      "Wonder_6": {
+        "id": "CgkIs_22-PodEAIQIg",
+        "incremental": false
+      },
+      "Wonder_7": {
+        "id": "CgkIs_22-PodEAIQIw",
+        "incremental": false
+      },
+      "Wonder_8": {
+        "id": "CgkIs_22-PodEAIQJA",
+        "incremental": false
+      },
+      "Wonder_9": {
+        "id": "CgkIs_22-PodEAIQJQ",
+        "incremental": false
+      },
+      "Wonder_10": {
+        "id": "CgkIs_22-PodEAIQJg",
+        "incremental": false
+      },
+      "Wonder_11": {
+        "id": "CgkIs_22-PodEAIQJw",
+        "incremental": false
+      },
+      "Wonder_12": {
+        "id": "CgkIs_22-PodEAIQKA",
+        "incremental": false
+      },
+      "Wonder_13": {
+        "id": "CgkIs_22-PodEAIQKQ",
+        "incremental": false
+      },
+      "Wonder_14": {
+        "id": "CgkIs_22-PodEAIQKg",
+        "incremental": false
+      },
+      "Wonder_15": {
+        "id": "CgkIs_22-PodEAIQKw",
+        "incremental": false
+      },
+      "Elfpower_7": {
+        "id": "CgkIs_22-PodEAIQLA",
+        "incremental": false
+      },
+      "Elfpower_15": {
+        "id": "CgkIs_22-PodEAIQLQ",
+        "incremental": false
+      },
+      "Elfpower_35": {
+        "id": "CgkIs_22-PodEAIQLg",
+        "incremental": false
+      },
+      "Elfpower_70": {
+        "id": "CgkIs_22-PodEAIQLw",
+        "incremental": false
+      },
+      "Elfpower_140": {
+        "id": "CgkIs_22-PodEAIQMA",
+        "incremental": false
+      },
+      "Elfpower_280": {
+        "id": "CgkIs_22-PodEAIQMQ",
+        "incremental": false
+      },
+      "Elfpower_560": {
+        "id": "CgkIs_22-PodEAIQMg",
+        "incremental": false
+      },
+      "Elfpower_1120": {
+        "id": "CgkIs_22-PodEAIQMw",
+        "incremental": false
+      },
+      "Elfpower_2250": {
+        "id": "CgkIs_22-PodEAIQNA",
+        "incremental": false
+      },
+      "Elfpower_4500": {
+        "id": "CgkIs_22-PodEAIQNQ",
+        "incremental": false
+      },
+      "Elfpower_9000": {
+        "id": "CgkIs_22-PodEAIQNg",
+        "incremental": false
+      },
+      "Elfpower_18000": {
+        "id": "CgkIs_22-PodEAIQNw",
+        "incremental": false
+      },
+      "Elfpower_35000": {
+        "id": "CgkIs_22-PodEAIQOA",
+        "incremental": false
+      },
+      "Elfpower_70000": {
+        "id": "CgkIs_22-PodEAIQOQ",
+        "incremental": false
+      },
+      "Elfpower_140000": {
+        "id": "CgkIs_22-PodEAIQOg",
+        "incremental": false
+      },
+      "Level_8": {
+        "id": "CgkIs_22-PodEAIQOw",
+        "incremental": false
+      },
+      "Level_16": {
+        "id": "CgkIs_22-PodEAIQPA",
+        "incremental": false
+      },
+      "Level_32": {
+        "id": "CgkIs_22-PodEAIQPQ",
+        "incremental": false
+      },
+      "Level_48": {
+        "id": "CgkIs_22-PodEAIQPg",
+        "incremental": false
+      },
+      "Level_64": {
+        "id": "CgkIs_22-PodEAIQPw",
+        "incremental": false
+      },
+      "Level_80": {
+        "id": "CgkIs_22-PodEAIQQA",
+        "incremental": false
+      },
+      "Level_96": {
+        "id": "CgkIs_22-PodEAIQQQ",
+        "incremental": false
+      },
+      "Level_112": {
+        "id": "CgkIs_22-PodEAIQQg",
+        "incremental": false
+      },
+      "Level_128": {
+        "id": "CgkIs_22-PodEAIQQw",
+        "incremental": false
+      },
+      "Level_144": {
+        "id": "CgkIs_22-PodEAIQRA",
+        "incremental": false
+      },
+      "Level_160": {
+        "id": "CgkIs_22-PodEAIQRQ",
+        "incremental": false
+      },
+      "Level_176": {
+        "id": "CgkIs_22-PodEAIQRg",
+        "incremental": false
+      },
+      "Level_192": {
+        "id": "CgkIs_22-PodEAIQRw",
+        "incremental": false
+      },
+      "Level_208": {
+        "id": "CgkIs_22-PodEAIQSA",
+        "incremental": false
+      },
+      "Level_224": {
+        "id": "CgkIs_22-PodEAIQSQ",
+        "incremental": false
+      },
+      "Level_240": {
+        "id": "CgkIs_22-PodEAIQSg",
+        "incremental": false
+      },
+      "Level_256": {
+        "id": "CgkIs_22-PodEAIQSw",
+        "incremental": false
+      },
+      "5Merges_100": {
+        "id": "CgkIs_22-PodEAIQTA",
+        "incremental": false
+      },
+      "5Merges_400": {
+        "id": "CgkIs_22-PodEAIQTQ",
+        "incremental": false
+      },
+      "5Merges_800": {
+        "id": "CgkIs_22-PodEAIQTg",
+        "incremental": false
+      },
+      "5Merges_1400": {
+        "id": "CgkIs_22-PodEAIQTw",
+        "incremental": false
+      },
+      "5Merges_2500": {
+        "id": "CgkIs_22-PodEAIQUA",
+        "incremental": false
+      },
+      "5Merges_5000": {
+        "id": "CgkIs_22-PodEAIQUQ",
+        "incremental": false
+      },
+      "5Merges_10000": {
+        "id": "CgkIs_22-PodEAIQUg",
+        "incremental": false
+      },
+      "5Merges_20000": {
+        "id": "CgkIs_22-PodEAIQUw",
+        "incremental": false
+      },
+      "5Merges_30000": {
+        "id": "CgkIs_22-PodEAIQVA",
+        "incremental": false
+      },
+      "5Merges_40000": {
+        "id": "CgkIs_22-PodEAIQVQ",
+        "incremental": false
+      }
+    }
+  },
+  "sleepOnDisplayed": 60,
+  "sleepOnLoadNoFill": 360,
+  "sleepOnLoadOtherError": 360,
+  "forceSkippedTimeoutTimes": 2,
+  "forceSkippedLoadedFailsRatio": 0.4,
+  "clickedRatioCheckedDisplayTimes": 1000,
+  "forceSkippedClickedMinRatio": 0,
+  "forceSkippedClickedMaxRatio": 0.5,
+  "adLoadTimeout": 10,
+  "adRefreshInterval": 1800,
+  "gen_events": {
+    "video_shown_2_in1day": [
+      {
+        "e1": "video_shown",
+        "v": 2,
+        "op": ">=",
+        "d": 1,
+        "r": false
+      }
+    ]
+  },
+  "event_targets": {
+    "banner_loaded": 0,
+    "banner_load_failed": 0,
+    "interstitial_loaded": 0,
+    "interstitial_load_failed": 0,
+    "video_load_failed": 0,
+    "video_loaded": 0
+  },
+  "summary_events": [],
+  "adParallelRequests": 1,
+  "adParallelWaitTime": 5,
+  "dontShowFullPageAdsOnSlowConnection": false,
+  "adFullScreenTimespan": 120,
+  "sns": {
+    "invite_url": "",
+    "like_url": "",
+    "leader_board_url": "http://racing.iibingo.com/api",
+    "api": "facebook",
+    "friends": true,
+    "invite_preview_url": ""
+  },
+  "payment": {
+    "checkout": {
+      "1": {
+        "feename": "com.me.gems.1a",
+        "repeat": 1,
+        "usd": 0.99
+      },
+      "2": {
+        "feename": "com.me.gems.5a",
+        "repeat": 1,
+        "usd": 4.99
+      },
+      "3": {
+        "feename": "com.me.gems.10a",
+        "repeat": 1,
+        "usd": 9.99
+      },
+      "4": {
+        "feename": "com.me.gems.20a",
+        "repeat": 1,
+        "usd": 19.99
+      },
+      "5": {
+        "feename": "com.me.gems.50a",
+        "repeat": 1,
+        "usd": 49.99
+      },
+      "6": {
+        "feename": "com.me.gems.100a",
+        "repeat": 1,
+        "usd": 99.99
+      },
+      "7": {
+        "feename": "com.me.gems.5b",
+        "repeat": 1,
+        "usd": 4.99
+      },
+      "8": {
+        "feename": "com.me.gems.10b",
+        "repeat": 1,
+        "usd": 9.99
+      },
+      "9": {
+        "feename": "com.me.gems.20b",
+        "repeat": 1,
+        "usd": 19.99
+      },
+      "10": {
+        "feename": "com.me.gems.50b",
+        "repeat": 1,
+        "usd": 49.99
+      },
+      "11": {
+        "feename": "com.me.gems.100b",
+        "repeat": 1,
+        "usd": 99.99
+      },
+      "12": {
+        "feename": "com.me.gems.5c",
+        "repeat": 1,
+        "usd": 4.99
+      },
+      "13": {
+        "feename": "com.me.gems.10c",
+        "repeat": 1,
+        "usd": 9.99
+      },
+      "14": {
+        "feename": "com.me.gems.20c",
+        "repeat": 1,
+        "usd": 19.99
+      },
+      "15": {
+        "feename": "com.me.gems.50c",
+        "repeat": 1,
+        "usd": 49.99
+      },
+      "16": {
+        "feename": "com.me.gems.100c",
+        "repeat": 1,
+        "usd": 99.99
+      },
+      "17": {
+        "feename": "com.me.monthlycard.1",
+        "repeat": 1,
+        "usd": 3.99
+      },
+      "18": {
+        "feename": "com.me.premiumland.one",
+        "repeat": 1,
+        "usd": 6.99
+      },
+      "19": {
+        "feename": "com.me.premiumland.two",
+        "repeat": 1,
+        "usd": 3.99
+      },
+      "20": {
+        "feename": "com.me.premiumland.three",
+        "repeat": 1,
+        "usd": 6.99
+      },
+      "21": {
+        "feename": "com.me.premium.timedbundle.one",
+        "repeat": 1,
+        "usd": 0.99
+      },
+      "22": {
+        "feename": "com.me.premium.timedbundle.two",
+        "repeat": 1,
+        "usd": 1.99
+      },
+      "23": {
+        "feename": "com.me.premium.timedbundle.three",
+        "repeat": 1,
+        "usd": 1.99
+      },
+      "24": {
+        "feename": "com.me.premium.timedbundle.four",
+        "repeat": 1,
+        "usd": 1.99
+      },
+      "25": {
+        "feename": "com.me.premium.timedbundle.five",
+        "repeat": 1,
+        "usd": 1.99
+      },
+      "26": {
+        "feename": "com.me.premium.timedbundle.six",
+        "repeat": 1,
+        "usd": 1.99
+      },
+      "27": {
+        "feename": "com.me.premium.timedbundle.seven",
+        "repeat": 1,
+        "usd": 2.99
+      },
+      "28": {
+        "feename": "com.me.premium.timedbundle.eight",
+        "repeat": 1,
+        "usd": 1.99
+      },
+      "29": {
+        "feename": "com.me.premium.timedbundle.nine",
+        "repeat": 1,
+        "usd": 2.99
+      },
+      "30": {
+        "feename": "com.me.dailypack.1",
+        "repeat": 1,
+        "usd": 0.99
+      },
+      "31": {
+        "feename": "com.me.battlepass",
+        "repeat": 1,
+        "usd": 4.99
+      },
+      "42": {
+        "feename": "com.me.starterpack",
+        "repeat": 1,
+        "usd": 2.99
+      },
+      "48": {
+        "feename": "com.me.dailypack.2",
+        "repeat": 1,
+        "usd": 1.99
+      },
+      "49": {
+        "feename": "com.me.m.1",
+        "repeat": 1,
+        "usd": 0.99,
+        "autoload": 0
+      },
+      "50": {
+        "feename": "com.me.m.2",
+        "repeat": 1,
+        "usd": 1.99,
+        "autoload": 0
+      },
+      "51": {
+        "feename": "com.me.m.3",
+        "repeat": 1,
+        "usd": 2.99,
+        "autoload": 0
+      },
+      "52": {
+        "feename": "com.me.m.4",
+        "repeat": 1,
+        "usd": 3.99,
+        "autoload": 0
+      },
+      "53": {
+        "feename": "com.me.m.5",
+        "repeat": 1,
+        "usd": 4.99,
+        "autoload": 0
+      },
+      "54": {
+        "feename": "com.me.m.6",
+        "repeat": 1,
+        "usd": 5.99,
+        "autoload": 0
+      },
+      "55": {
+        "feename": "com.me.m.7",
+        "repeat": 1,
+        "usd": 6.99,
+        "autoload": 0
+      },
+      "56": {
+        "feename": "com.me.m.8",
+        "repeat": 1,
+        "usd": 7.99,
+        "autoload": 0
+      },
+      "57": {
+        "feename": "com.me.m.9",
+        "repeat": 1,
+        "usd": 8.99,
+        "autoload": 0
+      },
+      "58": {
+        "feename": "com.me.m.10",
+        "repeat": 1,
+        "usd": 9.99,
+        "autoload": 0
+      },
+      "59": {
+        "feename": "com.me.m.11",
+        "repeat": 1,
+        "usd": 10.99,
+        "autoload": 0
+      },
+      "60": {
+        "feename": "com.me.m.12",
+        "repeat": 1,
+        "usd": 11.99,
+        "autoload": 0
+      },
+      "61": {
+        "feename": "com.me.m.13",
+        "repeat": 1,
+        "usd": 12.99,
+        "autoload": 0
+      },
+      "62": {
+        "feename": "com.me.m.14",
+        "repeat": 1,
+        "usd": 13.99,
+        "autoload": 0
+      },
+      "63": {
+        "feename": "com.me.m.15",
+        "repeat": 1,
+        "usd": 14.99,
+        "autoload": 0
+      },
+      "64": {
+        "feename": "com.me.m.16",
+        "repeat": 1,
+        "usd": 15.99,
+        "autoload": 0
+      },
+      "65": {
+        "feename": "com.me.m.17",
+        "repeat": 1,
+        "usd": 16.99,
+        "autoload": 0
+      },
+      "66": {
+        "feename": "com.me.m.18",
+        "repeat": 1,
+        "usd": 17.99,
+        "autoload": 0
+      },
+      "67": {
+        "feename": "com.me.m.19",
+        "repeat": 1,
+        "usd": 18.99,
+        "autoload": 0
+      },
+      "68": {
+        "feename": "com.me.m.20",
+        "repeat": 1,
+        "usd": 19.99,
+        "autoload": 0
+      },
+      "69": {
+        "feename": "com.me.m.21",
+        "repeat": 1,
+        "usd": 20.99,
+        "autoload": 0
+      },
+      "70": {
+        "feename": "com.me.m.22",
+        "repeat": 1,
+        "usd": 21.99,
+        "autoload": 0
+      },
+      "71": {
+        "feename": "com.me.m.23",
+        "repeat": 1,
+        "usd": 22.99,
+        "autoload": 0
+      },
+      "72": {
+        "feename": "com.me.m.24",
+        "repeat": 1,
+        "usd": 23.99,
+        "autoload": 0
+      },
+      "73": {
+        "feename": "com.me.m.25",
+        "repeat": 1,
+        "usd": 24.99,
+        "autoload": 0
+      },
+      "74": {
+        "feename": "com.me.m.26",
+        "repeat": 1,
+        "usd": 25.99,
+        "autoload": 0
+      },
+      "75": {
+        "feename": "com.me.m.27",
+        "repeat": 1,
+        "usd": 26.99,
+        "autoload": 0
+      },
+      "76": {
+        "feename": "com.me.m.28",
+        "repeat": 1,
+        "usd": 27.99,
+        "autoload": 0
+      },
+      "77": {
+        "feename": "com.me.m.29",
+        "repeat": 1,
+        "usd": 28.99,
+        "autoload": 0
+      },
+      "78": {
+        "feename": "com.me.m.30",
+        "repeat": 1,
+        "usd": 29.99,
+        "autoload": 0
+      },
+      "79": {
+        "feename": "com.me.m.31",
+        "repeat": 1,
+        "usd": 30.99,
+        "autoload": 0
+      },
+      "80": {
+        "feename": "com.me.m.32",
+        "repeat": 1,
+        "usd": 31.99,
+        "autoload": 0
+      },
+      "81": {
+        "feename": "com.me.m.33",
+        "repeat": 1,
+        "usd": 32.99,
+        "autoload": 0
+      },
+      "82": {
+        "feename": "com.me.m.34",
+        "repeat": 1,
+        "usd": 33.99,
+        "autoload": 0
+      },
+      "83": {
+        "feename": "com.me.m.35",
+        "repeat": 1,
+        "usd": 34.99,
+        "autoload": 0
+      },
+      "84": {
+        "feename": "com.me.m.36",
+        "repeat": 1,
+        "usd": 35.99,
+        "autoload": 0
+      },
+      "85": {
+        "feename": "com.me.m.37",
+        "repeat": 1,
+        "usd": 36.99,
+        "autoload": 0
+      },
+      "86": {
+        "feename": "com.me.m.38",
+        "repeat": 1,
+        "usd": 37.99,
+        "autoload": 0
+      },
+      "87": {
+        "feename": "com.me.m.39",
+        "repeat": 1,
+        "usd": 38.99,
+        "autoload": 0
+      },
+      "88": {
+        "feename": "com.me.m.40",
+        "repeat": 1,
+        "usd": 39.99,
+        "autoload": 0
+      },
+      "89": {
+        "feename": "com.me.m.41",
+        "repeat": 1,
+        "usd": 40.99,
+        "autoload": 0
+      },
+      "90": {
+        "feename": "com.me.m.42",
+        "repeat": 1,
+        "usd": 41.99,
+        "autoload": 0
+      },
+      "91": {
+        "feename": "com.me.m.43",
+        "repeat": 1,
+        "usd": 42.99,
+        "autoload": 0
+      },
+      "92": {
+        "feename": "com.me.m.44",
+        "repeat": 1,
+        "usd": 45.99,
+        "autoload": 0
+      },
+      "93": {
+        "feename": "com.me.m.45",
+        "repeat": 1,
+        "usd": 44.99,
+        "autoload": 0
+      },
+      "94": {
+        "feename": "com.me.m.46",
+        "repeat": 1,
+        "usd": 45.99,
+        "autoload": 0
+      },
+      "95": {
+        "feename": "com.me.m.47",
+        "repeat": 1,
+        "usd": 46.99,
+        "autoload": 0
+      },
+      "96": {
+        "feename": "com.me.m.48",
+        "repeat": 1,
+        "usd": 47.99,
+        "autoload": 0
+      },
+      "97": {
+        "feename": "com.me.m.49",
+        "repeat": 1,
+        "usd": 48.99,
+        "autoload": 0
+      },
+      "98": {
+        "feename": "com.me.m.50",
+        "repeat": 1,
+        "usd": 49.99,
+        "autoload": 0
+      },
+      "99": {
+        "feename": "com.me.m.51",
+        "repeat": 1,
+        "usd": 50.99,
+        "autoload": 0
+      },
+      "100": {
+        "feename": "com.me.m.52",
+        "repeat": 1,
+        "usd": 51.99,
+        "autoload": 0
+      },
+      "101": {
+        "feename": "com.me.m.53",
+        "repeat": 1,
+        "usd": 52.99,
+        "autoload": 0
+      },
+      "102": {
+        "feename": "com.me.m.54",
+        "repeat": 1,
+        "usd": 53.99,
+        "autoload": 0
+      },
+      "103": {
+        "feename": "com.me.m.55",
+        "repeat": 1,
+        "usd": 54.99,
+        "autoload": 0
+      },
+      "104": {
+        "feename": "com.me.m.56",
+        "repeat": 1,
+        "usd": 55.99,
+        "autoload": 0
+      },
+      "105": {
+        "feename": "com.me.m.57",
+        "repeat": 1,
+        "usd": 56.99,
+        "autoload": 0
+      },
+      "106": {
+        "feename": "com.me.m.58",
+        "repeat": 1,
+        "usd": 57.99,
+        "autoload": 0
+      },
+      "107": {
+        "feename": "com.me.m.59",
+        "repeat": 1,
+        "usd": 58.99,
+        "autoload": 0
+      },
+      "108": {
+        "feename": "com.me.m.60",
+        "repeat": 1,
+        "usd": 59.99,
+        "autoload": 0
+      },
+      "109": {
+        "feename": "com.me.m.61",
+        "repeat": 1,
+        "usd": 60.99,
+        "autoload": 0
+      },
+      "110": {
+        "feename": "com.me.m.62",
+        "repeat": 1,
+        "usd": 61.99,
+        "autoload": 0
+      },
+      "111": {
+        "feename": "com.me.m.63",
+        "repeat": 1,
+        "usd": 62.99,
+        "autoload": 0
+      },
+      "112": {
+        "feename": "com.me.m.64",
+        "repeat": 1,
+        "usd": 63.99,
+        "autoload": 0
+      },
+      "113": {
+        "feename": "com.me.m.65",
+        "repeat": 1,
+        "usd": 64.99,
+        "autoload": 0
+      },
+      "114": {
+        "feename": "com.me.m.66",
+        "repeat": 1,
+        "usd": 65.99,
+        "autoload": 0
+      },
+      "115": {
+        "feename": "com.me.m.67",
+        "repeat": 1,
+        "usd": 66.99,
+        "autoload": 0
+      },
+      "116": {
+        "feename": "com.me.m.68",
+        "repeat": 1,
+        "usd": 67.99,
+        "autoload": 0
+      },
+      "117": {
+        "feename": "com.me.m.69",
+        "repeat": 1,
+        "usd": 68.99,
+        "autoload": 0
+      },
+      "118": {
+        "feename": "com.me.m.70",
+        "repeat": 1,
+        "usd": 69.99,
+        "autoload": 0
+      },
+      "119": {
+        "feename": "com.me.m.71",
+        "repeat": 1,
+        "usd": 70.99,
+        "autoload": 0
+      },
+      "120": {
+        "feename": "com.me.m.72",
+        "repeat": 1,
+        "usd": 71.99,
+        "autoload": 0
+      },
+      "121": {
+        "feename": "com.me.m.73",
+        "repeat": 1,
+        "usd": 72.99,
+        "autoload": 0
+      },
+      "122": {
+        "feename": "com.me.m.74",
+        "repeat": 1,
+        "usd": 73.99,
+        "autoload": 0
+      },
+      "123": {
+        "feename": "com.me.m.75",
+        "repeat": 1,
+        "usd": 74.99,
+        "autoload": 0
+      },
+      "124": {
+        "feename": "com.me.m.76",
+        "repeat": 1,
+        "usd": 75.99,
+        "autoload": 0
+      },
+      "125": {
+        "feename": "com.me.m.77",
+        "repeat": 1,
+        "usd": 76.99,
+        "autoload": 0
+      },
+      "126": {
+        "feename": "com.me.m.78",
+        "repeat": 1,
+        "usd": 77.99,
+        "autoload": 0
+      },
+      "127": {
+        "feename": "com.me.m.79",
+        "repeat": 1,
+        "usd": 78.99,
+        "autoload": 0
+      },
+      "128": {
+        "feename": "com.me.m.80",
+        "repeat": 1,
+        "usd": 79.99,
+        "autoload": 0
+      },
+      "129": {
+        "feename": "com.me.m.81",
+        "repeat": 1,
+        "usd": 80.99,
+        "autoload": 0
+      },
+      "130": {
+        "feename": "com.me.m.82",
+        "repeat": 1,
+        "usd": 81.99,
+        "autoload": 0
+      },
+      "131": {
+        "feename": "com.me.m.83",
+        "repeat": 1,
+        "usd": 82.99,
+        "autoload": 0
+      },
+      "132": {
+        "feename": "com.me.m.84",
+        "repeat": 1,
+        "usd": 83.99,
+        "autoload": 0
+      },
+      "133": {
+        "feename": "com.me.m.85",
+        "repeat": 1,
+        "usd": 84.99,
+        "autoload": 0
+      },
+      "134": {
+        "feename": "com.me.m.86",
+        "repeat": 1,
+        "usd": 85.99,
+        "autoload": 0
+      },
+      "135": {
+        "feename": "com.me.m.87",
+        "repeat": 1,
+        "usd": 86.99,
+        "autoload": 0
+      },
+      "136": {
+        "feename": "com.me.m.88",
+        "repeat": 1,
+        "usd": 87.99,
+        "autoload": 0
+      },
+      "137": {
+        "feename": "com.me.m.89",
+        "repeat": 1,
+        "usd": 88.99,
+        "autoload": 0
+      },
+      "138": {
+        "feename": "com.me.m.90",
+        "repeat": 1,
+        "usd": 89.99,
+        "autoload": 0
+      },
+      "139": {
+        "feename": "com.me.m.91",
+        "repeat": 1,
+        "usd": 90.99,
+        "autoload": 0
+      },
+      "140": {
+        "feename": "com.me.m.92",
+        "repeat": 1,
+        "usd": 91.99,
+        "autoload": 0
+      },
+      "141": {
+        "feename": "com.me.m.93",
+        "repeat": 1,
+        "usd": 92.99,
+        "autoload": 0
+      },
+      "142": {
+        "feename": "com.me.m.94",
+        "repeat": 1,
+        "usd": 93.99,
+        "autoload": 0
+      },
+      "143": {
+        "feename": "com.me.m.95",
+        "repeat": 1,
+        "usd": 94.99,
+        "autoload": 0
+      },
+      "144": {
+        "feename": "com.me.m.96",
+        "repeat": 1,
+        "usd": 95.99,
+        "autoload": 0
+      },
+      "145": {
+        "feename": "com.me.m.97",
+        "repeat": 1,
+        "usd": 96.99,
+        "autoload": 0
+      },
+      "146": {
+        "feename": "com.me.m.98",
+        "repeat": 1,
+        "usd": 97.99,
+        "autoload": 0
+      },
+      "147": {
+        "feename": "com.me.m.99",
+        "repeat": 1,
+        "usd": 98.99,
+        "autoload": 0
+      },
+      "148": {
+        "feename": "com.me.m.100",
+        "repeat": 1,
+        "usd": 99.99,
+        "autoload": 0
+      },
+      "149": {
+        "feename": "com.me.battlepass.offer",
+        "repeat": 1,
+        "usd": 4.99,
+        "autoload": 0
+      },
+      "150": {
+        "feename": "com.me.event.1",
+        "repeat": 1,
+        "usd": 9.99,
+        "autoload": 0
+      },
+      "151": {
+        "feename": "com.me.event.2",
+        "repeat": 1,
+        "usd": 4.99,
+        "autoload": 0
+      },
+      "152": {
+        "feename": "com.me.levelhome.4",
+        "repeat": 1,
+        "usd": 4.99,
+        "autoload": 0
+      },
+      "153": {
+        "feename": "com.me.energy.1",
+        "repeat": 1,
+        "usd": 4.99,
+        "autoload": 0
+      },
+      "154": {
+        "feename": "com.me.monthlycard.2",
+        "repeat": 1,
+        "usd": 99.99,
+        "autoload": 0
+      },
+      "155": {
+        "feename": "com.me.monthlycard.3",
+        "repeat": 1,
+        "usd": 19.99,
+        "autoload": 0
+      },
+      "160": {
+        "feename": "com.me.battlepass.2",
+        "repeat": 1,
+        "usd": 4.99
+      },
+      "161": {
+        "feename": "com.me.battlepass.3",
+        "repeat": 1,
+        "usd": 12.99
+      },
+      "162": {
+        "feename": "com.me.premiumland.five",
+        "repeat": 1,
+        "usd": 0.99
+      },
+      "1001": {
+        "feename": "com.me.userlayer.100.1",
+        "repeat": 1,
+        "usd": 4.99,
+        "autoload": 0
+      },
+      "1002": {
+        "feename": "com.me.userlayer.100.2",
+        "repeat": 1,
+        "usd": 9.99,
+        "autoload": 0
+      },
+      "1003": {
+        "feename": "com.me.userlayer.100.3",
+        "repeat": 1,
+        "usd": 9.99,
+        "autoload": 0
+      },
+      "1011": {
+        "feename": "com.me.userlayer.101.1",
+        "repeat": 1,
+        "usd": 1.99,
+        "autoload": 0
+      },
+      "1012": {
+        "feename": "com.me.userlayer.101.2",
+        "repeat": 1,
+        "usd": 1.99,
+        "autoload": 0
+      },
+      "1013": {
+        "feename": "com.me.userlayer.101.3",
+        "repeat": 1,
+        "usd": 1.99,
+        "autoload": 0
+      },
+      "1021": {
+        "feename": "com.me.userlayer.102.1",
+        "repeat": 1,
+        "usd": 4.99,
+        "autoload": 0
+      },
+      "1022": {
+        "feename": "com.me.userlayer.102.2",
+        "repeat": 1,
+        "usd": 4.99,
+        "autoload": 0
+      },
+      "1023": {
+        "feename": "com.me.userlayer.102.3",
+        "repeat": 1,
+        "usd": 4.99,
+        "autoload": 0
+      },
+      "1031": {
+        "feename": "com.me.userlayer.103.1",
+        "repeat": 1,
+        "usd": 0.99,
+        "autoload": 0
+      },
+      "1032": {
+        "feename": "com.me.userlayer.103.2",
+        "repeat": 1,
+        "usd": 0.99,
+        "autoload": 0
+      },
+      "1033": {
+        "feename": "com.me.userlayer.103.3",
+        "repeat": 1,
+        "usd": 0.99,
+        "autoload": 0
+      },
+      "1034": {
+        "feename": "com.me.userlayer.103.4",
+        "repeat": 1,
+        "usd": 1.99,
+        "autoload": 0
+      },
+      "1041": {
+        "feename": "com.me.userlayer.104.1",
+        "repeat": 1,
+        "usd": 0.99,
+        "autoload": 0
+      },
+      "1042": {
+        "feename": "com.me.userlayer.104.2",
+        "repeat": 1,
+        "usd": 0.99,
+        "autoload": 0
+      },
+      "1043": {
+        "feename": "com.me.userlayer.104.3",
+        "repeat": 1,
+        "usd": 0.99,
+        "autoload": 0
+      },
+      "1044": {
+        "feename": "com.me.userlayer.104.4",
+        "repeat": 1,
+        "usd": 1.99,
+        "autoload": 0
+      },
+      "1051": {
+        "feename": "com.me.userlayer.105.1",
+        "repeat": 1,
+        "usd": 1.99,
+        "autoload": 0
+      },
+      "1052": {
+        "feename": "com.me.userlayer.105.2",
+        "repeat": 1,
+        "usd": 1.99,
+        "autoload": 0
+      },
+      "1053": {
+        "feename": "com.me.userlayer.105.3",
+        "repeat": 1,
+        "usd": 1.99,
+        "autoload": 0
+      },
+      "1054": {
+        "feename": "com.me.userlayer.105.4",
+        "repeat": 1,
+        "usd": 4.99,
+        "autoload": 0
+      },
+      "1055": {
+        "feename": "com.me.userlayer.105.5",
+        "repeat": 1,
+        "usd": 1.99,
+        "autoload": 0
+      },
+      "1061": {
+        "feename": "com.me.userlayer.106.1",
+        "repeat": 1,
+        "usd": 1.99,
+        "autoload": 0
+      },
+      "1062": {
+        "feename": "com.me.userlayer.106.2",
+        "repeat": 1,
+        "usd": 1.99,
+        "autoload": 0
+      },
+      "1063": {
+        "feename": "com.me.userlayer.106.3",
+        "repeat": 1,
+        "usd": 1.99,
+        "autoload": 0
+      },
+      "1064": {
+        "feename": "com.me.userlayer.106.4",
+        "repeat": 1,
+        "usd": 4.99,
+        "autoload": 0
+      },
+      "1065": {
+        "feename": "com.me.userlayer.106.5",
+        "repeat": 1,
+        "usd": 1.99,
+        "autoload": 0
+      },
+      "1071": {
+        "feename": "com.me.userlayer.107.1",
+        "repeat": 1,
+        "usd": 4.99,
+        "autoload": 0
+      },
+      "1072": {
+        "feename": "com.me.userlayer.107.2",
+        "repeat": 1,
+        "usd": 4.99,
+        "autoload": 0
+      },
+      "1073": {
+        "feename": "com.me.userlayer.107.3",
+        "repeat": 1,
+        "usd": 4.99,
+        "autoload": 0
+      },
+      "1074": {
+        "feename": "com.me.userlayer.107.4",
+        "repeat": 1,
+        "usd": 9.99,
+        "autoload": 0
+      },
+      "1075": {
+        "feename": "com.me.userlayer.107.5",
+        "repeat": 1,
+        "usd": 4.99,
+        "autoload": 0
+      },
+      "1081": {
+        "feename": "com.me.userlayer.108.1",
+        "repeat": 1,
+        "usd": 4.99,
+        "autoload": 0
+      },
+      "1082": {
+        "feename": "com.me.userlayer.108.2",
+        "repeat": 1,
+        "usd": 4.99,
+        "autoload": 0
+      },
+      "1083": {
+        "feename": "com.me.userlayer.108.3",
+        "repeat": 1,
+        "usd": 4.99,
+        "autoload": 0
+      },
+      "1084": {
+        "feename": "com.me.userlayer.108.4",
+        "repeat": 1,
+        "usd": 9.99,
+        "autoload": 0
+      },
+      "1085": {
+        "feename": "com.me.userlayer.108.5",
+        "repeat": 1,
+        "usd": 4.99,
+        "autoload": 0
+      },
+      "1091": {
+        "feename": "com.me.userlayer.109.1",
+        "repeat": 1,
+        "usd": 9.99,
+        "autoload": 0
+      },
+      "1092": {
+        "feename": "com.me.userlayer.109.2",
+        "repeat": 1,
+        "usd": 9.99,
+        "autoload": 0
+      },
+      "1093": {
+        "feename": "com.me.userlayer.109.3",
+        "repeat": 1,
+        "usd": 9.99,
+        "autoload": 0
+      },
+      "1094": {
+        "feename": "com.me.userlayer.109.4",
+        "repeat": 1,
+        "usd": 9.99,
+        "autoload": 0
+      },
+      "1095": {
+        "feename": "com.me.userlayer.109.5",
+        "repeat": 1,
+        "usd": 9.99,
+        "autoload": 0
+      },
+      "1101": {
+        "feename": "com.me.userlayer.110.1",
+        "repeat": 1,
+        "usd": 9.99,
+        "autoload": 0
+      },
+      "1102": {
+        "feename": "com.me.userlayer.110.2",
+        "repeat": 1,
+        "usd": 9.99,
+        "autoload": 0
+      },
+      "1103": {
+        "feename": "com.me.userlayer.110.3",
+        "repeat": 1,
+        "usd": 9.99,
+        "autoload": 0
+      },
+      "1104": {
+        "feename": "com.me.userlayer.110.4",
+        "repeat": 1,
+        "usd": 9.99,
+        "autoload": 0
+      },
+      "1105": {
+        "feename": "com.me.userlayer.110.5",
+        "repeat": 1,
+        "usd": 9.99,
+        "autoload": 0
+      },
+      "1111": {
+        "feename": "com.me.userlayer.111.1",
+        "repeat": 1,
+        "usd": 19.99,
+        "autoload": 0
+      },
+      "1112": {
+        "feename": "com.me.userlayer.111.2",
+        "repeat": 1,
+        "usd": 19.99,
+        "autoload": 0
+      },
+      "1113": {
+        "feename": "com.me.userlayer.111.3",
+        "repeat": 1,
+        "usd": 19.99,
+        "autoload": 0
+      },
+      "1114": {
+        "feename": "com.me.userlayer.111.4",
+        "repeat": 1,
+        "usd": 19.99,
+        "autoload": 0
+      },
+      "1115": {
+        "feename": "com.me.userlayer.111.5",
+        "repeat": 1,
+        "usd": 19.99,
+        "autoload": 0
+      },
+      "1121": {
+        "feename": "com.me.userlayer.112.1",
+        "repeat": 1,
+        "usd": 19.99,
+        "autoload": 0
+      },
+      "1122": {
+        "feename": "com.me.userlayer.112.2",
+        "repeat": 1,
+        "usd": 19.99,
+        "autoload": 0
+      },
+      "1123": {
+        "feename": "com.me.userlayer.112.3",
+        "repeat": 1,
+        "usd": 19.99,
+        "autoload": 0
+      },
+      "1124": {
+        "feename": "com.me.userlayer.112.4",
+        "repeat": 1,
+        "usd": 19.99,
+        "autoload": 0
+      },
+      "1125": {
+        "feename": "com.me.userlayer.112.5",
+        "repeat": 1,
+        "usd": 19.99,
+        "autoload": 0
+      },
+      "verify-url": "",
+      "force-check": 0,
+      "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApmwqKiLH1claYzi0uaAWii6St2QqyorVlVEj4cOJS8YtZyGXuopNZU7hc0sadgQ1X0iI3lcbR6MQQUBVL1EQyPQ+iaL3FcXffeDKMKjeb8+bcdUccW9bcvB1mvnxb3XeSBH5Xj2TL4e/nr9gcDABqad7yFwpjjsXIr8ahSUnUm3jRceLF4qGb0RjgdGmfka89w0wq1EfoSNNOxqnilclP5FqI6JA1xrBuIpLA32lAVcVJQW1HO9Jo3Tsz1MEIMITXUrWaBp6pUQsmjtgrg+f82EHPRj3E2IqtB1zVR7Al1IULye1gsd4Al/pFn8y0DjhbJnkjpUDyb5MKNVVDUNJXwIDAQAB"
+    }
+  },
+  "slientLoginGoogle": false,
+  "gts": 1685323022000,
+  "gv": 5,
+  "ver": 2,
+  "v_api": 0,
+  "appid": 1000000996,
+  "token": "2d5513c6a6c615a966ecf7d5f1c8bd6a"
+}

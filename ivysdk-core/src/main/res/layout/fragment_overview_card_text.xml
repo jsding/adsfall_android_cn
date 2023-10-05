@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <View
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/card_text_height"
+        android:background="@drawable/gradient_two" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/card_text_height"
+        android:background="@color/black_almost_translucent" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:text="@string/app_name"
+        android:textSize="@dimen/textsize_m"
+        style="@style/listTitleStyle"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:layout_centerVertical="true" />
+
+</RelativeLayout>

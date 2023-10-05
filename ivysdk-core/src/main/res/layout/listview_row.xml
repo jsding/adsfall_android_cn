@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:orientation="vertical"
+        android:padding="@dimen/spacing_xl"
+        android:clipToPadding="false">
+
+        <com.sherdle.universal.util.layout.RoundedImageView
+            android:id="@+id/thumbImage"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@drawable/rounded_placeholder"
+            android:layout_marginBottom="@dimen/spacing_l"
+            android:elevation="6dp"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/title"
+            style="@style/listTitleStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:color="@color/grey_darker"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/empty_textview"
+            android:textSize="@dimen/textsize_m" />
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title"
+            android:layout_marginTop="@dimen/spacing_m"
+            android:text="@string/empty_textview"
+            android:textColor="@color/grey_dark"
+            android:textSize="@dimen/textsize_xs"
+            android:textDirection="locale"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="@dimen/spacing_l"
+        android:layout_marginRight="@dimen/spacing_l"
+        android:background="@color/grey_lighter" />
+</LinearLayout>

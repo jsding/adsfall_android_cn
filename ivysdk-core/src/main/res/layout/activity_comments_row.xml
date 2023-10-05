@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="match_parent">
+    
+    <LinearLayout 
+    android:id="@+id/lineView"
+    android:orientation="horizontal" 
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent">
+        	
+    </LinearLayout>
+   
+    <RelativeLayout 
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="20dp">
+
+        <ImageView
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:id="@+id/ivProfilePhoto"
+            android:layout_width="50dp"
+            android:layout_height="50dp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/container"
+            android:orientation="horizontal"
+            android:layout_alignTop="@+id/ivProfilePhoto"
+            android:layout_toRightOf="@+id/ivProfilePhoto"
+            android:layout_alignParentTop="true">
+
+            <TextView
+                android:id="@+id/tvUsername"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="5dp"
+                android:gravity="left|center_vertical"
+                android:maxLines="1"
+                android:text="@string/no_results"
+                android:textColor="#41739C"
+                android:textSize="@dimen/textsize_s" />
+
+            <RatingBar
+                android:id="@+id/rating"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:isIndicator="true"
+                android:progressBackgroundTint="#FFA500"
+                android:progressTint="#FFA500"
+                android:secondaryProgressTint="#FFA500"
+                android:stepSize="0.1" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvComment"
+            android:text="@string/no_results"
+            android:layout_toRightOf="@+id/ivProfilePhoto"
+            android:layout_below="@+id/container"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:gravity="left|center_vertical"
+            android:textSize="@dimen/textsize_s" />
+
+        </RelativeLayout>
+        	
+</LinearLayout>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:universal="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/text_style"
+        android:icon="@drawable/ic_action_outline_view"
+        android:orderInCategory="1"
+        android:title="@string/view_mode"
+        universal:showAsAction="ifRoom">
+        <menu>
+            <group
+                android:id="@+id/viewmode_group"
+                android:checkableBehavior="single">
+                <item
+                    android:id="@+id/compact"
+                    android:title="@string/view_mode_compact" />
+                <item
+                    android:id="@+id/normal"
+                    android:title="@string/view_mode_normal" />
+                <item
+                    android:id="@+id/immersive"
+                    android:title="@string/view_mode_immersive" />
+            </group>
+        </menu>
+    </item>
+</menu>

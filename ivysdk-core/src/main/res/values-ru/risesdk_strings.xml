@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="android_sdk_return">Return</string>
+    <string name="android_sdk_download">Download</string>
+    <string name="android_sdk_guess_you_like">You may like this game</string>
+    <string name="android_sdk_exit"><u>Quit</u></string>
+    <string name="android_sdk_exit_confirm">Do you want to exit?</string>
+    <string name="android_sdk_more">More Games</string>
+    <string name="android_sdk_expired">Expired</string>
+    <string name="google_signin_other_error">Google Sign in Error</string>
+    <string name="google_signin_title">Google Sign In</string>
+    <string name="risesdk_gameactivity_title">Download these apps for free</string>
+    <string name="risesdk_ad_disabled">Thanks for your support, Ad will be not displayed.</string>
+    <string name="google_leaderboard_not_available">Google leaderboards not available on this device.</string>
+    <string name="transaction_cannot_be_completed">Transaction cannot be completed.</string>
+    <string name="ok">OK</string>
+    <string name="reward_video_load_failed">No reward video available now, please try again later.</string>
+    <string name="reward_loading_title">Loading Offers&#8230;</string>
+    <string name="risesdk_payment_received">Thanks for your payment!</string>
+    <string name="risesdk_install">Play</string>
+    <string name="risesdk_reward_install">Install</string>
+    <string name="banner_title_placeholder">Find more games</string>
+    <string name="banner_placeholder">Search IVY in Google Play Store to get more addictive games.</string>
+    <string name="promotion_skip_format">Skip | %s</string>
+    <string name="show_saved_game_title">Show My Game Savings</string>
+    <string name="user_survey">Help us improve</string>
+
+    <!-- Privacy Policy Url -->
+    <string name="privacy_policy_url">https://www.lisgame.com/privacy-policy/</string>
+
+    <!-- About text, you can use basic html, stay between [ and ] -->
+    <string name="about_text"><![CDATA[<b>Version 1.0</b> <br><br>Thank you for downloading our games<br><br> <i>By LisGame&#174;</i>]]></string>
+
+    <!-- Strings for optional translation below this line -->
+
+    <!-- privacy -->
+    <string name="privacy_policy_header">Data Protection Consent</string>
+    <string name="privacy_policy_summary"><![CDATA[We care about your privacy and data security. When you use this app, you consent to the use of cookies and third party services in accordance with the terms of our <a href="%1$s">privacy policy</a>.]]></string>
+    <string name="privacy_policy_agreement">By clicking \'I agree\', you confirm that you are over the age of 16 and that we may collect your data for the purposes described in the privacy policy.</string>
+    <string name="privacy_policy_agree_button">I agree</string>
+
+    <!-- twitter section -->
+    <string name="name">Name</string>
+    <string name="username">Username</string>
+    <string name="profile_image">Profile image</string>
+    <string name="message">Message</string>
+
+    <string name="tweet_share_header">\'s tweet</string>
+
+    <!-- rss -->
+    <string name="feed_title_value">Feed title</string>
+    <string name="feed_link_value">Feed description</string>
+    <string name="feed_description_value">Feed link</string>
+
+    <string name="btn_video">Play video</string>
+    <string name="btn_audio">Play audio</string>
+
+    <!-- youtube -->
+    <string name="video_no_live_title">On a break</string>
+    <string name="video_no_live">No live streams available now</string>
+    <string name="video_live">Select a stream</string>
+    <string name="play_button">Play</string>
+
+    <string name="video_share_begin">"I just saw this video: "</string>
+    <string name="video_share_middle">" in the \""</string>
+    <string name="video_share_end">\" app</string>
+
+    <string name="video_subtitle_start">"Uploaded "</string>
+    <string name="video_subtitle_end">" by "</string>
+
+    <!--  webview  -->
+    <string name="webview_title">Web</string>
+    <string name="retry">Retry</string>
+    <string name="notification_error_ssl_cert_invalid">The SSL Certificate of the server could not be verified. Would you like to continue?</string>
+
+    <string name="web_share_begin">"Look what I saw in the \""</string>
+    <string name="web_share_end">"\" app: "</string>
+
+    <!-- favorites -->
+    <string name="item_del_text">You are about to delete all your favorites</string>
+    <string name="item_del_confirmation">I know</string>
+    <string name="no_favorites">You can add favorites by opening an item and selecting \"favorite\"</string>
+    <string name="favorite_success">The item has been added</string>
+    <string name="favorite_duplicate">This item has already been added</string>
+    <string name="favorite_menu_delete">Delete</string>
+
+    <!-- settings -->
+    <string name="settings_general_summary">Username and password information</string>
+    <string name="settings_general">General</string>
+
+    <string name="settings_showmenu_summary">Yes/No</string>
+    <string name="settings_showmenu">Show side menu on start</string>
+
+    <string name="settings_fontsize_summary">Preferred text size for articles and posts</string>
+    <string name="settings_fontsize">Text size</string>
+
+    <string name="settings_fontsize_xl">Extra Large</string>
+    <string name="settings_fontsize_l">Large</string>
+    <string name="settings_fontsize_m">Default</string>
+    <string name="settings_fontsize_s">Small</string>
+    <string name="settings_fontsize_xs">Extra Small</string>
+
+    <string name="settings_other_summary">Other information</string>
+    <string name="settings_other">Other</string>
+
+    <string name="settings_aboutus_summary">Information about our application</string>
+    <string name="settings_aboutus">About</string>
+
+    <string name="settings_notifications_summary">Manage notification settings</string>
+    <string name="settings_notifications">Notifications</string>
+
+    <string name="settings_licenses_summary">Licence details for open-source software</string>
+    <string name="settings_licenses">Open-source licenses</string>
+
+    <string name="settings_rate_summary">Help other users enjoy this application</string>
+    <string name="settings_rate">Rate this app</string>
+
+    <string name="settings_version">Version</string>
+
+    <string name="settings_billing_summary">Manage your In-App purchases</string>
+    <string name="settings_billing">In-App Products.</string>
+
+    <string name="settings_purchase_summary">Removes ads and unlocks more content</string>
+    <string name="settings_purchase">Unlock extra features</string>
+
+    <string name="dialog_purchase_title">Content locked.</string>
+    <string name="dialog_purchase">In order to view this content, you need to unlock the full version by making a one time purchase.\n\nThis will also remove advertisements throughout the app.</string>
+
+    <!-- Wordpress -->
+    <string name="wordpress_subtitle_start">"Published "</string>
+    <string name="wordpress_subtitle_end">" by "</string>
+    <string name="related">Related to this</string>
+
+    <!-- media viewer and radio-->
+    <string name="volume_low">Turn your volume up!</string>
+    <string name="now_playing">Now playing</string>
+    <string name="toggle_fullscreen">Toggle Fullscreen</string>
+    <string name="notification_playing">Playing audio - Live Stream</string>
+    <string name="audio_notification">Background media playback</string>
+    <string name="error_retry">Failed to connect to stream... </string>
+    <string name="error_retry_later">Please try again in a few seconds... </string>
+    <string name="radio_playing_other">Already playing another station. Press play again to play this station instead.</string>
+
+    <!-- tumblr -->
+    <string name="image_descr">Image</string>
+    <string name="set">Set</string>
+    <string name="save">Save</string>
+    <string name="tumblr_share_begin">Check out this post I saw in</string>
+    <string name="saved">Saved at:</string>
+    <string name="set_confirm">Are you sure you would like to set this image as wallpaper?</string>
+    <string name="set_success">You have set a new Wallpaper!</string>
+
+    <!-- Attachment & Media -->
+    <string name="background_audio">Playing audio</string>
+    <string name="download_permission_explaination">In order to download files, you need to grant us permission to your storage.\n\nAfter granting us access, you may go ahead and download the file.</string>
+    <string name="download_permission_grant">Grant permission</string>
+    <string name="download_unavailable">You can not download this content</string>
+    <string name="download_failed">Download failed</string>
+    <string name="download_open_failed">No app to handle file</string>
+    <string name="action_download">Download</string>
+
+    <!-- general-->
+    <string name="settings">Settings</string>
+    <string name="favorites">Favorites</string>
+    <string name="invalid_configuration">Configuration could not be loaded</string>
+    <string name="share_header">Share</string>
+    <string name="about_header">About</string>
+    <string name="favorite_button">Favorite</string>
+    <string name="open_button">Open</string>
+    <string name="textview_date">"Date: "</string>
+    <string name="loading">Loading..</string>
+    <string name="empty_textview">Error loading data</string>
+    <string name="no_results">No results</string>
+    <string name="view_mode">View Mode</string>
+    <string name="view_mode_compact">Compact</string>
+    <string name="view_mode_normal">Normal</string>
+    <string name="view_mode_immersive">Immersive</string>
+    <string name="no_results_subtitle">Nothing to see here.</string>
+    <string name="yes">Yes</string>
+    <string name="no_app">No app to handle url</string>
+    <string name="cancel">Cancel</string>
+    <string name="comments">Comments</string>
+    <string name="no_comments">No comments available</string>
+    <string name="share">Share</string>
+    <string name="info">Info</string>
+    <string name="refresh">Refresh</string>
+    <string name="already_loading">We are already loading some new content!</string>
+    <string name="intent_failed">Failed to start external application.</string>
+    <string name="search_hint">Search</string>
+    <string name="search">Search</string>
+
+    <string name="drawer_open">Menu opened</string>
+    <string name="drawer_close">Menu closed</string>
+
+    <string name="permissions_required">You need to accept all required permissions to access this content.</string>
+
+    <!-- Connection dialogs -->
+    <string name="dialog_connection_title">Servers unreachable</string>
+    <string name="dialog_connection_description">We can not connect with our APIs.\n\nPlease ensure that you have set up your API keys and parameters as documented!</string>
+    <string name="dialog_internet_title">No internet</string>
+    <string name="dialog_internet_description">You seem to have no internet connection, this app requires internet to get the latest content.\n\nYou can continue to see your favorite/offline items!</string>
+    <string name="title_activity_woo_commerce_login">Sign in</string>
+
+    <string name="share_game_title">новая игра!</string>
+</resources>

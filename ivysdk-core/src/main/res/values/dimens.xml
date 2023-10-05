@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="normal_text_size">15dp</dimen>
+    <dimen name="view_height">480dp</dimen>
+    <dimen name="view_width">320dp</dimen>
+    <dimen name="style_big_text_size">25dp</dimen>
+    <dimen name="news_title_text_size">24dp</dimen>
+    <dimen name="picker_buttons_margin_padding">5dp</dimen>
+    <dimen name="buttonDefaultSizeHeight">54dp</dimen>
+    <dimen name="buttonDefaultSizeWidth">234dp</dimen>
+    <dimen name="push_dialog_title_size">23dp</dimen>
+    <dimen name="button_size">40dp</dimen>
+    <dimen name="dialog_content_padding">16dp</dimen>
+    <dimen name="header_close_bias">0.35</dimen>
+    <dimen name="header_close_factor">1.2</dimen>
+    <dimen name="header_title_bias">0.45</dimen>
+    <dimen name="permissionDialogWidth">300dp</dimen>
+    <dimen name="rate_close_margin">-7dp</dimen>
+    <dimen name="rate_container_edittext_padding">5dp</dimen>
+    <dimen name="rate_container_margin">15dp</dimen>
+    <dimen name="rate_container_padding">20dp</dimen>
+
+    <!-- App Bars -->
+    <dimen name="toolbar_elevation">4dp</dimen>
+    <dimen name="bottombar_elevation">16dp</dimen>
+
+    <!-- preferenceFragment -->
+    <dimen name="preference_fragment_padding_bottom">0dp</dimen>
+    <dimen name="preference_fragment_padding_side">16dp</dimen>
+    <integer name="preference_fragment_scrollbarStyle">0x02000000</integer>
+
+    <!-- Defaults -->
+    <dimen name="activity_horizontal_margin">6dp</dimen>
+    <dimen name="activity_detail_horizontal_margin">17dp</dimen>
+    <dimen name="activity_vertical_margin">6dp</dimen>
+
+    <bool name="isTablet">false</bool>
+    <bool name="isWideTablet">false</bool>
+
+    <dimen name="highlight_height">200dp</dimen>
+
+    <!-- Spacing -->
+    <dimen name="spacing_xxs">2dp</dimen>
+    <dimen name="spacing_xs">4dp</dimen>
+    <dimen name="spacing_s">6dp</dimen>
+    <dimen name="spacing_m">8dp</dimen>
+    <dimen name="spacing_l">12dp</dimen>
+    <dimen name="spacing_xl">16dp</dimen>
+    <dimen name="spacing_xxl">18dp</dimen>
+
+    <dimen name="textsize_xxs">10sp</dimen>
+    <dimen name="textsize_xs">12sp</dimen>
+    <dimen name="textsize_s">14sp</dimen>
+    <dimen name="textsize_m">16sp</dimen>
+    <dimen name="textsize_l">18sp</dimen>
+    <dimen name="textsize_xl">20sp</dimen>
+    <dimen name="textsize_xxl">25sp</dimen>
+
+    <!-- DetailLayouts -->
+    <dimen name="detail_margin">0dp</dimen>
+    <dimen name="image_height_wordpress">250dp</dimen>
+    <dimen name="image_height_youtube">200dp</dimen>
+
+    <!-- Drawer -->
+    <dimen name="drawer_width">304dp</dimen>
+
+    <!-- WooCommerce -->
+    <dimen name="woocommerce_category_width">150dp</dimen>
+    <dimen name="woocommerce_category_height">100dp</dimen>
+    <dimen name="woocommerce_padding">4dp</dimen>
+    <dimen name="woocommerce_related_product_width">200dp</dimen>
+    <dimen name="woocommerce_carousel_product_width">150dp</dimen>
+
+    <!-- SoundCloud !-->
+    <dimen name="playback_view_height">150dp</dimen>
+    <dimen name="default_padding">8dp</dimen>
+
+    <dimen name="simple_sound_cloud_notification_title">18sp</dimen>
+    <dimen name="simple_sound_cloud_notification_subtitle">14sp</dimen>
+    <dimen name="simple_sound_cloud_notification_icon">64dp</dimen>
+    <dimen name="simple_sound_cloud_notification_padding">8dp</dimen>
+
+    <!-- (Overview) Card -->
+    <dimen name="card_image_height">160dp</dimen>
+    <dimen name="card_text_height">140dp</dimen>
+    <dimen name="card_width_overview">240dp</dimen>
+
+    <!-- Attachment pager -->
+    <dimen name="thumbnail_height">32dp</dimen>
+
+    <!-- Images (Tumblr/Flickr) -->
+    <dimen name="card_width_image">160dp</dimen>
+
+    <!-- Wordpress -->
+    <dimen name="thumbnail_size">85dp</dimen>
+    <dimen name="thumbnail_radius">@dimen/spacing_l</dimen>
+
+</resources>

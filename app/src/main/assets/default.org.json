@@ -1,0 +1,997 @@
+{
+  "domain": "http://api2.app8king.com/api/edata?v_api=slg&appid=2672&key=",
+  "debug": false,
+  "providers": {
+    "toutiao": {
+      "appId": "5022059",
+      "appName": "宝石消除"
+    },
+    "AdColony": {
+      "appId": "app3f6fa1b266c14012ad",
+      "zones": [
+        "vz0af28b2e088249ed9e",
+        "vz51dbfa7af2a94d5885"
+      ]
+    }
+  },
+  "banner": [
+    {
+      "provider": "unity",
+      "p": {
+        "gameId": "3200762",
+        "placement": "2672newsdk_banner"
+      },
+      "weight": {
+        "global": 18
+      }
+    },
+    {
+      "provider": "admob",
+      "p": {
+        "placement": "ca-app-pub-2959680549066287/6819622318"
+      },
+      "weight": {
+        "global": 9
+      }
+    },
+    {
+      "provider": "admob_2nd",
+      "p": {
+        "placement": "ca-app-pub-2959680549066287/2518195473"
+      },
+      "weight": {
+        "global": 8
+      }
+    },
+    {
+      "provider": "facebook",
+      "p": {
+        "placement": "961908014200024_1064866047237553"
+      },
+      "weight": {
+        "global": 7
+      }
+    },
+    {
+      "provider": "facebook_2nd",
+      "p": {
+        "placement": "961908014200024_1064866693904155"
+      },
+      "weight": {
+        "global": 6
+      }
+    },
+    {
+      "provider": "applovin",
+      "p": {
+        "sdkkey": "E8pVhU9mykQd3y0TD0Ksoq4vpf_Muat6ifcP9m96UakTWk5klQaWEeQ2IPOA-GHgxu54eEA8pvgKcn2MBdtQGH",
+        "zoneId": "71714db5f7f19a8c"
+      },
+      "weight": {
+        "global": 5
+      }
+    },
+    {
+      "provider": "applovin_2nd",
+      "p": {
+        "sdkkey": "E8pVhU9mykQd3y0TD0Ksoq4vpf_Muat6ifcP9m96UakTWk5klQaWEeQ2IPOA-GHgxu54eEA8pvgKcn2MBdtQGH",
+        "zoneId": "bd67ac213a3e92bc"
+      },
+      "weight": {
+        "global": 4
+      }
+    },
+    {
+      "provider": "admob_3nd",
+      "p": {
+        "placement": "ca-app-pub-2959680549066287/1751908714"
+      },
+      "weight": {
+        "global": 3
+      }
+    },
+    {
+      "provider": "facebook_3nd",
+      "p": {
+        "placement": "961908014200024_1064867247237433"
+      },
+      "weight": {
+        "global": 2
+      }
+    },
+    {
+      "provider": "applovin_3nd",
+      "p": {
+        "sdkkey": "E8pVhU9mykQd3y0TD0Ksoq4vpf_Muat6ifcP9m96UakTWk5klQaWEeQ2IPOA-GHgxu54eEA8pvgKcn2MBdtQGH",
+        "zoneId": "c151290624bf1c10"
+      },
+      "weight": {
+        "global": 1
+      }
+    }
+  ],
+  "full": [
+    {
+      "provider": "mobvista_video",
+      "p": {
+        "placement": "138487",
+        "appId": "117656",
+        "sign" : "a74c649e9f376be0a5eb8cf16bbde644"
+      },
+      "weight": {
+        "global": 18
+      }
+    },
+    {
+      "provider": "mobvista_video",
+      "p": {
+        "placement": "138487",
+        "appId": "117656",
+        "sign" : "a74c649e9f376be0a5eb8cf16bbde644"
+      },
+      "weight": {
+        "global": 18
+      }
+    },
+    {
+      "provider": "unity",
+      "p": {
+        "gameId": "3200762",
+        "placement": "2672newsdk_interALL12US22"
+      },
+      "weight": {
+        "global": 18
+      }
+    },
+    {
+      "provider": "applovin",
+      "p": {
+        "sdkkey": "E8pVhU9mykQd3y0TD0Ksoq4vpf_Muat6ifcP9m96UakTWk5klQaWEeQ2IPOA-GHgxu54eEA8pvgKcn2MBdtQGH",
+        "zoneId": "6a6fe663384f1875"
+      },
+      "weight": {
+        "global": 17
+      }
+    },
+    {
+      "provider": "unity_2nd",
+      "p": {
+        "gameId": "3200762",
+        "placement": "2672newsdk_interALL8US18"
+      },
+      "weight": {
+        "global": 16
+      }
+    },
+    {
+      "provider": "ironsource",
+      "p": {
+        "appKey": "9797f975",
+        "placement": "0"
+      },
+      "weight": {
+        "global": 15
+      }
+    },
+    {
+      "provider": "applovin_2nd",
+      "p": {
+        "sdkkey": "E8pVhU9mykQd3y0TD0Ksoq4vpf_Muat6ifcP9m96UakTWk5klQaWEeQ2IPOA-GHgxu54eEA8pvgKcn2MBdtQGH",
+        "zoneId": "f8ce32693774fd3c"
+      },
+      "weight": {
+        "global": 14
+      }
+    },
+    {
+      "provider": "facebook",
+      "p": {
+        "placement": "961908014200024_1064867843904040"
+      },
+      "weight": {
+        "global": 13
+      }
+    },
+    {
+      "provider": "applovin_3nd",
+      "p": {
+        "sdkkey": "E8pVhU9mykQd3y0TD0Ksoq4vpf_Muat6ifcP9m96UakTWk5klQaWEeQ2IPOA-GHgxu54eEA8pvgKcn2MBdtQGH",
+        "zoneId": "5a29815638eba3d1"
+      },
+      "weight": {
+        "global": 12
+      }
+    },
+    {
+      "provider": "ironsource_2nd",
+      "p": {
+        "appKey": "9797f975",
+        "placement": "1429643"
+      },
+      "weight": {
+        "global": 11
+      }
+    },
+    {
+      "provider": "vungle",
+      "p": {
+        "appId": "5d22e76da9c48100174e9e19",
+        "placement": "2672NEWSDK_INTER-7921780"
+      },
+      "weight": {
+        "global": 10
+      }
+    },
+    {
+      "provider": "adcolony",
+      "p": {
+        "zone": "vz51dbfa7af2a94d5885"
+      },
+      "weight": {
+        "global": 9
+      }
+    },
+    {
+      "provider": "facebook_2nd",
+      "p": {
+        "placement": "961908014200024_1064868453903979"
+      },
+      "weight": {
+        "global": 8
+      }
+    },
+    {
+      "provider": "ironsource_3rd",
+      "p": {
+        "appKey": "9797f975",
+        "placement": "1429645"
+      },
+      "weight": {
+        "global": 7
+      }
+    },
+    {
+      "provider": "admob",
+      "p": {
+        "placement": "ca-app-pub-2959680549066287/2162192000"
+      },
+      "weight": {
+        "global": 6
+      }
+    },
+    {
+      "provider": "admob_2nd",
+      "p": {
+        "placement": "ca-app-pub-2959680549066287/2298703626"
+      },
+      "weight": {
+        "global": 5
+      }
+    },
+    {
+      "provider": "unity_3nd",
+      "p": {
+        "gameId": "3200762",
+        "placement": "2672newsdk_inter"
+      },
+      "weight": {
+        "global": 4
+      }
+    },
+    {
+      "provider": "facebook_3nd",
+      "p": {
+        "placement": "961908014200024_1064868747237283"
+      },
+      "weight": {
+        "global": 3
+      }
+    },
+    {
+      "provider": "admob_3nd",
+      "p": {
+        "placement": "ca-app-pub-2959680549066287/5067556943"
+      },
+      "weight": {
+        "global": 2
+      }
+    },
+    {
+      "provider": "chartboost",
+      "p": {
+        "appId": "5d22f223ba9f9e0e817c660d",
+        "appSignature": "815259e25a6949cc414dd71321fc44de23507c7a"
+      },
+      "weight": {
+        "global": 1
+      }
+    }
+  ],
+  "video": [
+    {
+      "provider": "mobvista_video",
+      "p": {
+        "placement": "138489",
+        "appId": "117656",
+        "sign" : "a74c649e9f376be0a5eb8cf16bbde644"
+      },
+      "weight": {
+        "global": 18
+      }
+    },
+    {
+      "provider": "mobvista",
+      "p": {
+        "placement": "138489",
+        "appId": "117656",
+        "sign" : "a74c649e9f376be0a5eb8cf16bbde644"
+      },
+      "weight": {
+        "global": 18
+      }
+    },
+    {
+      "provider": "smaato",
+      "p": {
+        "publisherId": 1100043923,
+        "placement": 130683667
+      },
+      "weight": {
+        "global": 99
+      }
+    },
+    {
+      "provider": "applovin",
+      "p": {
+        "sdkkey": "E8pVhU9mykQd3y0TD0Ksoq4vpf_Muat6ifcP9m96UakTWk5klQaWEeQ2IPOA-GHgxu54eEA8pvgKcn2MBdtQGH",
+        "zoneId": "1a2af9ae7e866f3c"
+      },
+      "weight": {
+        "global": 18
+      }
+    },
+    {
+      "provider": "unity",
+      "p": {
+        "gameId": "3200762",
+        "placement": "2672newsdk_videoALL15US30"
+      },
+      "weight": {
+        "global": 17
+      }
+    },
+    {
+      "provider": "applovin_2nd",
+      "p": {
+        "sdkkey": "E8pVhU9mykQd3y0TD0Ksoq4vpf_Muat6ifcP9m96UakTWk5klQaWEeQ2IPOA-GHgxu54eEA8pvgKcn2MBdtQGH",
+        "zoneId": "9a15433ff9136f3d"
+      },
+      "weight": {
+        "global": 16
+      }
+    },
+    {
+      "provider": "unity_2nd",
+      "p": {
+        "gameId": "3200762",
+        "placement": "2672newsdk_videoALL13US25"
+      },
+      "weight": {
+        "global": 15
+      }
+    },
+    {
+      "provider": "ironsource",
+      "p": {
+        "appKey": "9797f975",
+        "placement": "0"
+      },
+      "weight": {
+        "global": 14
+      }
+    },
+    {
+      "provider": "facebook",
+      "p": {
+        "placement": "961908014200024_1064869163903908"
+      },
+      "weight": {
+        "global": 3
+      }
+    },
+    {
+      "provider": "admob",
+      "p": {
+        "placement": "ca-app-pub-2959680549066287/2378594675"
+      },
+      "weight": {
+        "global": 12
+      }
+    },
+    {
+      "provider": "ironsource_2nd",
+      "p": {
+        "appKey": "9797f975",
+        "placement": "1429621"
+      },
+      "weight": {
+        "global": 11
+      }
+    },
+    {
+      "provider": "vungle",
+      "p": {
+        "appId": "5d22e76da9c48100174e9e19",
+        "placement": "2672NEWSDK_VIDEO-6655672"
+      },
+      "weight": {
+        "global": 10
+      }
+    },
+    {
+      "provider": "facebook_2nd",
+      "p": {
+        "placement": "961908014200024_1064870633903761"
+      },
+      "weight": {
+        "global": 9
+      }
+    },
+    {
+      "provider": "admob_2nd",
+      "p": {
+        "placement": "ca-app-pub-2959680549066287/7438569417"
+      },
+      "weight": {
+        "global": 8
+      }
+    },
+
+    {
+      "provider": "ironsource_3nd",
+      "p": {
+        "appKey": "9797f975",
+        "placement": "1429623"
+      },
+      "weight": {
+        "global": 7
+      }
+    },
+    {
+      "provider": "facebook_3nd",
+      "p": {
+        "placement": "961908014200024_1064870203903804"
+      },
+      "weight": {
+        "global": 6
+      }
+    },
+    {
+      "provider": "admob_3nd",
+      "p": {
+        "placement": "ca-app-pub-2959680549066287/2160415903"
+      },
+      "weight": {
+        "global": 5
+      }
+    },
+    {
+      "provider": "unity_3nd",
+      "p": {
+        "gameId": "3200762",
+        "placement": "2672newsdk_video"
+      },
+      "weight": {
+        "global": 4
+      }
+    },
+    {
+      "provider": "adcolony",
+      "p": {
+        "zone": "vz0af28b2e088249ed9e"
+      },
+      "weight": {
+        "global": 3
+      }
+    },
+    {
+      "provider": "applovin_3nd",
+      "p": {
+        "sdkkey": "E8pVhU9mykQd3y0TD0Ksoq4vpf_Muat6ifcP9m96UakTWk5klQaWEeQ2IPOA-GHgxu54eEA8pvgKcn2MBdtQGH",
+        "zoneId": "c239e0d541155bd9"
+      },
+      "weight": {
+        "global": 2
+      }
+    },
+    {
+      "provider": "chartboost",
+      "p": {
+        "appId": "5d22f223ba9f9e0e817c660d",
+        "appSignature": "815259e25a6949cc414dd71321fc44de23507c7a"
+      },
+      "weight": {
+        "global": 1
+      }
+    },
+    {
+      "provider": "mytarget",
+      "country-specified": [
+        "RU"
+      ],
+      "p": {
+        "appId": 538406,
+        "placement": "MNVIDEO"
+      },
+      "weight": {
+        "global": 1
+      }
+    }
+  ],
+  "native": [
+
+  ],
+  "floaterReward": {
+    "icon": "https://66.media.tumblr.com/839f9b929721ff7219d413d163d8e62b/tumblr_pvhx4ey3pV1xdq50xo1_250.gif",
+    "size": 128,
+    "animation": {
+      "type": "x",
+      "fromX": 2000,
+      "fromY": 400,
+      "toX": 800,
+      "toY": 400,
+      "duration": 2000
+    },
+    "baseDelaySecs": 30,
+    "ignoreDelaySecs": 10,
+    "maxSessionDisplays": 20,
+    "screenStopSecs": 20,
+    "reward": [{
+      "type": 0,
+      "num": 2
+    }]
+  },
+  "remoteconfig": {
+    "win_showads": true,
+    "win_showads_level": 1,
+    "win_showads_times": 1,
+    "lose_showads": true,
+    "lose_showads_level": 1,
+    "lose_showads_times": 1,
+    "revival_showvideo": true,
+    "revival_showvideo_percent": 0.20000000000000001,
+    "NewVersion": "1.0.0",
+    "task_showvideo_percent": 0.5,
+    "exitem_discount_percent": 0.5
+  },
+  "sleepOnDisplayed": 60,
+  "sleepOnLoadNoFill": 360,
+  "sleepOnLoadOtherError": 360,
+  "forceSkippedTimeoutTimes": 2,
+  "forceSkippedLoadedFailsRatio": 0.40000000000000002,
+  "clickedRatioCheckedDisplayTimes": 1000,
+  "forceSkippedClickedMinRatio": 0,
+  "forceSkippedClickedMaxRatio": 0.5,
+  "adLoadTimeout": 10,
+  "adRefreshInterval": 20,
+  "promote": {
+    "apps": {
+      "1221": {
+        "id": 1221,
+        "package": "com.dysugar.jewels.prince",
+        "name": "Jewels classic Prince",
+        "type": 1,
+        "copyright": "",
+        "label_ids": "[\"53\",\"127\",\"160\",\"164\"]",
+        "sys_type": 1,
+        "appstoreid": "",
+        "summary": "Jewels classic Prince",
+        "icon": "http://farm2.staticflickr.com/1727/27816831387_7b3f9a8925_o.png",
+        "banner": "https://c2.staticflickr.com/2/1754/27816830337_e9658ff230.jpg",
+        "cover": "https://c2.staticflickr.com/2/1751/42685428091_96e2e3e5ff_b.jpg",
+        "desc": "Jewels classic Prince, match 3 game.",
+        "url": "",
+        "action": "",
+        "appid": "1221",
+        "native": "",
+        "gificon": "https://playstrap.oss-cn-beijing.aliyuncs.com/tumblr_pdfulc0PLn1xdq50xo1_250.gif",
+        "video": "https://ve.media.tumblr.com/tumblr_pgb5afYhVL1xdq50x.mp4",
+        "down": "http://farm2.staticflickr.com/1904/31317354708_5287bd3170_o.png",
+        "down_st": 4,
+        "down_persentY": "0.84"
+      },
+      "2545": {
+        "id": 2545,
+        "package": "com.lyoomatch.jewelscrush.princessadventure",
+        "name": "Jewels Crush",
+        "type": 1,
+        "copyright": "",
+        "label_ids": "[\"78\",\"127\",\"160\",\"164\"]",
+        "sys_type": 1,
+        "appstoreid": "",
+        "summary": "Jewel Crush",
+        "icon": "http://farm5.staticflickr.com/4650/26128967018_b42fa834c3_o.png",
+        "banner": "https://live.staticflickr.com/65535/48141147898_c41dc84ef5.jpg",
+        "cover": "https://live.staticflickr.com/65535/48141117956_80e252f71e_b.jpg",
+        "desc": "Jewels Crush, match 3 jewels legend.",
+        "url": "",
+        "action": "",
+        "appid": "2545",
+        "native": "",
+        "gificon": "https://playstrap.oss-cn-beijing.aliyuncs.com/tumblr_pdfulc0PLn1xdq50xo1_250.gif",
+        "video": "https://vt.media.tumblr.com/tumblr_pdszopyta81xdq50x.mp4",
+        "down": "http://farm2.staticflickr.com/1795/30176670598_86a9432f44_o.png",
+        "down_st": 8,
+        "down_persentY": "0.7"
+      },
+      "2647": {
+        "id": 2647,
+        "package": "com.bestheart.gemsjewels.junglepuzzlegame",
+        "name": "Gems & Jewels",
+        "type": 1,
+        "copyright": "",
+        "label_ids": "[\"127\",\"160\"]",
+        "sys_type": 1,
+        "appstoreid": "",
+        "summary": "Gems & Jewels",
+        "icon": "http://farm8.staticflickr.com/7866/46482008954_45b7dc5c5c_o.png",
+        "banner": "https://c1.staticflickr.com/1/834/42621266475_dcb2cd81bd.jpg",
+        "cover": "https://live.staticflickr.com/65535/48141148018_29bff08553_b.jpg",
+        "desc": "Gems & Jewels, jungle adventure!",
+        "url": "",
+        "action": "",
+        "appid": "2647",
+        "native": "",
+        "gificon": "https://playstrap.oss-cn-beijing.aliyuncs.com/tumblr_pdfulc0PLn1xdq50xo1_250.gif",
+        "video": "https://ve.media.tumblr.com/tumblr_pgb558RTae1xdq50x.mp4",
+        "down": "http://farm2.staticflickr.com/1908/30252558427_6cacc961a4_o.png",
+        "down_st": 4,
+        "down_persentY": "0.84"
+      },
+      "2666": {
+        "id": 2666,
+        "package": "com.ivy.gems.witch",
+        "name": "Gems Witch",
+        "type": 1,
+        "copyright": "",
+        "label_ids": "[\"127\",\"160\"]",
+        "sys_type": 1,
+        "appstoreid": "",
+        "summary": "Gems Witch",
+        "icon": "http://farm5.staticflickr.com/4885/45931127365_f0b02f781f_o.png",
+        "banner": "https://c1.staticflickr.com/5/4853/46793525742_432d0ab97d.jpg",
+        "cover": "https://c2.staticflickr.com/8/7864/46845766841_4b875106d4_b.jpg",
+        "desc": "Gems Witch, the newest match 3 puzzle game.",
+        "url": "",
+        "action": "",
+        "appid": "2666",
+        "native": "",
+        "gificon": "https://playstrap.oss-cn-beijing.aliyuncs.com/tumblr_pdfulc0PLn1xdq50xo1_250.gif",
+        "video": "",
+        "down": ""
+      },
+      "2669": {
+        "id": 2669,
+        "package": "com.resestudio.jewelworld.jewelscandy",
+        "name": "Jewel World",
+        "type": 1,
+        "copyright": "",
+        "label_ids": "[\"127\"]",
+        "sys_type": 1,
+        "appstoreid": "",
+        "summary": "Jewel World",
+        "icon": "https://live.staticflickr.com/65535/48141212327_d15ce4d051_o.png",
+        "banner": "https://live.staticflickr.com/65535/48193651311_3c42771925.jpg",
+        "cover": "https://live.staticflickr.com/65535/48193650821_c3be27126e_b.jpg",
+        "desc": "Jewel World, jewels candy legend.",
+        "url": "",
+        "action": "",
+        "appid": "2669",
+        "native": "",
+        "gificon": "",
+        "video": "",
+        "down": ""
+      },
+      "2670": {
+        "id": 2670,
+        "package": "com.resestudio.jewelcastle.jewelslegend",
+        "name": "Jewel Castle",
+        "type": 1,
+        "copyright": "",
+        "label_ids": "[\"127\",\"164\"]",
+        "sys_type": 1,
+        "appstoreid": "",
+        "summary": "Jewel Castle",
+        "icon": "https://live.staticflickr.com/65535/48141116521_a8750dbe03_o.png",
+        "banner": "https://live.staticflickr.com/65535/48141117211_8d2844003f.jpg",
+        "cover": "https://live.staticflickr.com/65535/48141214047_84721bdabc_b.jpg",
+        "desc": "Jewel Castle, Mystery Adventure.",
+        "url": "",
+        "action": "",
+        "appid": "2670",
+        "native": "",
+        "gificon": "https://playstrap.oss-cn-beijing.aliyuncs.com/tumblr_pdfulc0PLn1xdq50xo1_250.gif",
+        "video": "",
+        "down": ""
+      },
+      "2672": {
+        "id": 2672,
+        "package": "com.resestudio.jewelry.jewellegend",
+        "name": "Jewelry Legend",
+        "type": 1,
+        "copyright": "",
+        "label_ids": "[\"127\"]",
+        "sys_type": 1,
+        "appstoreid": "",
+        "summary": "Jewelry Legend",
+        "icon": "http://farm8.staticflickr.com/7924/32362917337_db2c4e0de2_o.png",
+        "banner": "https://farm8.staticflickr.com/7808/46389709825_3b10417cca.jpg",
+        "cover": "https://live.staticflickr.com/65535/48141117646_8158fff476_b.jpg",
+        "desc": "Jewelry Legend, beautiful gameplay!",
+        "url": "",
+        "action": "",
+        "appid": "2672",
+        "native": "",
+        "gificon": "https://playstrap.oss-cn-beijing.aliyuncs.com/tumblr_pdfulc0PLn1xdq50xo1_250.gif",
+        "video": "",
+        "down": ""
+      },
+      "2676": {
+        "id": 2676,
+        "package": "com.jeweladventure.matchthree.temple",
+        "name": "Jewel Adventure",
+        "type": 1,
+        "copyright": "",
+        "label_ids": "[]",
+        "sys_type": 1,
+        "appstoreid": "",
+        "summary": "Jewel Adventure",
+        "icon": "https://live.staticflickr.com/65535/48141116571_bb9ee3e06d_o.png",
+        "banner": "https://live.staticflickr.com/65535/46823113445_bf9b4c6641.jpg",
+        "cover": "https://live.staticflickr.com/65535/48141214407_fe11c72a6a_b.jpg",
+        "desc": "Jewel Adventure, Match 3 Addictive.",
+        "url": "",
+        "action": "",
+        "appid": "2676",
+        "native": "",
+        "gificon": "",
+        "video": "",
+        "down": ""
+      },
+      "2685": {
+        "id": 2685,
+        "package": "com.jungleblastcube.jewelscrush.puzzlegame",
+        "name": "Jungle Blast  -  Jewels Crush Puzzle Game",
+        "type": 1,
+        "copyright": "",
+        "label_ids": "[\"68\"]",
+        "sys_type": 1,
+        "appstoreid": "",
+        "summary": "Jungle Blast",
+        "icon": "https://live.staticflickr.com/65535/48187663177_9a30ab2ec8_o.png",
+        "banner": "https://live.staticflickr.com/65535/48187663657_e24a3e88f3.jpg",
+        "cover": "https://c1.staticflickr.com/5/4816/45038449704_6c58ceef17_b.jpg",
+        "desc": "Jungle Blast  , Jewels Crush Puzzle Game.",
+        "url": "",
+        "action": "",
+        "appid": "2685",
+        "native": "",
+        "gificon": "",
+        "video": "",
+        "down": ""
+      }
+    },
+    "more": [
+      2685,
+      2672,
+      2676,
+      2670,
+      2647,
+      2545,
+      1221,
+      2669,
+      2666
+    ]
+  },
+  "summary_events": {
+    "app_start": [
+      2,
+      3,
+      5,
+      10
+    ],
+    "retention": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "active": [
+      2,
+      3
+    ],
+    "sb": [
+      2,
+      3,
+      5,
+      10,
+      20,
+      50,
+      100
+    ],
+    "cb": [
+      1,
+      2,
+      3,
+      5,
+      10,
+      20
+    ],
+    "sn": [
+      2,
+      3,
+      5,
+      10,
+      20,
+      50,
+      100
+    ],
+    "cn": [
+      1,
+      2,
+      3,
+      5,
+      10,
+      20
+    ],
+    "si": [
+      2,
+      3,
+      5,
+      10,
+      20,
+      50,
+      100
+    ],
+    "ci": [
+      1,
+      2,
+      3,
+      5,
+      10,
+      20
+    ],
+    "sv": [
+      1,
+      2,
+      3,
+      5,
+      10,
+      20,
+      50,
+      100
+    ],
+    "cv": [
+      1,
+      2,
+      3,
+      5,
+      10,
+      20
+    ]
+  },
+  "adParallelRequests": 1,
+  "adParallelWaitTime": 5,
+  "dontShowFullPageAdsOnSlowConnection": false,
+  "adFullScreenTimespan": 120,
+  "ad": {
+    "adNextLoadInterval": 15,
+    "timeToWaitForAdToShowSeconds": 5,
+    "updateBanner": [
+
+    ],
+    "adDelayFirstInterstitialCallSec": 30,
+    "adProvidersRefreshInMinutes": 60,
+    "useBannerFingerPrinting": true,
+    "useVideoClipPreloading": true,
+    "rewardedClipsCaps": {
+      "*": {
+        "intervalHours": 24,
+        "maxImpressions": 4
+      }
+    },
+    "iLTS": 10,
+    "bLTS": 10,
+    "aC": {
+      "iTs": [
+        20,
+        120
+      ],
+      "iPTs": [
+        0,
+        60
+      ],
+      "fIPT": 5,
+      "fIPSS": 2,
+      "iSTs": [
+        {
+          "f": "*",
+          "t": "*"
+        }
+      ]
+    }
+  },
+  "google": {
+    "leaderboard": [
+      {
+        "id": "CgkIs5H-ttQYEAIQAQ",
+        "default": true
+      }
+    ]
+  },
+  "payment": {
+    "checkout": {
+      "60": {
+        "feename": "com.resestudio.jewelry.jewellegend60",
+        "repeat": 1
+      },
+      "61": {
+        "feename": "com.resestudio.jewelry.jewellegend61",
+        "repeat": 1
+      },
+      "62": {
+        "feename": "com.resestudio.jewelry.jewellegend62",
+        "repeat": 1
+      },
+      "63": {
+        "feename": "com.resestudio.jewelry.jewellegend63",
+        "repeat": 1
+      },
+      "64": {
+        "feename": "com.resestudio.jewelry.jewellegend64",
+        "repeat": 1
+      },
+      "65": {
+        "feename": "com.resestudio.jewelry.jewellegend65",
+        "repeat": 1
+      },
+      "66": {
+        "feename": "com.resestudio.jewelry.jewellegend66",
+        "repeat": 1
+      },
+      "100": {
+        "feename": "com.resestudio.jewelry.jewellegend100",
+        "repeat": 1
+      },
+      "101": {
+        "feename": "com.resestudio.jewelry.jewellegend101",
+        "repeat": 1
+      },
+      "102": {
+        "feename": "com.resestudio.jewelry.jewellegend102",
+        "repeat": 1
+      },
+      "103": {
+        "feename": "com.resestudio.jewelry.jewellegend103",
+        "repeat": 1
+      },
+      "104": {
+        "feename": "com.resestudio.jewelry.jewellegend104",
+        "repeat": 1
+      },
+      "105": {
+        "feename": "com.resestudio.jewelry.jewellegend105",
+        "repeat": 1
+      },
+      "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAixRDVY6aBHjwkpRY6p8zOE4vGY8zZsfZIB0JisZhzbeKaCceR2Jfmkou5yarpu+Vx1uVt5FLLRM74823drngH6T70XiuKbl+yOYZPQjKEh9gsSNr9jsNVUxdEtqgDZLBPK5GgUnngoePIqvhkoCOYhS7bU4fM5/sGbz8dMz03t+T3qaQPeUiuLUgrLxA8TZsJgHWmeY6nCDYmAxDuMpSyZRHNDQVyXjnt+r4jJJxgcVQXfJgFSkSz3DaZmTB51LzGfBTgMzncSiqM0DI7JCngrQiRzwqvWPfSXci/BKb70kZBkQrVYF6RqbkyMLic8XfDoeu3z2scPfn0Q1WVkd4wQIDAQAB"
+    }
+  },
+  "gts": 2553667242136,
+  "gv": 1,
+  "ver": 2,
+  "appid": 2672,
+  "v_api": 0
+}

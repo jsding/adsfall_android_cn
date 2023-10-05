@@ -1,0 +1,23 @@
+<resources>
+    <style name="AppTheme.Light" parent="AppTheme.BaseLight">
+        <item name="colorPrimaryDark">@color/grey_light</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+    <style name="AppTheme.Launcher" parent="BaseAppTheme">
+        <item name="colorPrimaryDark">@color/grey_light</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+    <style name="AppTheme" parent="BaseAppTheme">
+        <item name="android:navigationBarColor">@color/myNavigationColor</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowContentTransitions">true</item>
+
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+
+
+
+</resources>

@@ -1,0 +1,23 @@
+<resources>
+
+    <!-- Public Application Themes -->
+    <style name="AppTheme" parent="BaseAppTheme">
+        <item name="android:navigationBarColor">@color/myNavigationColor</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowContentTransitions">true</item>
+
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+    </style>
+
+    <!-- Toolbar Styles -->
+    <style name="ToolBarStyle" parent="">
+        <item name="android:background">?toolbarBackground</item>
+        <item name="android:theme">@style/Toolbar</item>
+
+        <item name="android:elevation">@dimen/toolbar_elevation</item>
+        <item name="android:transitionName">actionBar</item>
+        <item name="android:popupTheme">@style/Toolbar</item>
+    </style>
+
+
+</resources>

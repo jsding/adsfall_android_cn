@@ -1,0 +1,50 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/coolblue"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:background="@color/myPrimaryColor" />
+
+    <com.sherdle.universal.util.layout.TrackingScrollView
+        android:id="@+id/scroller"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <!-- Holder layout that adds margin so that there can be elevation in the inner view
+             (can't be done by adding margin to the innner view directly because of a bug)-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/detail_margin"
+            android:paddingRight="@dimen/detail_margin"
+            android:paddingTop="@dimen/detail_margin">
+
+            <ViewStub
+                android:id="@+id/layout_stub"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+    </com.sherdle.universal.util.layout.TrackingScrollView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@drawable/toolbar_gradient" />
+
+    <include
+        android:id="@+id/toolbar_actionbar"
+        layout="@layout/toolbar_default"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+</RelativeLayout>

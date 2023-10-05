@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:paddingBottom="@dimen/spacing_xxs"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/imageViewHighlight"
+        android:adjustViewBounds="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/placeholder"
+        android:background="@color/light_gray"
+        android:scaleType="centerCrop"
+        android:maxHeight="@dimen/highlight_height" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black_more_translucent"
+        android:layout_alignTop="@+id/imageViewHighlight"
+        android:layout_alignBottom="@+id/imageViewHighlight"
+        android:foreground="?android:attr/selectableItemBackground"
+        />
+
+    <TextView
+        android:id="@+id/textViewHighlight"
+        android:layout_above="@+id/textViewDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/spacing_xl"
+        android:paddingRight="@dimen/spacing_xl"
+        android:paddingBottom="@dimen/spacing_xs"
+        android:text="@string/app_name"
+        android:textSize="@dimen/textsize_m"
+        style="@style/listTitleStyle"
+        android:fontFamily="bold"
+        android:textDirection="locale"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/textViewDate"
+        android:layout_alignBottom="@+id/imageViewHighlight"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:paddingBottom="@dimen/spacing_xxl"
+        android:paddingLeft="@dimen/spacing_xl"
+        android:paddingRight="@dimen/spacing_xl"
+        android:text="27/04/2016, 21:09"
+        android:textDirection="locale"
+        android:textSize="@dimen/textsize_xs"
+        android:textColor="@color/extra_light_gray" />
+
+
+</RelativeLayout>

@@ -1,0 +1,17 @@
+_.delay(function() {  
+  $.each($('div.app-content[data-appid]'), function(index, value) {
+    var appid = $(value).attr('data-appid');
+
+    $.schedule({
+        time: 5000,
+        repeat: true,
+        obj: $(value),
+        func: function() {
+            console.log("reload application: " + appid)
+            $.post('?module=App&embed=1&nf=1&use_fixed_height=1&appid='+appid, dbface.globalparameters, function(data) {
+                $(value).find('div.card-pf-body').html(data);
+            });
+        }
+    });
+  });
+}, 3000);

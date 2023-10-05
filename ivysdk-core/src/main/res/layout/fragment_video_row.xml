@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/spacing_xs"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/spacing_xs"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:minHeight="50dp"
+        app:cardCornerRadius="6dp"
+        app:cardPreventCornerOverlap="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/spacing_m">
+
+            <ImageView
+                android:id="@+id/userVideoThumbImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:adjustViewBounds="true"
+                android:maxWidth="150dip" />
+
+            <TextView
+                android:id="@+id/userVideoTitleTextView"
+                style="@style/listTitleStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_toEndOf="@id/userVideoThumbImageView"
+                android:layout_toRightOf="@id/userVideoThumbImageView"
+                android:padding="@dimen/spacing_s"
+                android:text="@string/empty_textview"
+                android:textSize="@dimen/textsize_m" />
+
+            <TextView
+                android:id="@+id/userVideoDateTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/userVideoTitleTextView"
+                android:layout_toEndOf="@id/userVideoThumbImageView"
+                android:layout_toRightOf="@id/userVideoThumbImageView"
+                android:paddingLeft="@dimen/spacing_s"
+                android:paddingStart="@dimen/spacing_s"
+                android:text="@string/empty_textview"
+                android:textColor="@color/grey_dark"
+                android:textDirection="locale"
+                android:textSize="@dimen/textsize_xs" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+</FrameLayout>

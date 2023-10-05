@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_number": "1029434097331",
+    "firebase_url": "https://merge-elves-38816766.firebaseio.com",
+    "project_id": "merge-elves-38816766",
+    "storage_bucket": "merge-elves-38816766.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1029434097331:android:ae08fefe71c31cebd13ac6",
+        "android_client_info": {
+          "package_name": "com.merge.elves"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1029434097331-79uor0e4h2knauae59qiuf2gths2j2lm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.merge.elves",
+            "certificate_hash": "39b737b2be76b38629c44333d459f1723ed9d8e6"
+          }
+        },
+        {
+          "client_id": "1029434097331-a4hce4aoba08jg175dmg406cae35v4j4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.merge.elves",
+            "certificate_hash": "99ffa5d995712fe5df1b365dbf58d5cd9b34e8a7"
+          }
+        },
+        {
+          "client_id": "1029434097331-uub69mbc5tscbssai2b6olh5tdq6kq7m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIIm7cGq5DLvbeIT5tAENF30BdkZ0TNBw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1029434097331-uub69mbc5tscbssai2b6olh5tdq6kq7m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
