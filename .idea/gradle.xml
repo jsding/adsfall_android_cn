@@ -10,9 +10,11 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/SamsungInAppPurchaseSDK_v6.1/Libs/IAP6Helper" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/ivysdk-core" />
             <option value="$PROJECT_DIR$/oppo" />
+            <option value="$PROJECT_DIR$/samsung" />
             <option value="$PROJECT_DIR$/taptap" />
             <option value="$PROJECT_DIR$/vivo" />
             <option value="$PROJECT_DIR$/xiaomi" />

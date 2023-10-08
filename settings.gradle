@@ -4,3 +4,7 @@ include ':xiaomi'
 include ':taptap'
 include ':oppo'
 include ':vivo'
+include ':samsung'
+include ':samsungIAP6Helper'
+
+project(':samsungIAP6Helper').projectDir = new File('SamsungInAppPurchaseSDK_v6.1/Libs/IAP6Helper')

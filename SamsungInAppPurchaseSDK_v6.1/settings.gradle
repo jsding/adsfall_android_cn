@@ -1,0 +1,4 @@
+include ':IAP6Helper', ':IAP6Sample', ':IAP6SampleKotlin'
+project(':IAP6Helper').projectDir = new File('Libs/IAP6Helper')
+project(':IAP6Sample').projectDir = new File('Samples/IAP6Sample')
+project(':IAP6SampleKotlin').projectDir = new File('Samples/IAP6SampleKotlin')
