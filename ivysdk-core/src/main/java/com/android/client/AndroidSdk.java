@@ -73,6 +73,8 @@ public class AndroidSdk {
   private static Builder builder;
   private static FacebookUserManager facebookUserManager = null;
 
+  private static IProviderFacade providerFacade;
+
   public static final int POS_LEFT_TOP = 1;
   public static final int POS_LEFT_BOTTOM = 2;
   public static final int POS_CENTER_TOP = 3;
@@ -220,6 +222,22 @@ public class AndroidSdk {
         }
       }
     });
+
+    ApplicationInfo ai = null;
+    try {
+      ai = activity.getPackageManager().getApplicationInfo(activity.getPackageName(), PackageManager.GET_META_DATA);
+
+      if (ai != null && ai.metaData != null) {
+        Object o = ai.metaData.get("adsfall.provider");
+        if (o instanceof String) {
+          String providerClass = String.valueOf(o);
+          providerFacade = (IProviderFacade) Class.forName(providerClass).newInstance();
+          providerFacade.onInitialize(activity);
+        }
+      }
+    } catch (Throwable t) {
+      Logger.error(TAG, "initialize exception", t);
+    }
 
     EventBus.getInstance().addListener(CommonEvents.AD_LOADED, new EventListener() {
       @Override
@@ -1980,12 +1998,16 @@ public class AndroidSdk {
   }
 
   public static void spendVirtualCurrency(String virtualCurrencyName, String itemid, int value,
-                                          int currentValue) {
+                                          int currentValue, String catalog) {
     Bundle bundle = new Bundle();
 
     bundle.putString("label", virtualCurrencyName);
     bundle.putString("itemid", itemid);
     bundle.putInt("value", value);
+
+    if (catalog != null) {
+      bundle.putString("catalog", catalog);
+    }
 
     IvySdk.logIvyEvent("spend_virtual_currency", bundle);
 

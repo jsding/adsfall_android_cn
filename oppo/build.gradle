@@ -32,6 +32,8 @@ dependencies {
 
 }
 
+group 'com.adsfall.oppo'
+
 uploadArchives {
     repositories {
         mavenDeployer {

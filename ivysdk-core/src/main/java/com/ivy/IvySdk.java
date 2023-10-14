@@ -38,6 +38,7 @@ import com.android.client.GoogleListener;
 import com.android.client.InAppMessageListener;
 import com.android.client.OfferwallCreditListener;
 import com.android.client.OnCloudFunctionResult;
+import com.android.client.OnDataListener;
 import com.android.client.OnSkuDetailsListener;
 import com.android.client.OrderConsumeListener;
 import com.android.client.SKUDetail;
@@ -64,6 +65,7 @@ import com.google.firebase.FirebaseOptions;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -318,7 +320,7 @@ public final class IvySdk {
       PurchaseManager purchaseManager = purchaseManagerClass.newInstance();
       purchaseManager.init(activity, EventBus.getInstance(), eventTracker);
       purchaseManagerWrapper = new PurchaseManagerWrapper(purchaseManager);
-    } catch(Throwable t) {
+    } catch (Throwable t) {
       showToast("Purchase System Initialized Failed!");
       Logger.error(TAG, "PurchaseManager created exception", t);
     }
@@ -602,8 +604,6 @@ public final class IvySdk {
     }
 
     LocalNotificationManager.clearLocalNotification(activity);
-
-    checkOnlineStatus();
   }
 
   private static JSONObject customRemoteConfig = null;
@@ -1354,8 +1354,15 @@ public final class IvySdk {
     void onRemoteConfigUpdated();
   }
 
+  private static boolean isDebugMode = false;
+
   public static void setDebug(final boolean flag) {
+    isDebugMode = false;
     IvyAds.setDebugMode(flag);
+  }
+
+  public static boolean isDebugMode() {
+    return isDebugMode;
   }
 
   public static void tryStartInAppReview() {
@@ -2843,10 +2850,88 @@ public final class IvySdk {
     }
   }
 
-  public static void checkOnlineStatus() {
+  public static void onAccountSignedIn() {
+    Logger.debug(TAG, "onAccount Signed In");
+    try {
+      checkOnlineStatus();
+      startCheckRealtimeInAppMessage();
+    } catch (Throwable t) {
+      Logger.error(TAG, "onAccountSignedIn exception", t);
+    }
+  }
+
+  private static boolean realTimeMessageCheckerStarted = false;
+
+  private static void startCheckRealtimeInAppMessage() {
+    boolean enableRealtimeMessage = getGridConfigBoolean("realtime.appmessage.check");
+    if (!enableRealtimeMessage || realTimeMessageCheckerStarted) {
+      return;
+    }
+
+    String userId = FirebaseAuth.getInstance().getUid();
+    if (userId == null) {
+      return;
+    }
+
+    Logger.debug(TAG, "startCheckRealtimeInAppMessage");
+    realTimeMessageCheckerStarted = true;
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+
+    final DatabaseReference msgRef = database.getReference("message/" + userId);
+    msgRef.addChildEventListener(new ChildEventListener() {
+      @Override
+      public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+        Logger.debug(TAG, "onChildAdded");
+        Object o = snapshot.getValue();
+        if (o instanceof Map) {
+          try {
+            String id = snapshot.getKey();
+            if (id != null) {
+              try {
+                JSONObject resultObject = new JSONObject((Map<String, Object>) o);
+                Logger.debug(TAG, "Receiving in app message >>> " + resultObject);
+                AndroidSdk.onGameMessage(id, resultObject.toString());
+              } catch (Throwable t) {
+                Logger.error(TAG, "parse realtime message exception", t);
+              }
+              msgRef.child(id).removeValue();
+            }
+          } catch (Throwable e) {
+            Logger.error(TAG, "startCheckRealtimeInAppMessage exception", e);
+          }
+        } else {
+          Logger.warning(TAG, "Not map data ignore");
+        }
+      }
+
+      @Override
+      public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+        Logger.debug(TAG, "onChildChanged");
+      }
+
+      @Override
+      public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+        Logger.debug(TAG, "onChildRemoved");
+      }
+
+      @Override
+      public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+        Logger.debug(TAG, "onChildMoved");
+      }
+
+      @Override
+      public void onCancelled(@NonNull DatabaseError error) {
+        Logger.debug(TAG, "onCancelled");
+      }
+    });
+  }
+
+  private static boolean onlineStatusChecker = false;
+
+  private static void checkOnlineStatus() {
     try {
       boolean enableUserOnlineCheck = getGridConfigBoolean("online.status.check");
-      if (!enableUserOnlineCheck) {
+      if (!enableUserOnlineCheck || onlineStatusChecker) {
         return;
       }
       String userId = FirebaseAuth.getInstance().getUid();
@@ -2855,6 +2940,7 @@ public final class IvySdk {
       }
       Logger.debug(TAG, "start online status monitor ： " + userId);
 
+      onlineStatusChecker = true;
       // Since I can connect from multiple devices, we store each connection instance separately
       // any time that connectionsRef's value is null (i.e. has no children) I am offline
       final FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -2862,7 +2948,6 @@ public final class IvySdk {
 
       // Stores the timestamp of my last disconnect (the last time I was seen online)
       final DatabaseReference lastOnlineRef = database.getReference("users/" + userId + "/lastOnline");
-
       final DatabaseReference connectedRef = database.getReference(".info/connected");
       connectedRef.addValueEventListener(new ValueEventListener() {
         @Override
@@ -2888,12 +2973,72 @@ public final class IvySdk {
 
         @Override
         public void onCancelled(@NonNull DatabaseError error) {
-          Log.w(TAG, "Listener was cancelled at .info/connected");
+          Logger.debug(TAG, "Listener was cancelled at .info/connected");
         }
       });
-    } catch(Throwable t) {
+    } catch (Throwable t) {
       Logger.error(TAG, "checkOnlineStatus exception", t);
     }
+  }
+
+  private static final String URL_LOADING_PROMOTION = "https://loading-promotion-bq4v4uzyia-uc.a.run.app";
+  private static final String URL_MORE_GAMES = "https://cdn.lisgame.com/promote/crosspromotion.json";
+
+  /**
+   * 检查闪屏开启的交叉推广。闪屏交叉推广是特殊的展示推广位，向应用提供一个应用图标。
+   */
+  public static void checkLoadingPromotion() {
+  }
+
+  /**
+   *
+   */
+  public static void checkMoreGames(@NonNull OnDataListener listener) {
+    Activity a = IvySdk.getActivity();
+    if (a == null) {
+      return;
+    }
+
+    String moreGameData = Util.retrieveData(a, "moregame");
+    if (moreGameData != null) {
+      long lastGetMoreGameTimestamp = IvySdk.mmGetLongValue("last_more_game_timestamp", 0L);
+      if (lastGetMoreGameTimestamp > 0 && System.currentTimeMillis() - lastGetMoreGameTimestamp < 24 * 3600 * 1000L) {
+        listener.onData(moreGameData);
+        return;
+      }
+    }
+
+    Request request = new Request.Builder().url(URL_MORE_GAMES).get().build();
+    getOkHttpClient().newCall(request).enqueue(new Callback() {
+      @Override
+      public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
+        try (ResponseBody responseBody = response.body()) {
+          if (responseBody != null) {
+            try {
+              String body = responseBody.string();
+              JSONObject o = new JSONObject(body);
+              if (o.has("result") && o.optBoolean("result")) {
+                listener.onData(body);
+                // write the body to
+                Activity a = IvySdk.getActivity();
+                if (a != null) {
+                  Util.storeData(a, "moregame", body);
+                  IvySdk.mmSetLongValue("last_more_game_timestamp", System.currentTimeMillis());
+                  Logger.debug(TAG, "new more game config saved!");
+                }
+              }
+            } catch (Throwable t) {
+              Logger.error(TAG, "checkMoreGames exception", t);
+            }
+          }
+        }
+      }
+
+      @Override
+      public void onFailure(@NonNull Call call, @NonNull IOException e) {
+        Logger.error(TAG, "checkMoreGames exception", e);
+      }
+    });
   }
 }
 

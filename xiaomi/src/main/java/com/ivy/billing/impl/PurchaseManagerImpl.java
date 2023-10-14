@@ -672,15 +672,6 @@ public class PurchaseManagerImpl implements PurchaseManager, EventListener, Purc
     final String sku = purchase.getSkus().get(0);
     final String orderId = purchase.getOrderId();
 
-    String orderPrefix = IvySdk.getGridConfigString("google.order.prefix");
-    if (!"".equals(orderPrefix)) {
-      if (!orderId.startsWith(orderPrefix) && !orderId.startsWith(sku) && !"".equals(orderId)) {
-        Logger.debug(TAG, "orderId not well, sku: " + sku + ", orderId " + orderId);
-        listener.onFail(ERROR_ORDER_FORMAT);
-        return;
-      }
-    }
-
     if (!verifyPurchase(purchase)) {
       listener.onFail(ERROR_SIGNED_FAILED);
       return;

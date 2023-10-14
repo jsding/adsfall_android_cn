@@ -37,6 +37,10 @@ dependencies {
     implementation("com.adsfall.taptap:TapPaymentsGlobal:3.21.0@aar")
     implementation("com.adsfall.taptap:TapConnect:3.21.0@aar")
     implementation("com.adsfall.taptap:TapDB:3.21.0@aar")
+
+    implementation("androidx.annotation:annotation:1.7.0")
+    implementation project(":ivysdk-core")
+
 }
 
 group 'com.adsfall.taptap'

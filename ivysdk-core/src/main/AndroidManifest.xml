@@ -14,13 +14,14 @@
 
     <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
 
-    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <!-- 如果有视频相关的广告且使用textureView播放，请务必添加，否则黑屏 -->
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <queries>
         <provider android:authorities="com.facebook.katana.provider.PlatformProvider" />
+
         <package android:name="com.merge.elves" />
         <package android:name="com.merge.inn" />
         <package android:name="com.merge.farmtown" />
@@ -106,23 +107,30 @@
         <activity
             android:name="com.sherdle.universal.MainActivity"
             android:configChanges="orientation|screenSize"
-            android:theme="@style/AppTheme.Launcher"
-            android:exported="false">
-        </activity>
-        <activity android:name="com.sherdle.universal.providers.videos.ui.VideoDetailActivity" android:exported="false"/>
-        <activity android:name="com.sherdle.universal.providers.wordpress.ui.WordpressDetailActivity" android:exported="false"/>
+            android:exported="false"
+            android:theme="@style/AppTheme.Launcher"></activity>
+        <activity
+            android:name="com.sherdle.universal.providers.videos.ui.VideoDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.sherdle.universal.providers.wordpress.ui.WordpressDetailActivity"
+            android:exported="false" />
         <activity
             android:name="com.sherdle.universal.comments.CommentsActivity"
-            android:configChanges="orientation|screenSize" android:exported="false" />
+            android:configChanges="orientation|screenSize"
+            android:exported="false" />
         <activity
             android:name="com.sherdle.universal.HolderActivity"
-            android:configChanges="orientation|screenSize" android:exported="false" />
+            android:configChanges="orientation|screenSize"
+            android:exported="false" />
         <activity
             android:name="com.sherdle.universal.attachmentviewer.ui.AttachmentActivity"
-            android:configChanges="orientation|screenSize" android:exported="false"/>
+            android:configChanges="orientation|screenSize"
+            android:exported="false" />
         <activity
             android:name="com.sherdle.universal.attachmentviewer.ui.VideoPlayerActivity"
-            android:configChanges="orientation|screenSize" android:exported="false"/>
+            android:configChanges="orientation|screenSize"
+            android:exported="false" />
 
     </application>
 </manifest>

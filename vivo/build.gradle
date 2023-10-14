@@ -35,6 +35,8 @@ dependencies {
 
 }
 
+group 'com.adsfall.vivo'
+
 uploadArchives {
     repositories {
         mavenDeployer {

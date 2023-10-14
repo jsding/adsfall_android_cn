@@ -1453,13 +1453,16 @@ public class Unity {
     AndroidSdk.trackActivityEvent(name, catalog, value, iap);
   }
 
-  @Deprecated
   public static void spendVirtualCurrency(String virtualCurrencyName, String itemid, int value) {
-    AndroidSdk.spendVirtualCurrency(virtualCurrencyName, itemid, value, 0);
+    AndroidSdk.spendVirtualCurrency(virtualCurrencyName, itemid, value, 0, null);
   }
 
   public static void spendVirtualCurrency(String virtualCurrencyName, String itemid, int value, int currentValue) {
-    AndroidSdk.spendVirtualCurrency(virtualCurrencyName, itemid, value, currentValue);
+    AndroidSdk.spendVirtualCurrency(virtualCurrencyName, itemid, value, currentValue, null);
+
+  }
+  public static void spendVirtualCurrency(String virtualCurrencyName, String itemid, int value, int currentValue, String catalog) {
+    AndroidSdk.spendVirtualCurrency(virtualCurrencyName, itemid, value, currentValue, catalog);
   }
 
   @Deprecated
@@ -1615,6 +1618,7 @@ public class Unity {
           if (currentUser1 != null) {
             sendMessage(MSG_FIRESTORE_CONNECTED, currentUser1.getUid());
             IvySdk.setUserID(currentUser1.getUid());
+            IvySdk.onAccountSignedIn();
           }
         } else {
           Exception e = task.getException();
@@ -1640,6 +1644,8 @@ public class Unity {
               if (uid != null) {
                 sendMessage(MSG_FIRESTORE_CONNECTED, uid);
                 updateLastSignedProvider(null, null);
+                IvySdk.onAccountSignedIn();
+
               } else {
                 signInAnonymously();
               }
@@ -1694,6 +1700,8 @@ public class Unity {
             if (uid != null) {
               sendMessage(MSG_FIRESTORE_CONNECTED, uid);
               IvySdk.setUserID(uid);
+              IvySdk.onAccountSignedIn();
+
               updateLastSignedProvider(null, null);
             }
           }
@@ -1753,6 +1761,8 @@ public class Unity {
               if (uid != null) {
                 sendMessage(MSG_FIRESTORE_CONNECTED, uid);
                 IvySdk.setUserID(uid);
+                IvySdk.onAccountSignedIn();
+
                 updateLastSignedProvider(null, null);
               } else {
                 sendMessage("onFirestoreConnectError", FirebaseAuthError.ERROR_UNKNOWN.name() + "|" + FirebaseAuthError.ERROR_UNKNOWN.getDescription());
@@ -1791,6 +1801,8 @@ public class Unity {
         String uid = FirebaseAuth.getInstance().getUid();
         IvySdk.setUserID(uid);
         sendMessage(MSG_FIRESTORE_CONNECTED, uid);
+        IvySdk.onAccountSignedIn();
+
         updateLastSignedProvider(email, password);
 
         // save the email and password for later using
@@ -1814,6 +1826,8 @@ public class Unity {
         if (uid != null) {
           sendMessage(MSG_FIRESTORE_CONNECTED, uid);
           IvySdk.setUserID(uid);
+          IvySdk.onAccountSignedIn();
+
         } else {
           sendMessage("onFirestoreConnectError", "");
         }
