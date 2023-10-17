@@ -3,8 +3,10 @@ package com.ivy;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
@@ -35,6 +37,7 @@ import com.adsfall.R;
 import com.alibaba.fastjson.JSON;
 import com.android.client.AndroidSdk;
 import com.android.client.GoogleListener;
+import com.android.client.IProviderFacade;
 import com.android.client.InAppMessageListener;
 import com.android.client.OfferwallCreditListener;
 import com.android.client.OnCloudFunctionResult;
@@ -314,10 +317,11 @@ public final class IvySdk {
       }
     }
 
+    providerFacade.onInitialize(activity, gridData);
+
     // 内购
     try {
-      Class<PurchaseManager> purchaseManagerClass = (Class<PurchaseManager>) Class.forName("com.ivy.billing.impl.PurchaseManagerImpl");
-      PurchaseManager purchaseManager = purchaseManagerClass.newInstance();
+      PurchaseManager purchaseManager = providerFacade.getPurchaseManager();
       purchaseManager.init(activity, EventBus.getInstance(), eventTracker);
       purchaseManagerWrapper = new PurchaseManagerWrapper(purchaseManager);
     } catch (Throwable t) {
@@ -604,6 +608,10 @@ public final class IvySdk {
     }
 
     LocalNotificationManager.clearLocalNotification(activity);
+
+    if (providerFacade != null) {
+      providerFacade.initPushSystem(activity);
+    }
   }
 
   private static JSONObject customRemoteConfig = null;
@@ -1072,6 +1080,11 @@ public final class IvySdk {
       if (adManager != null && activity != null) {
         adManager.onResume(activity);
       }
+    }
+
+    Activity activity = getActivity();
+    if (activity != null && purchaseManagerWrapper != null) {
+      purchaseManagerWrapper.onResume(getActivity());
     }
   }
 
@@ -2850,6 +2863,25 @@ public final class IvySdk {
     }
   }
 
+  public static void showMessageDialog(String title, String message) {
+    Activity activity = getActivity();
+    if (activity == null || activity.isFinishing()) {
+      return;
+    }
+    activity.runOnUiThread(new Runnable() {
+      @Override
+      public void run() {
+        AlertDialog alertDialog = new AlertDialog.Builder(activity, AlertDialog.THEME_DEVICE_DEFAULT_DARK).setTitle(title).setMessage(message).setPositiveButton("OK", new DialogInterface.OnClickListener() {
+          @Override
+          public void onClick(DialogInterface dialogInterface, int i) {
+
+          }
+        }).setCancelable(true).create();
+        alertDialog.show();
+      }
+    });
+  }
+
   public static void onAccountSignedIn() {
     Logger.debug(TAG, "onAccount Signed In");
     try {
@@ -3039,6 +3071,11 @@ public final class IvySdk {
         Logger.error(TAG, "checkMoreGames exception", e);
       }
     });
+  }
+
+  private static IProviderFacade providerFacade = null;
+  public static void setProviderFacade(@NonNull IProviderFacade providerFacade) {
+    IvySdk.providerFacade = providerFacade;
   }
 }
 

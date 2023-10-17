@@ -2,6 +2,7 @@ package com.android.client;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
@@ -62,6 +63,7 @@ public class Unity {
   public static final int AD_NATIVE = 5;
   public static final int AD_GIF_ICON = 6;
 
+  private static IProviderFacade providerFacade;
   private static final String MSG_FIRESTORE_CONNECTED = "onFirestoreConnected";
 
   public static void onCreate(@NonNull Activity activity) {
@@ -220,6 +222,23 @@ public class Unity {
               sendMessage("onGetOfferwallCreditsFailed", message);
             }
           });
+
+          ApplicationInfo ai = null;
+          try {
+            ai = activity.getPackageManager().getApplicationInfo(activity.getPackageName(), PackageManager.GET_META_DATA);
+
+            if (ai != null && ai.metaData != null) {
+              Object o = ai.metaData.get("adsfall.provider");
+              if (o instanceof String) {
+                String providerClass = String.valueOf(o);
+                providerFacade = (IProviderFacade) Class.forName(providerClass).newInstance();
+              }
+            }
+          } catch (Throwable t) {
+            Logger.error(TAG, "initialize exception", t);
+          }
+
+          IvySdk.setProviderFacade(providerFacade);
           AndroidSdk.onCreate(activity, builder);
         }
       });
@@ -1609,6 +1628,27 @@ public class Unity {
    * 2. 如果当前用户已经是登入状态，直接使用当前账号回调
    */
   public static void signIn() {
+    if (providerFacade != null && providerFacade.onlyUsingPlatformAccount()) {
+      providerFacade.signIn(IvySdk.getActivity(), new OnSignedInListener() {
+        @Override
+        public void onSignedInSuccess(SignInProfile signInProfile) {
+          Logger.debug(TAG, "signIn success");
+        }
+
+        @Override
+        public void onSignedInError(String code, String message) {
+          Logger.debug(TAG, "onSignedInError success");
+
+        }
+
+        @Override
+        public void onSignedInCancel() {
+          Logger.debug(TAG, "onSignedInCancel success");
+        }
+      });
+      return;
+    }
+
     FirebaseAuth auth = FirebaseAuth.getInstance();
     FirebaseUser currentUser = auth.getCurrentUser();
     if (currentUser != null) {

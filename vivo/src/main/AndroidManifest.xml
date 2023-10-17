@@ -1,4 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.adsfall.vivo">
+    <application>
+        <meta-data
+            android:name="adsfall.application"
+            android:value="com.ivy.vivo.VivoApplicationFacade" />
 
+        <meta-data
+            android:name="adsfall.provider"
+            android:value="com.ivy.vivo.VivoProviderFacade" />
+        <meta-data
+            android:name="adsfall.vivoAppId"
+            android:value="" />
+
+    </application>
 </manifest>

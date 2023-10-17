@@ -1,6 +1,7 @@
 package com.ivy.billing;
 
 
+import android.app.Activity;
 import android.content.Context;
 
 import androidx.annotation.NonNull;
@@ -38,9 +39,19 @@ public interface PurchaseManager {
 
   void setBillItemId(String itemId);
 
+  JSONObject getStoreItem(String productId);
+
+  void queryPurchases(String productId);
+
+  void queryUnconsumedPurchases();
+
+
   void consumePurchase(@NonNull String purchaseToken, @NonNull OrderConsumeListener orderConsumeListener);
 
   void queryPurchase();
 
   void onDestroy();
+
+
+  void onResume(Activity activity);
 }

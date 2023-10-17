@@ -1,5 +1,7 @@
 package com.ivy.billing;
 
+import android.app.Activity;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.UiThread;
@@ -59,6 +61,12 @@ public class PurchaseManagerWrapper {
   public void onDestroy() {
     if (purchaseManager != null) {
       purchaseManager.onDestroy();
+    }
+  }
+
+  public void onResume(Activity activity) {
+    if (purchaseManager != null) {
+      purchaseManager.onResume(activity);
     }
   }
 

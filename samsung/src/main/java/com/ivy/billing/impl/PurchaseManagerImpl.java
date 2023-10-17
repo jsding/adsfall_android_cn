@@ -496,6 +496,21 @@ public class PurchaseManagerImpl implements PurchaseManager, EventListener, OnGe
   }
 
   @Override
+  public JSONObject getStoreItem(String productId) {
+    return null;
+  }
+
+  @Override
+  public void queryPurchases(String productId) {
+
+  }
+
+  @Override
+  public void queryUnconsumedPurchases() {
+
+  }
+
+  @Override
   public void consumePurchase(@NonNull String purchaseToken, @NonNull OrderConsumeListener orderConsumeListener) {
     Logger.debug(TAG, "Consume Purchase >>> " + purchaseToken);
     mIapHelper.consumePurchasedItems(purchaseToken, new OnConsumePurchasedItemsListener() {
@@ -537,6 +552,11 @@ public class PurchaseManagerImpl implements PurchaseManager, EventListener, OnGe
   @Override
   public void onDestroy() {
     mIapHelper.dispose();
+  }
+
+  @Override
+  public void onResume(Activity activity) {
+
   }
 
   @Override

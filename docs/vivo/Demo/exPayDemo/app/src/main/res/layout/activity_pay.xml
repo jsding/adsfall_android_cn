@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/vivo_pay_demo_common_dp_20">
+
+        <Button
+            android:id="@+id/vivo_pay_demo_login"
+            android:layout_width="@dimen/vivo_pay_demo_common_dp_120"
+            android:layout_height="@dimen/vivo_pay_demo_common_dp_40"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginRight="@dimen/vivo_pay_demo_common_dp_20"
+            android:text="@string/vivo_pay_demo_login" />
+
+        <Button
+            android:id="@+id/vivo_pay_demo_change_orient"
+            android:layout_width="@dimen/vivo_pay_demo_common_dp_120"
+            android:layout_height="@dimen/vivo_pay_demo_common_dp_40"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/vivo_pay_demo_orientation" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/vivo_pay_demo_common_dp_1"
+        android:layout_marginBottom="@dimen/vivo_pay_demo_common_dp_20"
+        android:layout_marginTop="@dimen/vivo_pay_demo_common_dp_20"
+        android:background="@color/vivo_common_black" />
+
+    <EditText
+        android:id="@+id/vivo_pay_demo_product_name_input"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/vivo_pay_demo_common_dp_40"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="@dimen/vivo_pay_demo_common_dp_20"
+        android:layout_marginRight="@dimen/vivo_pay_demo_common_dp_20"
+        android:background="@drawable/vivo_pay_demo_edittext_bg"
+        android:hint="@string/vivo_pay_demo_product_name_hint"
+        android:paddingLeft="@dimen/vivo_pay_demo_common_dp_10"
+        android:paddingRight="@dimen/vivo_pay_demo_common_dp_10"
+        android:text="@string/vivo_pay_demo_product_name_default"
+        android:textSize="@dimen/vivo_union_dimen_sp_16" />
+
+    <EditText
+        android:id="@+id/vivo_pay_demo_product_price_input"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/vivo_pay_demo_common_dp_40"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="@dimen/vivo_pay_demo_common_dp_20"
+        android:layout_marginRight="@dimen/vivo_pay_demo_common_dp_20"
+        android:background="@drawable/vivo_pay_demo_edittext_bg"
+        android:hint="@string/vivo_pay_demo_product_price_hint"
+        android:inputType="numberDecimal"
+        android:paddingLeft="@dimen/vivo_pay_demo_common_dp_10"
+        android:paddingRight="@dimen/vivo_pay_demo_common_dp_10"
+        android:text="@string/vivo_pay_demo_product_price_default"
+        android:textSize="@dimen/vivo_union_dimen_sp_16" />
+
+    <Button
+        android:id="@+id/vivo_pay_demo_role_name_input"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/vivo_pay_demo_common_dp_40"
+        android:layout_marginLeft="@dimen/vivo_pay_demo_common_dp_20"
+        android:layout_marginRight="@dimen/vivo_pay_demo_common_dp_20"
+        android:paddingLeft="@dimen/vivo_pay_demo_common_dp_10"
+        android:paddingRight="@dimen/vivo_pay_demo_common_dp_10"
+        android:text="@string/vivo_pay_demo_role_name_default"
+        android:textSize="@dimen/vivo_union_dimen_sp_16" />
+
+    <RadioGroup
+        android:id="@+id/vivo_pay_demo_method_group"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/vivo_pay_demo_common_dp_40"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/vivo_pay_demo_checkout"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="@dimen/vivo_pay_demo_common_dp_30"
+            android:checked="true"
+            android:text="@string/vivo_pay_demo_pay" />
+
+        <RadioButton
+            android:id="@+id/vivo_pay_demo_sms"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/vivo_pay_demo_pay_sms" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/vivo_pay_demo_start_pay"
+        android:layout_width="@dimen/vivo_pay_demo_common_dp_200"
+        android:layout_height="@dimen/vivo_pay_demo_common_dp_40"
+        android:layout_gravity="center"
+        android:text="@string/vivo_pay_demo_submit" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/vivo_pay_demo_common_dp_1"
+        android:layout_marginBottom="@dimen/vivo_pay_demo_common_dp_10"
+        android:layout_marginTop="@dimen/vivo_pay_demo_common_dp_10"
+        android:background="@color/vivo_common_black" />
+
+    <Button
+        android:id="@+id/vivo_pay_demo_clear_log"
+        android:layout_width="@dimen/vivo_pay_demo_common_dp_200"
+        android:layout_height="@dimen/vivo_pay_demo_common_dp_40"
+        android:layout_gravity="center"
+        android:text="@string/vivo_pay_demo_clear_log" />
+
+    <com.vivo.paydemo.LogView
+        android:id="@+id/vivo_pay_demo_log"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/vivo_pay_demo_common_dp_10"
+        android:background="@android:color/darker_gray"
+        android:fadingEdge="vertical"
+        android:focusable="true"
+        android:scrollbars="vertical" />
+
+</LinearLayout>

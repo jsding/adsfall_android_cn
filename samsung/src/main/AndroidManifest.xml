@@ -5,4 +5,13 @@
     <uses-permission android:name="com.samsung.android.iap.permission.BILLING" />
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <application>
+        <meta-data
+            android:name="adsfall.application"
+            android:value="com.ivy.samsung.SamsungApplicationFacade" />
+
+        <meta-data
+            android:name="adsfall.provider"
+            android:value="com.ivy.samsung.SamsungProviderFacade" />
+    </application>
 </manifest>

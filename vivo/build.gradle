@@ -5,9 +5,6 @@ plugins {
 apply plugin: 'maven'
 apply plugin: 'maven-publish'
 
-version '1.0.1'
-
-
 android {
     compileSdkVersion 33
 
@@ -31,11 +28,20 @@ android {
     }
 }
 
-dependencies {
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
 
+dependencies {
+    implementation(name: 'vivounionsdk_1.6.3.0_release', ext: 'aar')
+    implementation("androidx.annotation:annotation:1.7.0")
+    api project(":ivysdk-core")
 }
 
 group 'com.adsfall.vivo'
+version "${project.adapterVersion}"
 
 uploadArchives {
     repositories {

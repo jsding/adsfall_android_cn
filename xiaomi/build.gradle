@@ -3,8 +3,6 @@ apply plugin: 'com.android.library'
 apply plugin: 'maven'
 apply plugin: 'maven-publish'
 
-version '1.0.1'
-
 android {
     compileSdkVersion 33
 
@@ -35,10 +33,12 @@ android {
 dependencies {
     implementation 'com.squareup.okhttp3:okhttp:4.11.0'
     implementation "com.xiaomi.billingclient:billing:1.1.0"
-    implementation project(":ivysdk-core")
+    implementation("androidx.annotation:annotation:1.7.0")
+    api project(":ivysdk-core")
 }
 
-group 'com.adsfall.billing'
+group 'com.adsfall.mi'
+version "${project.adapterVersion}"
 
 uploadArchives {
     repositories {

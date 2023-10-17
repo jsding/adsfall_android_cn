@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Pay demo</string>
+    <string name="vivo_dialog_ok">OK</string>
+    <string name="vivo_dialog_cancel">Cancel</string>
+    <string name="vivo_dialog_message">Content</string>
+    <string name="vivo_pay_demo_login">Login</string>
+    <string name="vivo_pay_demo_pay">Checkout</string>
+    <string name="vivo_pay_demo_pay_sms">SMS</string>
+    <string name="vivo_pay_demo_orientation">Change orientation</string>
+    <string name="vivo_pay_demo_product_name_hint">Please input the product name</string>
+    <string name="vivo_pay_demo_product_price_hint">Please input the product price</string>
+    <string name="vivo_pay_demo_product_name_default">vivo X21 mobile phone</string>
+    <string name="vivo_pay_demo_product_price_default">3</string>
+    <string name="vivo_pay_demo_role_name_default">Please input the role name</string>
+    <string name="vivo_pay_demo_submit">Submit</string>
+    <string name="vivo_pay_demo_clear_log">Clear Log</string>
+    <string name="vivo_pay_demo_service_name">Please input the server name</string>
+    <string name="vivo_pay_demo_service_id">Please input the server id</string>
+    <string name="vivo_pay_demo_role_name">Please input the role name</string>
+    <string name="vivo_pay_demo_role_id">Please input the role id</string>
+    <string name="vivo_pay_demo_role_grade">Please input the role rank</string>
+</resources>
+

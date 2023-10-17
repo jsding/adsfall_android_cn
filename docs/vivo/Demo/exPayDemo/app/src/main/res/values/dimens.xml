@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="vivo_pay_demo_common_dp_1">1dp</dimen>
+    <dimen name="vivo_pay_demo_common_dp_10">10dp</dimen>
+    <dimen name="vivo_pay_demo_common_dp_20">20dp</dimen>
+    <dimen name="vivo_pay_demo_common_dp_30">30dp</dimen>
+    <dimen name="vivo_pay_demo_common_dp_40">40dp</dimen>
+    <dimen name="vivo_pay_demo_common_dp_120">120dp</dimen>
+    <dimen name="vivo_pay_demo_common_dp_200">200dp</dimen>
+    <dimen name="vivo_pay_demo_common_dp_300">300dp</dimen>
+
+    <dimen name="vivo_union_dimen_sp_16">16sp</dimen>
+
+</resources>

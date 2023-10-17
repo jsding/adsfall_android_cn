@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:amazon="http://schemas.amazon.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.adsfall.amazon">
+
+    <uses-permission android:name="com.samsung.android.iap.permission.BILLING" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- 此权限将确保任何其他应用均无法拦截您的ADM消息。-->
+    <permission
+        android:name="${applicationId}.permission.RECEIVE_ADM_MESSAGE"
+        android:protectionLevel="signature" />
+    <uses-permission android:name="${applicationId}.permission.RECEIVE_ADM_MESSAGE" />
+
+    <!--此权限允许您的应用接收通过ADM推送的通知。-->
+    <uses-permission android:name="com.amazon.device.messaging.permission.RECEIVE" />
+
+    <application>
+
+        <meta-data
+            android:name="adsfall.provider"
+            android:value="com.ivy.amazon.AmazonProviderFacade" />
+
+
+        <receiver
+            android:name="com.amazon.device.iap.ResponseReceiver"
+            android:exported="true"
+            android:permission="com.amazon.inapp.purchasing.Permission.NOTIFY">
+            <intent-filter>
+                <action android:name="com.amazon.inapp.purchasing.NOTIFY" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="com.ivy.adm.LisADMMessageHandler"
+            android:exported="false"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+            tools:ignore="Instantiatable" />
+
+
+        <!-- 您必须显式启用ADM，并声明您的应用在没有
+           ADM的情况下无法工作(android:required="true")，还是在没有ADM的情况下可以工作(android:required="false")。
+           如果您指定android:required="false"，则您的应用在ADM不可用的情况下
+           必须正常降级。 -->
+        <amazon:enable-feature
+            android:name="com.amazon.device.messaging"
+            android:required="false" />
+
+        <receiver
+            android:name="com.ivy.adm.LisADMMessageReceiver"
+            android:exported="true"
+            android:permission="com.amazon.device.messaging.permission.SEND">
+
+            <intent-filter>
+                <action android:name="com.amazon.device.messaging.intent.REGISTRATION" />
+                <action android:name="com.amazon.device.messaging.intent.RECEIVE" />
+
+                <category android:name="${applicationId}" />
+            </intent-filter>
+
+        </receiver>
+
+        <activity
+            android:name="com.amazon.identity.auth.device.workflow.WorkflowActivity"
+            android:allowTaskReparenting="true"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:theme="@android:style/Theme.NoDisplay">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!-- android:host must use the full package name found in Manifest General Attributes -->
+                <data
+                    android:host="${applicationId}"
+                    android:scheme="amzn" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

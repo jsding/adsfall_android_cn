@@ -1,0 +1,52 @@
+apply plugin: 'com.android.library'
+
+apply plugin: 'maven'
+apply plugin: 'maven-publish'
+
+android {
+    compileSdkVersion 33
+
+    defaultConfig {
+        minSdkVersion 21
+        compileSdkVersion 33
+        targetSdkVersion 33
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    implementation files('libs/amazon-device-messaging-1.2.0.jar')
+    implementation files('libs/login-with-amazon-sdk.jar')
+
+    implementation 'com.squareup.okhttp3:okhttp:4.11.0'
+    implementation("androidx.annotation:annotation:1.7.0")
+    implementation 'com.amazon.device:amazon-appstore-sdk:3.0.4'
+
+    api project(":ivysdk-core")
+}
+
+group 'com.adsfall.amazon'
+version "${project.adapterVersion}"
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: nexusUrl) {
+                authentication(userName: nexusUserName, password: nexusPassword)
+            }
+        }
+    }
+}

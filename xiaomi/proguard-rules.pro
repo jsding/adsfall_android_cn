@@ -48,9 +48,4 @@
     @android.webkit.JavascriptInterface <methods>;
 }
 
-# Keep ADCNative class members unobfuscated
--keepclassmembers class com.adcolony.sdk.ADCNative** {
-    *;
-}
-
--keep class com.ivy.billing.** {*;}
+-keep class com.ivy.mi.** {*;}

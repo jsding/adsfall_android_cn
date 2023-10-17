@@ -5,8 +5,6 @@ plugins {
 apply plugin: 'maven'
 apply plugin: 'maven-publish'
 
-version '1.0.1'
-
 android {
     compileSdkVersion 33
 
@@ -39,11 +37,11 @@ dependencies {
     implementation("com.adsfall.taptap:TapDB:3.21.0@aar")
 
     implementation("androidx.annotation:annotation:1.7.0")
-    implementation project(":ivysdk-core")
-
+    api project(":ivysdk-core")
 }
 
 group 'com.adsfall.taptap'
+version "${project.adapterVersion}"
 
 publishing {
     repositories {

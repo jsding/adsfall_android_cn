@@ -125,6 +125,7 @@
    public *;
 }
 -keep class com.android.client.** { *; }
+-keep class com.ivy.** { *; }
 
 -keep class com.my.target.** {*;}
 

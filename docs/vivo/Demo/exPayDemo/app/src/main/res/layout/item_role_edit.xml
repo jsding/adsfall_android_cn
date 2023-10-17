@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/vivo_pay_demo_service_name"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/vivo_pay_demo_common_dp_40"
+        android:layout_marginLeft="@dimen/vivo_pay_demo_common_dp_20"
+        android:layout_marginRight="@dimen/vivo_pay_demo_common_dp_20"
+        android:layout_marginTop="@dimen/vivo_pay_demo_common_dp_10"
+        android:background="@drawable/vivo_pay_demo_edittext_bg"
+        android:gravity="center"
+        android:hint="@string/vivo_pay_demo_service_name" />
+
+    <EditText
+        android:id="@+id/vivo_pay_demo_service_id"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/vivo_pay_demo_common_dp_40"
+        android:layout_marginLeft="@dimen/vivo_pay_demo_common_dp_20"
+        android:layout_marginRight="@dimen/vivo_pay_demo_common_dp_20"
+        android:layout_marginTop="@dimen/vivo_pay_demo_common_dp_10"
+        android:background="@drawable/vivo_pay_demo_edittext_bg"
+        android:gravity="center"
+        android:hint="@string/vivo_pay_demo_service_id" />
+
+    <EditText
+        android:id="@+id/vivo_pay_demo_role_name"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/vivo_pay_demo_common_dp_40"
+        android:layout_marginLeft="@dimen/vivo_pay_demo_common_dp_20"
+        android:layout_marginRight="@dimen/vivo_pay_demo_common_dp_20"
+        android:layout_marginTop="@dimen/vivo_pay_demo_common_dp_10"
+        android:background="@drawable/vivo_pay_demo_edittext_bg"
+        android:gravity="center"
+        android:hint="@string/vivo_pay_demo_role_name" />
+
+    <EditText
+        android:id="@+id/vivo_pay_demo_role_id"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/vivo_pay_demo_common_dp_40"
+        android:layout_marginLeft="@dimen/vivo_pay_demo_common_dp_20"
+        android:layout_marginRight="@dimen/vivo_pay_demo_common_dp_20"
+        android:layout_marginTop="@dimen/vivo_pay_demo_common_dp_10"
+        android:background="@drawable/vivo_pay_demo_edittext_bg"
+        android:gravity="center"
+        android:hint="@string/vivo_pay_demo_role_id"/>
+
+    <EditText
+        android:layout_marginBottom="@dimen/vivo_pay_demo_common_dp_10"
+        android:id="@+id/vivo_pay_demo_role_grade"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/vivo_pay_demo_common_dp_40"
+        android:layout_marginLeft="@dimen/vivo_pay_demo_common_dp_20"
+        android:layout_marginRight="@dimen/vivo_pay_demo_common_dp_20"
+        android:layout_marginTop="@dimen/vivo_pay_demo_common_dp_10"
+        android:background="@drawable/vivo_pay_demo_edittext_bg"
+        android:gravity="center"
+        android:hint="@string/vivo_pay_demo_role_grade" />
+</LinearLayout>

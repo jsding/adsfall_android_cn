@@ -589,27 +589,6 @@ public class PurchaseManagerImpl implements PurchaseManager, EventListener, Purc
     }
   }
 
-  private boolean verifyPurchase(@NonNull Purchase purchase) {
-    String base64PublicKey = preferences.publicKey;
-
-    if (base64PublicKey == null || "".equals(base64PublicKey)) {
-      Logger.warning(TAG, "IAP public key is not configured, will NOT verify the purchase");
-      return true;
-    }
-
-//    String signature = purchase.getSignature();
-//    boolean verified = Security.verifyPurchase(base64PublicKey, purchaseData, signature);
-//    if (!verified) {
-//      Logger.error(TAG, "purchase verified failed");
-//      Logger.debug(TAG, "OrderID: " + purchase.getOrderId());
-//      Logger.debug(TAG, "Signature: " + purchase.getSignature());
-//      Logger.debug(TAG, "PurchaseData: " + purchase.getOriginalJson());
-//    } else {
-//      Logger.debug(TAG, "Purchase Verified");
-//    }
-    return true;
-  }
-
   private void processPurchase(@NonNull Purchase purchase) {
     if (purchase.getPurchaseState() != Purchase.PurchaseState.PURCHASED) {
       Logger.warning(TAG, "Purchase state not PURCHASED, " + purchase.getPurchaseState());
@@ -671,11 +650,6 @@ public class PurchaseManagerImpl implements PurchaseManager, EventListener, Purc
   private void handleVerifiedPurchase(@NonNull Purchase purchase, @NonNull PaymentVerifiedListener listener) {
     final String sku = purchase.getSkus().get(0);
     final String orderId = purchase.getOrderId();
-
-    if (!verifyPurchase(purchase)) {
-      listener.onFail(ERROR_SIGNED_FAILED);
-      return;
-    }
 
     String verifyUrl = preferences.verifyUrl;
     if (verifyUrl == null || "".equals(verifyUrl)) {
@@ -811,6 +785,21 @@ public class PurchaseManagerImpl implements PurchaseManager, EventListener, Purc
   }
 
   @Override
+  public JSONObject getStoreItem(String productId) {
+    return null;
+  }
+
+  @Override
+  public void queryPurchases(String productId) {
+
+  }
+
+  @Override
+  public void queryUnconsumedPurchases() {
+
+  }
+
+  @Override
   public void consumePurchase(@NonNull String purchaseToken, @NonNull OrderConsumeListener orderConsumeListener) {
     Logger.debug(TAG, "Consume Purchase >>> " + purchaseToken);
 
@@ -864,6 +853,11 @@ public class PurchaseManagerImpl implements PurchaseManager, EventListener, Purc
     if (billingClient != null) {
       billingClient.endConnection();
     }
+  }
+
+  @Override
+  public void onResume(Activity activity) {
+
   }
 
   private void startLaunchBillingFlow(@NonNull Activity activity, @NonNull BillingFlowParams flowParams) {

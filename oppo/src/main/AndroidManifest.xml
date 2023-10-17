@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.adsfall.oppo">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.adsfall.oppo">
+
+    <application>
+
+        <meta-data
+            android:name="adsfall.application"
+            android:value="com.ivy.oppo.OppoApplicationFacade" />
+
+        <meta-data
+            android:name="adsfall.provider"
+            android:value="com.ivy.oppo.OppoProviderFacade" />
+    </application>
 
 
 </manifest>
