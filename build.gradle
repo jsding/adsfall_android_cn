@@ -53,7 +53,7 @@ ext {
     compileSdkVersion = 33
     minSdkVersion = 19
     targetSdkVersion = 33
-    adapterVersion = "1.0.9"
+    adapterVersion = "1.1.1"
 }
 
 task clean(type: Delete) {

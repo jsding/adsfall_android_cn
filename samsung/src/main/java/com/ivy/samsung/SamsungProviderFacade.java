@@ -34,6 +34,10 @@ public class SamsungProviderFacade implements IProviderFacade {
 
   @Override
   public void initPushSystem(@NonNull Activity activity) {
+  }
 
+  @Override
+  public String getChannel() {
+    return "samsung";
   }
 }

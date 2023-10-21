@@ -169,7 +169,7 @@ public class PurchaseManagerImpl implements PurchaseManager, EventListener, Purc
           }
           // query the iaps
           if (products.size() > 0) {
-            billingClient.querySkuDetailsAsync(SkuDetailsParams.newBuilder().setSkusList(products).build(), mGotInventoryInappListener);
+            billingClient.querySkuDetailsAsync(SkuDetailsParams.newBuilder().setSkusList(products).setType(BillingClient.SkuType.INAPP).build(), mGotInventoryInappListener);
           }
         }
       }
@@ -189,12 +189,13 @@ public class PurchaseManagerImpl implements PurchaseManager, EventListener, Purc
     long priceAmountMicros = 0L;
     String currencyCode = "USD";
     if (BillingClient.SkuType.INAPP.equals(type)) {
-      SkuDetails.OneTimePurchaseOfferDetails purchaseOfferDetails = skuDetails.getOneTimePurchaseOfferDetails();
-      if (purchaseOfferDetails != null) {
-        price = purchaseOfferDetails.getFormattedPrice();
-        priceAmountMicros = purchaseOfferDetails.getPriceAmountMicros();
-        currencyCode = purchaseOfferDetails.getPriceCurrencyCode();
+      price = skuDetails.getPrice();
+      try {
+        priceAmountMicros = Long.parseLong(skuDetails.getPriceAmountMicros());
+      } catch(Throwable t) {
+        t.printStackTrace();
       }
+      currencyCode = skuDetails.getPriceCurrencyCode();
     } else {
       SkuDetails.SubscriptionOfferDetails purchaseOfferDetails = skuDetails.getSubscriptionOfferDetails().get(0);
 
@@ -204,6 +205,10 @@ public class PurchaseManagerImpl implements PurchaseManager, EventListener, Purc
     }
     String title = skuDetails.getTitle();
     String description = skuDetails.getDescription();
+
+    if ("".equals(price)) {
+      price = "US$" + usd;
+    }
     return new SKUDetail(type, sku, price, priceAmountMicros, currencyCode, title, description, usd);
   }
 
@@ -213,7 +218,7 @@ public class PurchaseManagerImpl implements PurchaseManager, EventListener, Purc
     List<String> products = new ArrayList<>();
     products.add(sku);
 
-    billingClient.querySkuDetailsAsync(SkuDetailsParams.newBuilder().setSkusList(products).build(), (billingResult, skuDetailsList) -> {
+    billingClient.querySkuDetailsAsync(SkuDetailsParams.newBuilder().setSkusList(products).setType(BillingClient.SkuType.INAPP).build(), (billingResult, skuDetailsList) -> {
       if (billingResult.getResponseCode() != BillingClient.BillingResponseCode.OK) {
         Logger.error(TAG, "Query inventory failed, errorCode: " + billingResult.getResponseCode());
         return;
@@ -303,7 +308,7 @@ public class PurchaseManagerImpl implements PurchaseManager, EventListener, Purc
 
             Bundle bundle = new Bundle();
             bundle.putInt("times", IvySdk.appStartTimes);
-            bundle.putString(EventParams.PARAM_PROVIDER, "google");
+            bundle.putString(EventParams.PARAM_PROVIDER, IvySdk.getPaymentChannel());
             if (currentBillItemId != null) {
               bundle.putString("reason", currentBillItemId);
             }
@@ -411,7 +416,7 @@ public class PurchaseManagerImpl implements PurchaseManager, EventListener, Purc
           return;
         case CANCELED:
           Bundle bundle = new Bundle();
-          bundle.putString(EventParams.PARAM_PROVIDER, "google");
+          bundle.putString(EventParams.PARAM_PROVIDER, IvySdk.getPaymentChannel());
           bundle.putString(EventParams.PARAM_ITEMID, itemid);
           this.eventTracker.logEvent(EventID.IAP_CANCEL, bundle);
           return;

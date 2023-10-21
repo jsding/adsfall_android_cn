@@ -65,8 +65,12 @@ dependencies {
     implementation 'com.google.ads.mediation:unity:4.8.0.0'
     implementation 'com.google.ads.mediation:pangle:5.4.1.1.0'
     implementation 'com.google.ads.mediation:mintegral:16.5.11.0'
-    implementation 'com.google.ads.mediation:vungle:6.12.1.1'
     implementation 'com.google.ads.mediation:fyber:8.2.4.0'
+
+    // applovin max
+    implementation 'com.applovin:applovin-sdk:11.11.3'
+    implementation 'com.applovin.mediation:google-adapter:22.4.0.0'
+    implementation 'com.applovin.mediation:mintegral-adapter:16.5.21.0'
 
     // russia, we use yandex mediation - mytarget
     implementation 'com.yandex.android:mobileads:5.10.0'

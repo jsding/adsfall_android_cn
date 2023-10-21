@@ -15,10 +15,6 @@
     <application>
 
         <meta-data
-            android:name="adsfall.application"
-            android:value="com.ivy.mi.MiApplicationFacade" />
-
-        <meta-data
             android:name="adsfall.provider"
             android:value="com.ivy.mi.MiProviderFacade" />
     </application>

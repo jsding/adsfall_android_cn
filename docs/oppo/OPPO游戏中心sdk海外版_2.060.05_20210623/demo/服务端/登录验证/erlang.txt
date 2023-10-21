@@ -1,0 +1,13 @@
+check_auth_2(SessionID,Ssoid) ->
+	Url = "https://in-gameopen.oppomobile.com/sdkopen/user/fileIdInfo?fileId="++Ssoid++"&token="++SessionID,
+	Consumer_key = {"oauthConsumerKey","appKey"},
+	Nonce = {"oauthNonce",integer_to_list(random:uniform(1000))},
+	Method = {"oauthSignatureMethod","HMAC-SHA1"},
+	TimeStamp = {"oauthTimestamp",integer_to_list(unixTimeStamp())},
+	Token = {"oauthToken",http_uri:encode(SessionID)},
+	Version = {"oauthVersion","1.0"},
+	BaseStr = urlencode([Consumer_key,Token,Method,TimeStamp,Nonce,Version])++"&".
+	Key = "appSecret&",
+	Sign = http_uri:encode(binary_to_list(base64:encode(crypto:hmac('sha',list_to_binary(Key), BaseStr)))),
+	Header = "param: "++BaseStr++",oauthsignature: "++Sign,
+	httpc:request(get,{Url,[{"param",BaseStr},{"oauthsignature",Sign}]},[],[]).

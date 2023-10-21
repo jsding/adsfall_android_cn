@@ -2100,9 +2100,15 @@ public class Unity {
 
   @Keep
   public static void requestPostNotificationPermission() {
+    long lastRequestNoficationTime = IvySdk.mmGetLongValue("_last_request_notification_permission_time", 0L);
+    if (lastRequestNoficationTime > 0) {
+      return;
+    }
+
     Activity activity = IvySdk.getActivity();
     if (activity != null) {
       LocalNotificationManager.enablePermission(activity);
+      IvySdk.mmSetLongValue("_last_request_notification_permission_time", System.currentTimeMillis());
     }
   }
 
@@ -2111,6 +2117,10 @@ public class Unity {
   }
 
   public static String getAppstore() {
+
+    if (providerFacade != null) {
+      return providerFacade.getChannel();
+    }
     return "google";
   }
 

@@ -19,33 +19,4 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
-
--keepattributes Signature
--keepattributes *Annotation*
--keepattributes EnclosingMethod
--keepattributes InnerClasses
-
--keep class android.** {
-    *;
-}
-
--keep class androidx.** {
-    public *;
-}
-
--keepclassmembers class org.cocos2dx.** {
-    *;
-}
-
--keep class org.cocos2dx.** { *; }
--dontwarn org.cocos2dx.**
-
--keep class com.android.vending.** {
-    *;
-}
-
--keepclassmembers class * {
-    @android.webkit.JavascriptInterface <methods>;
-}
-
 -keep class com.ivy.mi.** {*;}

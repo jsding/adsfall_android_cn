@@ -112,4 +112,9 @@ public class TaptapProviderFacade implements IProviderFacade {
   public void initPushSystem(@NonNull Activity activity) {
 
   }
+
+  @Override
+  public String getChannel() {
+    return "taptap";
+  }
 }

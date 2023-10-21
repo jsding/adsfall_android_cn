@@ -37,4 +37,9 @@ public class MiProviderFacade implements IProviderFacade {
   public void initPushSystem(@NonNull Activity activity) {
 
   }
+
+  @Override
+  public String getChannel() {
+    return "mi";
+  }
 }

@@ -33,4 +33,9 @@ public class OppoProviderFacade implements IProviderFacade {
   public void initPushSystem(@NonNull Activity activity) {
 
   }
+
+  @Override
+  public String getChannel() {
+    return "oppo";
+  }
 }

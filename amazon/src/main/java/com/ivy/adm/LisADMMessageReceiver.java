@@ -15,12 +15,11 @@ public class LisADMMessageReceiver extends ADMMessageReceiver {
     }
 
     try {
-
       // 若可能，推荐使用基于新作业的
       if (ADMLatestAvailable) {
         registerJobServiceClass(LisADMMessageHandler.class, JOB_ID);
       }
-    } catch(Throwable t) {
+    } catch(Throwable ignored) {
 
     }
   }

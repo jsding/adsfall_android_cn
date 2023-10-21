@@ -1,0 +1,17 @@
+关于支付回调验证签名的说明：
+
+
+	目的：保证支付回调请求来自我方支付服务器，且数据没有被篡改。
+	
+	
+	实现方式： 单向的RSA签名验证，我方向CP提供同一个RSA的公钥（pub key），我方支付服务器在服务端用私钥对固定的一串
+	
+	数据做签名，这串String叫做BaseString，BaseString + 私钥 = 签名，我方把数据和签名一起用一个post请求发给CP服务端，
+	
+	CP服务端收到请求后，利用数据组装BaseString，使用公钥验证签名，公钥 + BaseString ？= 签名。
+	
+	RSA原理：
+	
+	我方服务端签名：   BaseString + 私钥 = 签名（sign）
+	
+	CP服务端验证签名：  BaseString + 公钥 ？= 签名（sign）

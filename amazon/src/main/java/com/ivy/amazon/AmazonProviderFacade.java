@@ -13,8 +13,10 @@ import androidx.annotation.NonNull;
 
 import org.json.JSONObject;
 
+import kotlin.OptIn;
+
 public class AmazonProviderFacade implements IProviderFacade {
-  private static final String TAG = "Samsung";
+  private static final String TAG = "Amazon";
 
 
   @Override
@@ -39,12 +41,14 @@ public class AmazonProviderFacade implements IProviderFacade {
     try {
       ADM adm = new ADM(activity);
       if (adm.getRegistrationId() == null) {
-        // startRegister()是异步的；当注册ID可用时，
-        // 将通过onRegistered()回调通知您的应用。
         adm.startRegister();
       }
     } catch(Throwable t) {
       Logger.error(TAG, "adm startRegister exception", t);
     }
+  }
+  @Override
+  public String getChannel() {
+    return "amazon";
   }
 }

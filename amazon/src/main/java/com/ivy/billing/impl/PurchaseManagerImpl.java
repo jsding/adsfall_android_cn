@@ -514,36 +514,6 @@ public class PurchaseManagerImpl implements PurchaseManager, EventListener, Purc
     });
   }
 
-  public static final int ERROR_ORDER_FORMAT = 6;
-  public static final int ERROR_SIGNED_FAILED = 1;
-  public static final int ERROR_RESPONSE_NOT_SUCCESS = 2;
-  public static final int ERROR_RESPONSE_EMPTY = 3;
-  public static final int ERROR_RESPONSE_WRONG_STATUS = 4;
-  public static final int ERROR_VERIFY_SERVER_HTTP_ERROR = 5;
-  public static final int SOFT_PURCHASE_ERROR = 10;
-
-  private void logVerifyEvent(String sku, String orderId, int status, int errorCode, String reason, long startTimes) {
-    Bundle bundle = new Bundle();
-    if (sku != null) {
-      bundle.putString(EventParams.PARAM_ITEMID, sku);
-    }
-    if (orderId != null) {
-      bundle.putString(EventParams.PARAM_ORDERID, orderId);
-    }
-    bundle.putInt(EventParams.PARAM_TIMES, (int) ((System.currentTimeMillis() - startTimes) / 1000));
-    if (errorCode > 0) {
-      bundle.putString(EventParams.PARAM_LABEL, String.valueOf(errorCode));
-    }
-    if (reason != null) {
-      bundle.putString(EventParams.PARAM_REASON, reason);
-    }
-    if (status == 1) {
-      eventTracker.logEvent("iap_verified", bundle);
-    } else {
-      eventTracker.logEvent("iap_verified_failed", bundle);
-    }
-  }
-
 
   public void setPayVerifyUrl(String verifyUrl) {
     Logger.debug(TAG, "Update verify URL >>> " + verifyUrl);

@@ -21,13 +21,13 @@
 
     <queries>
         <provider android:authorities="com.facebook.katana.provider.PlatformProvider" />
-
         <package android:name="com.merge.elves" />
         <package android:name="com.merge.inn" />
         <package android:name="com.merge.farmtown" />
         <package android:name="com.merge.romance" />
         <package android:name="com.puzzle.matchtile" />
         <package android:name="com.merge.farmharvest" />
+        <package android:name="com.lisgame.animalstown" />
     </queries>
 
     <application

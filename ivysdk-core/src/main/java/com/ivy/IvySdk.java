@@ -3077,5 +3077,12 @@ public final class IvySdk {
   public static void setProviderFacade(@NonNull IProviderFacade providerFacade) {
     IvySdk.providerFacade = providerFacade;
   }
+
+  public static String getPaymentChannel() {
+    if (providerFacade != null) {
+      return providerFacade.getChannel();
+    }
+    return "google";
+  }
 }
 

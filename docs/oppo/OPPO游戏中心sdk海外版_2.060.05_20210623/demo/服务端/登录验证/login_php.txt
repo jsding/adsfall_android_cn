@@ -1,0 +1,54 @@
+        $serverUrl  		 = "https://in-gameopen.oppomobile.com/sdkopen/user/fileIdInfo";
+		$request_serverUrl   = $serverUrl."?fileId="."93032594"."&token="."685fe9fc5b62e8b67673f5de1e494db2";
+		$time                = microtime(true);
+		$dataParams['oauthConsumerKey'] 	= $this->conf['appvKey'];
+		$dataParams['oauthToken'] 			= "685fe9fc5b62e8b67673f5de1e494db2";
+		$dataParams['oauthSignatureMethod'] = "HMAC-SHA1";
+		$dataParams['oauthTimestamp'] 		= intval($time*1000);
+		$dataParams['oauthNonce'] 			= intval($time) + rand(0,9);
+		$dataParams['oauthVersion'] 		= "1.0";
+		$requestString 						= $this->_assemblyParameters($dataParams);
+
+		$oauthSignature = $this->conf['appSecret']."&";
+		$sign 			= $this->_signatureNew($oauthSignature,$requestString);
+		$result 		= $this->OauthPostExecuteNew($sign,$requestString,$request_serverUrl);
+		$result 		= 	json_decode($result,true);			//结果也是一个json格式字符串
+
+	   	/**
+	     * 请求的参数串组合
+	     */
+	    private function _assemblyParameters($dataParams){
+		   $requestString 				= "";
+		    foreach($dataParams as $key=>$value){
+			  $requestString = $requestString . $key . "=" . $value . "&";
+		    }
+		    return $requestString;
+	    }
+
+
+	    /**
+	     * 使用HMAC-SHA1算法生成签名
+     	 */
+	    private function _signatureNew($oauthSignature,$requestString){
+		     return urlencode(base64_encode( hash_hmac( 'sha1', $requestString,$oauthSignature,true) ));
+	    }
+
+		
+			/**
+			* Oauth身份认证请求
+			* @param string $Authorization 请求头值
+			* @param string $serverUrl     请求url
+			*/
+	
+		public function OauthPostExecuteNew($sign,$requestString,$request_serverUrl){
+			$opt = array(
+					"http"=>array(
+							"method"=>"GET",
+							'header'=>array("param:".$requestString, "oauthsignature:".$sign),
+					)
+			);		
+			$res=file_get_contents($request_serverUrl,null,stream_context_create($opt));
+			return $res;
+		}
+
+		

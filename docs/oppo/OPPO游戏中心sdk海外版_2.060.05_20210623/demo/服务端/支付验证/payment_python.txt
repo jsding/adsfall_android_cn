@@ -1,0 +1,19 @@
+def rsa_verify(pubkey, content, signature, digesttype='sha1'):
+    bio = BIO.MemoryBuffer(pubkey)
+    rsa = RSA.load_pub_key_bio(bio)
+    pubkey = PKey()
+    pubkey.reset_context(md=digesttype)
+    pubkey.assign_rsa(rsa)
+    pubkey.verify_init()
+    pubkey.verify_update(content)
+    return pubkey.verify_final(signature) == 1
+
+
+#############
+
+
+    fields = ['notifyId', 'partnerOrder', 'productName', 'productDesc', 'price', 'count', 'attach']
+    params = dict(request.params)
+    tosign = '&'.join('%s=%s' % (f, params[f]) for f in fields)
+    if not rsa_verify(cfg['rsa_public_key'], tosign, params['sign'].decode('base64')):
+        return urllib.urlencode({'result': 'FAIL', 'resultMsg': 'fail to verify signature'})

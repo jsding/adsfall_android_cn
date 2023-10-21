@@ -7,10 +7,6 @@
 
     <application>
         <meta-data
-            android:name="adsfall.application"
-            android:value="com.ivy.samsung.SamsungApplicationFacade" />
-
-        <meta-data
             android:name="adsfall.provider"
             android:value="com.ivy.samsung.SamsungProviderFacade" />
     </application>

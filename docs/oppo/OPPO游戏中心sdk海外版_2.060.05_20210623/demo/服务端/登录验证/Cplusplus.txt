@@ -1,0 +1,65 @@
+
+int CWebSdkHandler::doDealOppoGameLoginRequest(const TNetHead_V2* netHead)
+{
+    PLOppoLoginRequest* pReq = CHandlerFactory::GetMsg<PLOppoLoginRequest>(MSGID_SDK_OPPO_LOGIN_REQUEST);
+    LOG_AST_R(pReq, -1);
+    if (pReq->oauth_token().length() > 300 ||  pReq->oauth_tokne_secret().length()>300)
+    {
+        LOG_ERROR("客户端发过来的字符串过长，[%s][%s]", pReq->oauth_token().c_str(), pReq->oauth_tokne_secret().c_str());
+        return -1;
+    }
+    LOG_DEBUG("客户端发过来的ssoid=[%s] token=[%s]", pReq->oauth_token().c_str(), pReq->oauth_tokne_secret().c_str());
+    string token;
+    string ssoid;
+    ssoid = encodeUrl(pReq->oauth_token());
+    token = encodeUrl(pReq->oauth_tokne_secret());
+
+    uint64 cur_time = GET_NOW_TIME();
+    char str_cur_time[100]={0};
+    sprintf(str_cur_time, "%lld", cur_time);
+    string _oauthNonce = "332"; //随机数
+
+    //生成头param
+    std::string param_header;
+    std::string param_value;
+    {
+        param_header = "param:";
+        param_value += "oauthConsumerKey=" + string(AppKey);
+        param_value += "&oauthToken=" + token ;
+        param_value += "&oauthSignatureMethod=HMAC-SHA1";
+        param_value += "&oauthTimestamp=" + string(str_cur_time) ;
+        param_value += "&oauthNonce=" + _oauthNonce ;
+        param_value += "&oauthVersion=1.0&";
+
+        param_header+=param_value;
+    }
+
+    string signature_ret;
+    //生成签名值
+    {
+        std::string key = string(AppSecret)  + "&";
+        LOG_DEBUG("HmacSha1key=[%s]", key.c_str());
+        //SHA1_HMAC
+        CryptoPP::HMAC<CryptoPP::SHA1> hmac(reinterpret_cast<const byte *>(key.c_str()),key.length());
+        std::string hash;
+        CryptoPP::StringSource(param_value,true,new CryptoPP::HashFilter(hmac,new CryptoPP::StringSink(hash)));
+        //base64
+        std::string ret;
+        CryptoPP::StringSource(hash,true,new CryptoPP::Base64Encoder(new CryptoPP::StringSink(ret)));
+        LOG_DEBUG("签名结果=[%s]", ret.c_str());
+        string temp = ret;
+        HttpInterface::urlEncode(temp, ret);
+        signature_ret = string("oauthsignature:")+ret;
+    }
+    LOG_DEBUG("param_header=[%s]", param_header.c_str());
+
+    std::string url;
+    {
+        char temp[1000];       
+        snprintf(temp, sizeof(temp), LOGIN_URL_OPPO"fileId=%s&token=%s", ssoid.c_str(), token.c_str());
+        url = temp;
+        LOG_AST_R(url.length()<sizeof(temp)-1, 0, "字符数组不够用");
+    }
+    SdkLoginMgr::Instance()->addPTOppoLoginRequest(url, param_header, signature_ret, netHead);
+    return 0;
+}
