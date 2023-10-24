@@ -87,6 +87,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
       public void onPaymentSystemError(int causeId, String message) {
 
       }
+
+      @Override
+      public void onSkuDetailData(int billId, String skuJson) {
+
+      }
     });
 
     AndroidSdk.onCreate(this, builder);
@@ -94,96 +99,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
     dbAdapter = FirestoreAdapter.getInstance();
 
 
-//        try {
-//            PackageInfo info = getPackageManager().getPackageInfo(getPackageName(),
-//                    PackageManager.GET_SIGNATURES);
-//            for (Signature signature : info.signatures) {
-//                MessageDigest md = MessageDigest.getInstance("SHA");
-//                md.update(signature.toByteArray());
-//                Log.d("KeyHash:", Base64.encodeToString(md.digest(), Base64.DEFAULT));
-//            }
-//        } catch (PackageManager.NameNotFoundException | NoSuchAlgorithmException e) {
-//            e.printStackTrace();
-//        }
-//
-//        AndroidSdk.Builder builder = new AndroidSdk.Builder();
-//        builder.setSdkResultListener(new SdkResultListener() {
-//            @Override
-//            public void onInitialized() {
-//                asyncToast("sdk initialized");
-//            }
-//
-//            @Override
-//            public void onReceiveServerExtra(String data) {
-//                asyncToast("server data: " + data);
-//            }
-//
-//            @Override
-//            public void onReceiveNotificationData(String data) {
-//                asyncToast("noti: " + data);
-//            }
-//        }).setUserCenterListener(new UserCenterListener() {
-//            @Override
-//            public void onReceiveLoginResult(boolean success) {
-//                asyncToast("login? " + success);
-//            }
-//
-//            @Override
-//            public void onReceiveFriends(String friends) {
-//                asyncToast("receive friends? " + friends);
-//            }
-//
-//            @Override
-//            public void onReceiveInviteResult(boolean success) {
-//                asyncToast("invite? " + success);
-//            }
-//
-//            @Override
-//            public void onReceiveChallengeResult(int count) {
-//                asyncToast("challenge? " + " count: " + count);
-//            }
-//
-//            @Override
-//            public void onReceiveLikeResult(boolean success) {
-//                asyncToast("like? " + success);
-//            }
-//
-//        }).setAdEventListener(new AdEventListener() {
-//            @Override
-//            public void onAdShow(String tag, String platform, int type){
-//                super.onAdShow(tag, platform, type);
-//                asyncToast("on Ad Show : " + tag);
-//            }
-//
-//            @Override
-//            public void onAdClicked(String tag, String platform, int type) {
-//                super.onAdClicked(tag, platform, type);
-//                asyncToast("on Ad Click : " + tag);
-//            }
-//        }).setPaymentListener(new PaymentSystemListener() {
-//            @Override
-//            public void onPaymentSuccess(int billId) {
-//                asyncToast("payment success: " + billId);
-//            }
-//
-//            @Override
-//            public void onPaymentFail(int billId) {
-//                asyncToast("payment fail: " + billId);
-//            }
-//
-//            @Override
-//            public void onPaymentCanceled(int bill) {
-//                asyncToast("payment cancel: " + bill);
-//            }
-//
-//            @Override
-//            public void onPaymentSystemValid() {
-//                Log.e("DEMO", "pay system is valid");
-//            }
-//        });
-//
-//        AndroidSdk.onCreate(this, builder);
-//        AndroidSdk.loadExtra(1);
 
     // ATTENTION: This was auto-generated to handle app links.
     Intent appLinkIntent = getIntent();
@@ -237,31 +152,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
         } catch (Throwable t) {
           t.printStackTrace();
         }
-//                AndroidSdk.showWebView("来自精灵合成宝贝家的", "https://docs.google.com/forms/d/e/1FAIpQLSeVuRdssdP3isCvlWiLy4BoD9evJDzMKnYLlbc00cE5ot6S3g/viewform?usp=sf_link");
-        // Unity.initializeAndLinkFacebookAfterSignIn();
-        // throw new RuntimeException("Test Crash"); // Force a crash
-
-//                AndroidSdk.loginFacebook(new FacebookLoginListener() {
-//                    @Override
-//                    public void onReceiveLoginResult(boolean success) {
-//                        FirestoreAdapter.getInstance().initializeAndLinkFacebookAfterSignIn(new DatabaseConnectListener() {
-//                            @Override
-//                            public void onSuccess() {
-//
-//                            }
-//
-//                            @Override
-//                            public void onFail() {
-//
-//                            }
-//                        });
-//                     }
-//
-//                    @Override
-//                    public void onReceiveFriends(String friends) {
-//
-//                    }
-//                });
 
 
         break;

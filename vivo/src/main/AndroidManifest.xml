@@ -11,6 +11,9 @@
         <meta-data
             android:name="adsfall.vivoAppId"
             android:value="" />
+        <meta-data
+            android:name="adsfall.appstore"
+            android:value="vivo" />
 
     </application>
 </manifest>

@@ -17,5 +17,10 @@
         <meta-data
             android:name="adsfall.provider"
             android:value="com.ivy.mi.MiProviderFacade" />
+
+        <meta-data
+            android:name="adsfall.appstore"
+            android:value="xiaomi" />
+
     </application>
 </manifest>

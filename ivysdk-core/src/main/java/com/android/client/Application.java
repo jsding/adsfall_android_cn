@@ -2,11 +2,6 @@ package com.android.client;
 
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
-import android.content.pm.PackageManager;
-
-import androidx.multidex.MultiDex;
-
-import com.ivy.util.Logger;
 
 public class Application extends androidx.multidex.MultiDexApplication {
   private IAppFacade appFacade;

@@ -1,8 +1,10 @@
 package com.ivy.mi;
 
 import android.app.Activity;
+import android.content.Intent;
 
 import com.android.client.IProviderFacade;
+import com.android.client.OnPaymentSystemReadyListener;
 import com.android.client.OnSignedInListener;
 import com.ivy.billing.PurchaseManager;
 import com.ivy.billing.impl.PurchaseManagerImpl;
@@ -41,5 +43,30 @@ public class MiProviderFacade implements IProviderFacade {
   @Override
   public String getChannel() {
     return "mi";
+  }
+
+  @Override
+  public void onCreate(Activity activity) {
+
+  }
+
+  @Override
+  public void onResume(Activity activity) {
+
+  }
+
+  @Override
+  public void onPause(Activity activity) {
+
+  }
+
+  @Override
+  public void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+  }
+
+  @Override
+  public void registerPaymentSystemReadyListener(@NonNull OnPaymentSystemReadyListener listener) {
+    listener.onReady();
   }
 }

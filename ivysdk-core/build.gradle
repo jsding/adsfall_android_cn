@@ -72,10 +72,8 @@ dependencies {
     implementation 'com.applovin.mediation:google-adapter:22.4.0.0'
     implementation 'com.applovin.mediation:mintegral-adapter:16.5.21.0'
 
-    // russia, we use yandex mediation - mytarget
+    // russia, we use yandex mediation
     implementation 'com.yandex.android:mobileads:5.10.0'
-    implementation 'com.my.target:mytarget-sdk:5.16.5'
-    implementation 'com.yandex.ads.mediation:mobileads-mytarget:5.16.5.0'
 
     // google sign in
     implementation 'com.google.android.gms:play-services-auth:20.4.0'

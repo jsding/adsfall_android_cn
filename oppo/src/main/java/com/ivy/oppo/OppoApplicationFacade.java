@@ -13,7 +13,7 @@ public class OppoApplicationFacade implements IAppFacade {
   }
 
   @Override
-  public void onCreate(Context base) {
+  public void onCreate(android.app.Application app) {
 
   }
 }

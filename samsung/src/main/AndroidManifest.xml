@@ -9,5 +9,10 @@
         <meta-data
             android:name="adsfall.provider"
             android:value="com.ivy.samsung.SamsungProviderFacade" />
+
+        <meta-data
+            android:name="adsfall.appstore"
+            android:value="samsung" />
+
     </application>
 </manifest>

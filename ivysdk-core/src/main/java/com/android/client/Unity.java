@@ -1,6 +1,7 @@
 package com.android.client;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
@@ -118,6 +119,11 @@ public class Unity {
               Logger.debug(TAG, "Unity#onPaymentSystemError: " + code + "|" + message);
 
               sendMessage("onPaymentSystemError", code + "|" + message);
+            }
+
+            @Override
+            public void onSkuDetailData(int bill, String skuDetail) {
+              sendMessage("onPaymentData", bill + "|" + skuDetail);
             }
           }).setUrlListener(new UrlListener() {
             @Override
@@ -708,10 +714,42 @@ public class Unity {
   }
 
   public static void launchApp(String packageName) {
+    // fix package for amazon
+    if ("amazon".equals(getAppstore())) {
+      if ("com.merge.elves".equals(packageName)) {
+        packageName = "com.merge.elves.amazon";
+      } else if ("com.merge.farmtown".equals(packageName)) {
+        packageName = "com.merge.farmtown.amazon";
+      } else if ("com.merge.farmharvest".equals(packageName)) {
+        packageName = "com.merge.farmharvest.amazon";
+      } else if ("com.merge.inn".equals(packageName)) {
+        packageName = "com.merge.inn.amazon";
+      } else if ("com.merge.romance".equals(packageName)) {
+        packageName = "com.merge.romance.amazon";
+      } else if ("com.lisgame.animalstown".equals(packageName)) {
+        packageName = "com.lisgame.animalstown.amazon";
+      }
+    }
     AndroidSdk.launchApp(packageName);
   }
 
   public static void getApp(String packageName) {
+    // fix package for amazon
+    if ("amazon".equals(getAppstore())) {
+      if ("com.merge.elves".equals(packageName)) {
+        packageName = "com.merge.elves.amazon";
+      } else if ("com.merge.farmtown".equals(packageName)) {
+        packageName = "com.merge.farmtown.amazon";
+      } else if ("com.merge.farmharvest".equals(packageName)) {
+        packageName = "com.merge.farmharvest.amazon";
+      } else if ("com.merge.inn".equals(packageName)) {
+        packageName = "com.merge.inn.amazon";
+      } else if ("com.merge.romance".equals(packageName)) {
+        packageName = "com.merge.romance.amazon";
+      } else if ("com.lisgame.animalstown".equals(packageName)) {
+        packageName = "com.lisgame.animalstown.amazon";
+      }
+    }
     AndroidSdk.openAppStore(packageName);
   }
 
@@ -1480,6 +1518,7 @@ public class Unity {
     AndroidSdk.spendVirtualCurrency(virtualCurrencyName, itemid, value, currentValue, null);
 
   }
+
   public static void spendVirtualCurrency(String virtualCurrencyName, String itemid, int value, int currentValue, String catalog) {
     AndroidSdk.spendVirtualCurrency(virtualCurrencyName, itemid, value, currentValue, catalog);
   }
@@ -2117,9 +2156,18 @@ public class Unity {
   }
 
   public static String getAppstore() {
+    Context context = IvySdk.CONTEXT;
+    if (context == null) {
+      return "google";
+    }
 
-    if (providerFacade != null) {
-      return providerFacade.getChannel();
+    try {
+      ApplicationInfo ai = context.getPackageManager().getApplicationInfo(context.getPackageName(), PackageManager.GET_META_DATA);
+      if (ai != null && ai.metaData != null) {
+        return ai.metaData.getString("adsfall.appstore", "google");
+      }
+    } catch (Throwable t) {
+      Logger.error(TAG, "getAppstore exception", t);
     }
     return "google";
   }

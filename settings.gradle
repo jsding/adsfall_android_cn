@@ -5,6 +5,7 @@ include ':xiaomi'
 include ':taptap'
 include ':oppo'
 include ':vivo'
+include ':huawei'
 include ':samsung'
 include ':samsungIAP6Helper'
 

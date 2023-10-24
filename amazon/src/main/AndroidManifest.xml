@@ -22,6 +22,9 @@
             android:name="adsfall.provider"
             android:value="com.ivy.amazon.AmazonProviderFacade" />
 
+        <meta-data
+            android:name="adsfall.appstore"
+            android:value="amazon" />
 
         <receiver
             android:name="com.amazon.device.iap.ResponseReceiver"

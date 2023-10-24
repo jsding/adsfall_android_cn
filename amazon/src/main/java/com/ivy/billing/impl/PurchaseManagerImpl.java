@@ -3,6 +3,7 @@ package com.ivy.billing.impl;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -528,5 +529,10 @@ public class PurchaseManagerImpl implements PurchaseManager, EventListener, Purc
     PurchasingService.getPurchaseUpdates(false);
 
     hideProgressBar(activity);
+  }
+
+  @Override
+  public void onActivityResult(int requestCode, int resultCode, Intent data) {
+
   }
 }

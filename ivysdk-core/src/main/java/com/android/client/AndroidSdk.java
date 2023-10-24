@@ -235,6 +235,27 @@ public class AndroidSdk {
       }
     });
 
+    EventBus.getInstance().addListener(CommonEvents.BILLING_PAYMENT_DATA, new EventListener() {
+      @Override
+      public void onEvent(int i, Object obj) {
+        if (i != CommonEvents.BILLING_PAYMENT_DATA) {
+          return;
+        }
+        if (obj instanceof SKUDetail) {
+          SKUDetail skuDetail = (SKUDetail)obj;
+          String itemId = skuDetail.getSku();
+          JSONObject storeItem = IvySdk.getStoreItem(itemId);
+          if (storeItem == null) {
+            return;
+          }
+          int billId = storeItem.optInt("billId", 0);
+          if (billId != 0 && builder.paymentResultListener != null) {
+            builder.paymentResultListener.onSkuDetailData(billId, skuDetail.toJson().toString());
+          }
+        }
+      }
+    });
+
     EventBus.getInstance().addListener(CommonEvents.BILLING_PURCHASE_STATE_CHANGE, new EventListener() {
       @Override
       public void onEvent(int i, Object obj) {

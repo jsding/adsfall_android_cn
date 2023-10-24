@@ -2,10 +2,12 @@ package com.ivy.vivo;
 
 import android.accounts.Account;
 import android.app.Activity;
+import android.content.Intent;
 
 import androidx.annotation.NonNull;
 
 import com.android.client.IProviderFacade;
+import com.android.client.OnPaymentSystemReadyListener;
 import com.android.client.OnSignedInListener;
 import com.android.client.SignInProfile;
 import com.ivy.billing.PurchaseManager;
@@ -16,7 +18,7 @@ import com.vivo.unionpay.sdk.open.VivoUnionSDK;
 
 import org.json.JSONObject;
 
-public class VivoProviderFacade implements IProviderFacade {
+    public class VivoProviderFacade implements IProviderFacade {
   private static final String TAG = "Vivo";
   private static final String PLATFORM = "Vivo";
   @Override
@@ -59,5 +61,30 @@ public class VivoProviderFacade implements IProviderFacade {
   @Override
   public String getChannel() {
     return "vivo";
+  }
+
+  @Override
+  public void onCreate(Activity activity) {
+
+  }
+
+  @Override
+  public void onResume(Activity activity) {
+
+  }
+
+  @Override
+  public void onPause(Activity activity) {
+
+  }
+
+  @Override
+  public void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+  }
+
+  @Override
+  public void registerPaymentSystemReadyListener(@NonNull OnPaymentSystemReadyListener listener) {
+    listener.onReady();
   }
 }

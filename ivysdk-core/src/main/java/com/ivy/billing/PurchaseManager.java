@@ -3,6 +3,7 @@ package com.ivy.billing;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -54,4 +55,6 @@ public interface PurchaseManager {
 
 
   void onResume(Activity activity);
+
+  void onActivityResult(final int requestCode, int resultCode, Intent data);
 }

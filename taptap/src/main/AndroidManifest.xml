@@ -10,6 +10,9 @@
         <meta-data
             android:name="adsfall.provider"
             android:value="com.ivy.taptap.TaptapProviderFacade" />
+        <meta-data
+            android:name="adsfall.appstore"
+            android:value="taptap" />
 
     </application>
 </manifest>

@@ -10,6 +10,7 @@ buildscript {
         maven {
             url 'https://artifact.bytedance.com/repository/pangle'
         }
+        maven { url 'http://developer.huawei.com/repo/' }
         maven { url "https://dl-maven-android.mintegral.com/repository/mbridge_android_sdk_oversea" }
         maven { url "https://verve.jfrog.io/artifactory/verve-gradle-release" }
         maven {
@@ -37,6 +38,7 @@ allprojects {
         maven {
             url 'https://artifact.bytedance.com/repository/pangle'
         }
+        maven { url 'http://developer.huawei.com/repo/' }
         maven { url "https://dl-maven-android.mintegral.com/repository/mbridge_android_sdk_oversea" }
         maven { url "https://verve.jfrog.io/artifactory/verve-gradle-release" }
         maven {
@@ -53,7 +55,7 @@ ext {
     compileSdkVersion = 33
     minSdkVersion = 19
     targetSdkVersion = 33
-    adapterVersion = "1.1.1"
+    adapterVersion = "1.1.8"
 }
 
 task clean(type: Delete) {

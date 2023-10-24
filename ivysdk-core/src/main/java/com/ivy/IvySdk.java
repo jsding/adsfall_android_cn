@@ -42,6 +42,7 @@ import com.android.client.InAppMessageListener;
 import com.android.client.OfferwallCreditListener;
 import com.android.client.OnCloudFunctionResult;
 import com.android.client.OnDataListener;
+import com.android.client.OnPaymentSystemReadyListener;
 import com.android.client.OnSkuDetailsListener;
 import com.android.client.OrderConsumeListener;
 import com.android.client.SKUDetail;
@@ -319,51 +320,56 @@ public final class IvySdk {
 
     providerFacade.onInitialize(activity, gridData);
 
-    // 内购
-    try {
-      PurchaseManager purchaseManager = providerFacade.getPurchaseManager();
-      purchaseManager.init(activity, EventBus.getInstance(), eventTracker);
-      purchaseManagerWrapper = new PurchaseManagerWrapper(purchaseManager);
-    } catch (Throwable t) {
-      showToast("Purchase System Initialized Failed!");
-      Logger.error(TAG, "PurchaseManager created exception", t);
-    }
+    providerFacade.registerPaymentSystemReadyListener(new OnPaymentSystemReadyListener() {
+      @Override
+      public void onReady() {
+        // 内购
+        try {
+          PurchaseManager purchaseManager = providerFacade.getPurchaseManager();
+          purchaseManager.init(activity, EventBus.getInstance(), eventTracker);
+          purchaseManagerWrapper = new PurchaseManagerWrapper(purchaseManager);
+        } catch (Throwable t) {
+          showToast("Purchase System Initialized Failed!");
+          Logger.error(TAG, "PurchaseManager created exception", t);
+        }
 
-    storeItems = new HashMap<>();
+        storeItems = new HashMap<>();
 
-    List<String> iapIds = new ArrayList<>();
-    if (gridData.has("payment")) {
-      try {
-        JSONObject checkout = gridData.optJSONObject("payment").optJSONObject("checkout");
-        Iterator<String> iapItems = checkout.keys();
-        while (iapItems.hasNext()) {
-          String billId = iapItems.next();
-          JSONObject iapItem = checkout.optJSONObject(billId);
-          if (iapItem != null) {
-            String feeName = iapItem.optString("feename");
-            if (!"".equals(feeName)) {
-              iapIds.add(feeName);
-              iapItem.put("billId", billId);
-              iapItem.put("usd", iapItem.optDouble("usd", 0));
-              if (!iapItem.has("autoload")) {
-                iapItem.put("autoload", 1);
+        List<String> iapIds = new ArrayList<>();
+        if (gridData.has("payment")) {
+          try {
+            JSONObject checkout = gridData.optJSONObject("payment").optJSONObject("checkout");
+            Iterator<String> iapItems = checkout.keys();
+            while (iapItems.hasNext()) {
+              String billId = iapItems.next();
+              JSONObject iapItem = checkout.optJSONObject(billId);
+              if (iapItem != null) {
+                String feeName = iapItem.optString("feename");
+                if (!"".equals(feeName)) {
+                  iapIds.add(feeName);
+                  iapItem.put("billId", billId);
+                  iapItem.put("usd", iapItem.optDouble("usd", 0));
+                  if (!iapItem.has("autoload")) {
+                    iapItem.put("autoload", 1);
+                  }
+                  storeItems.put(iapItem.optString("feename"), iapItem);
+                }
               }
-              storeItems.put(iapItem.optString("feename"), iapItem);
             }
+          } catch (Exception ex) {
+            Logger.error(TAG, "config payment exception", ex);
           }
         }
-      } catch (Exception ex) {
-        Logger.error(TAG, "config payment exception", ex);
-      }
-    }
 
-    if (storeItems != null && storeItems.size() > 0) {
-      try {
-        purchaseManagerWrapper.startLoadingStoreData(iapIds, storeItems);
-      } catch (Throwable t) {
-        Logger.error(TAG, "startLoadingStoreData exception", t);
+        if (storeItems != null && storeItems.size() > 0) {
+          try {
+            purchaseManagerWrapper.startLoadingStoreData(iapIds, storeItems);
+          } catch (Throwable t) {
+            Logger.error(TAG, "startLoadingStoreData exception", t);
+          }
+        }
       }
-    }
+    });
 
     // read google achievements data in grid data
     JSONObject googleEntry = gridData.optJSONObject("google");
@@ -611,6 +617,7 @@ public final class IvySdk {
 
     if (providerFacade != null) {
       providerFacade.initPushSystem(activity);
+      providerFacade.onCreate(activity);
     }
   }
 
@@ -1036,6 +1043,9 @@ public final class IvySdk {
         eventTracker.onPause();
       }
 
+      if (providerFacade != null) {
+        providerFacade.onPause(getActivity());
+      }
     } catch (Throwable t) {
       Logger.error(TAG, "onPause exception", t);
     }
@@ -1052,6 +1062,10 @@ public final class IvySdk {
       resume();
       if (eventTracker != null) {
         eventTracker.onResume();
+      }
+
+      if (providerFacade != null) {
+        providerFacade.onResume(getActivity());
       }
     } catch (Throwable t) {
       Logger.error(TAG, "onResume exception", t);
@@ -1141,8 +1155,15 @@ public final class IvySdk {
         sp.edit().putLong("last_check_update_time", System.currentTimeMillis()).apply();
       }
     }
-  }
 
+    if (purchaseManagerWrapper != null) {
+      purchaseManagerWrapper.onActivityResult(requestCode, resultCode, data);
+    }
+
+    if (providerFacade != null) {
+      providerFacade.onActivityResult(requestCode, resultCode, data);
+    }
+  }
 
   public static void showToast(final String message) {
     Activity activity = getActivity();
@@ -2342,9 +2363,9 @@ public final class IvySdk {
 
       if (bundle != null) {
         for (String key : bundle.keySet()) {
-          String value = bundle.getString(key, null);
+          Object value = bundle.get(key);
           if (value != null) {
-            formBuilder.add(key, value);
+            formBuilder.add(key, String.valueOf(value));
           }
         }
       }

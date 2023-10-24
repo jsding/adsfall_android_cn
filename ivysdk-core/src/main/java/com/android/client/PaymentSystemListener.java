@@ -12,4 +12,6 @@ public interface PaymentSystemListener {
   void onPaymentSystemValid();
 
   void onPaymentSystemError(int causeId, String message);
+
+  void onSkuDetailData(int billId, String skuJson);
 }

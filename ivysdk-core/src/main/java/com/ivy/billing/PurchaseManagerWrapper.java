@@ -1,6 +1,7 @@
 package com.ivy.billing;
 
 import android.app.Activity;
+import android.content.Intent;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -67,6 +68,12 @@ public class PurchaseManagerWrapper {
   public void onResume(Activity activity) {
     if (purchaseManager != null) {
       purchaseManager.onResume(activity);
+    }
+  }
+
+  public void onActivityResult(final int requestCode, int resultCode, Intent data) {
+    if (purchaseManager != null) {
+      purchaseManager.onActivityResult(requestCode, resultCode, data);
     }
   }
 

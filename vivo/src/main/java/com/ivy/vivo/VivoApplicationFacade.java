@@ -5,6 +5,7 @@ import android.content.pm.ApplicationInfo;
 
 import androidx.annotation.Keep;
 
+import com.android.client.Application;
 import com.android.client.IAppFacade;
 import com.sherdle.universal.util.Log;
 import com.vivo.unionpay.sdk.open.VivoUnionSDK;
@@ -16,12 +17,12 @@ public class VivoApplicationFacade implements IAppFacade {
   }
 
   @Override
-  public void onCreate(Context context) {
+  public void onCreate(android.app.Application app) {
     try {
-      ApplicationInfo ai = context.getApplicationInfo();
+      ApplicationInfo ai = app.getApplicationInfo();
       if (ai != null && ai.metaData != null) {
         String vivoAppId = ai.metaData.getString("adsfall.vivoAppId", "");
-        VivoUnionSDK.initSdk(context, vivoAppId);
+        VivoUnionSDK.initSdk(app, vivoAppId);
       }
     } catch (Exception e) {
       Log.e("VivoApplication", "onCreate exception");

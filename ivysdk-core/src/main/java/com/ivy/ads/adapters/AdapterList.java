@@ -59,7 +59,6 @@ public final class AdapterList {
           } else if (AdNetworkName.YANDEX.equals(network)) {
             registeredProviders.add(new YandexBannerAdapter(context, gridName, IvyAdType.BANNER).setNetworkName(AdNetworkName.YANDEX));
           } else if (AdNetworkName.MYTARGET.equals(network)) {
-            registeredProviders.add(new MytargetBannerAdapter(context, gridName, IvyAdType.BANNER).setNetworkName(AdNetworkName.MYTARGET));
           } else {
             Logger.error("ADSFALL", "No banner adapter for network " + network);
           }
@@ -95,7 +94,6 @@ public final class AdapterList {
           } else if (AdNetworkName.YANDEX.equals(network)) {
             registeredProviders.add(new YandexNonRewardedAdapter(context, gridName, IvyAdType.INTERSTITIAL).setNetworkName(AdNetworkName.YANDEX));
           } else if (AdNetworkName.MYTARGET.equals(network)) {
-            registeredProviders.add(new MytargetNonRewardedAdapter(context, gridName, IvyAdType.INTERSTITIAL).setNetworkName(AdNetworkName.MYTARGET));
           } else if (AdNetworkName.APPLOVIN_MAX.equals(network) || AdNetworkName.MAX.equals(network)) {
             registeredProviders.add(new ApplovinMaxNonRewardedAdapter(context, gridName, IvyAdType.INTERSTITIAL).setNetworkName(AdNetworkName.APPLOVIN_MAX));
           } else {
@@ -131,7 +129,6 @@ public final class AdapterList {
           } else if (AdNetworkName.YANDEX.equals(network)) {
             registeredProviders.add(new YandexRewardedAdapter(context, gridName, IvyAdType.REWARDED).setNetworkName(AdNetworkName.YANDEX));
           } else if (AdNetworkName.MYTARGET.equals(network)) {
-            registeredProviders.add(new MytargetRewardedAdapter(context, gridName, IvyAdType.REWARDED).setNetworkName(AdNetworkName.MYTARGET));
           } else if (AdNetworkName.APPLOVIN_MAX.equals(network) || AdNetworkName.MAX.equals(network)) {
             registeredProviders.add(new ApplovinMaxRewardedAdapter(context, gridName, IvyAdType.REWARDED).setNetworkName(AdNetworkName.APPLOVIN_MAX));
           } else {

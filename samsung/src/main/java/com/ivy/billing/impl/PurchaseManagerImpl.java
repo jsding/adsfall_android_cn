@@ -2,6 +2,7 @@ package com.ivy.billing.impl;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -556,6 +557,11 @@ public class PurchaseManagerImpl implements PurchaseManager, EventListener, OnGe
 
   @Override
   public void onResume(Activity activity) {
+
+  }
+
+  @Override
+  public void onActivityResult(int requestCode, int resultCode, Intent data) {
 
   }
 

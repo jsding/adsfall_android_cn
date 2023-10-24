@@ -1,5 +1,6 @@
 package com.ivy.taptap;
 
+import android.app.Application;
 import android.content.Context;
 
 import androidx.annotation.Keep;
@@ -15,7 +16,7 @@ public class TaptapApplicationFacade implements IAppFacade {
   }
 
   @Override
-  public void onCreate(Context base) {
+  public void onCreate(Application app) {
 
   }
 }
