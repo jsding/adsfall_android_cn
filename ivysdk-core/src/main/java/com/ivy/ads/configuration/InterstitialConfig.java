@@ -13,7 +13,7 @@ public class InterstitialConfig extends BaseConfig {
   public Ad ad = new Ad();
   public long adFullScreenTimespan = 300;
   public boolean dontShowFullPageAdsOnSlowConnection = true;
-  public List<JSONObject> fullPageAdProviders = new ArrayList();
+  public List<JSONObject> fullPageAdProviders = new ArrayList<>();
 
   @Override
   public BaseConfig fillFromJson(@NonNull JSONObject jsonObject) {
@@ -47,50 +47,8 @@ public class InterstitialConfig extends BaseConfig {
     return this;
   }
 
-  public static class Ac {
-    public int interstitialInitialSilenceSessions;
-    public int interstitialInitialSilenceTime;
-    public int[] interstitialPreloadTimeouts;
-    public int[] interstitialTimeouts;
-    public ISTs[] transitions;
-
-    public void fillFromJson(@NonNull JSONObject jsonObject) {
-      if (jsonObject.has("fIPSS")) {
-        this.interstitialInitialSilenceSessions = jsonObject.optInt("fIPSS");
-      }
-      if (jsonObject.has("fIPT")) {
-        this.interstitialInitialSilenceTime = jsonObject.optInt("fIPT");
-      }
-
-      if (jsonObject.has("iPTs")) {
-        JSONArray iPTs = jsonObject.optJSONArray("iPTs");
-        this.interstitialPreloadTimeouts = new int[iPTs.length()];
-        for (int i = 0; i < iPTs.length(); i++) {
-          this.interstitialPreloadTimeouts[i] = iPTs.optInt(i);
-        }
-      }
-
-      if (jsonObject.has("iTs")) {
-        JSONArray iTs = jsonObject.optJSONArray("iTs");
-        this.interstitialTimeouts = new int[iTs.length()];
-        for (int i = 0; i < iTs.length(); i++) {
-          this.interstitialTimeouts[i] = iTs.optInt(i);
-        }
-      }
-
-      if (jsonObject.has("iSTs")) {
-        JSONArray iSTs = jsonObject.optJSONArray("iSTs");
-        this.transitions = new ISTs[iSTs.length()];
-        for (int i = 0; i < iSTs.length(); i++) {
-          this.transitions[i] = new ISTs(iSTs.optJSONObject(i));
-        }
-      }
-
-    }
-  }
 
   public static class Ad extends BaseConfig.Ad {
-    public Ac aC = new Ac();
     // @JsonProperty("iLTS")
     public int interstitialLoadTimeoutSeconds = 10;
     public long maxInterstitialCachingTimeSeconds = 120;
@@ -102,20 +60,6 @@ public class InterstitialConfig extends BaseConfig {
       if (jsonObject.has("maxInterstitialCachingTimeSeconds")) {
         this.maxInterstitialCachingTimeSeconds = jsonObject.optInt("maxInterstitialCachingTimeSeconds");
       }
-      if (jsonObject.has("aC")) {
-        this.aC.fillFromJson(jsonObject.optJSONObject("aC"));
-      }
-    }
-  }
-
-  public static class ISTs {
-    // @JsonProperty("f")
-    public String from;
-    // @JsonProperty("t")
-    public String to;
-    public ISTs(JSONObject o) {
-      this.from = o.optString("f", "*");
-      this.to = o.optString("t", "*");
     }
   }
 }

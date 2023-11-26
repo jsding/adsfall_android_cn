@@ -358,9 +358,8 @@ public class WebviewFragment extends Fragment implements BackPressFragment,
   private void shareURL() {
     Intent shareIntent = new Intent(Intent.ACTION_SEND);
     shareIntent.setType("text/plain");
-    String appname = getString(R.string.app_name);
     shareIntent.putExtra(Intent.EXTRA_TEXT,
-      (getResources().getString(R.string.web_share_begin)) + appname
+      (getResources().getString(R.string.web_share_begin))
         + getResources().getString(R.string.web_share_end)
         + browser.getUrl());
     startActivity(Intent.createChooser(shareIntent, getResources()

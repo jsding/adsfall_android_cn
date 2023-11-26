@@ -70,17 +70,7 @@ public class DefaultVideoLoader extends MediaLoader {
     @Override
     protected Bitmap doInBackground(String... params) {
       Bitmap bitmap = null;
-      try (MediaMetadataRetriever mediaMetadataRetriever = new MediaMetadataRetriever()) {
-        if (Build.VERSION.SDK_INT >= 14)
-          mediaMetadataRetriever.setDataSource(params[0], new HashMap<String, String>());
-        else
-          mediaMetadataRetriever.setDataSource(params[0]);
-        //   mediaMetadataRetriever.setDataSource(videoPath);
-        bitmap = mediaMetadataRetriever.getFrameAtTime();
-      } catch (Exception e) {
-        e.printStackTrace();
 
-      }
       return bitmap;
     }
 

@@ -23,15 +23,8 @@ public class PicassoVideoThumbnailHandler extends RequestHandler {
 
   @Override
   public Result load(Request data, int arg1) throws IOException {
-    Bitmap bitmap = null;
-    try (MediaMetadataRetriever mediaMetadataRetriever = new MediaMetadataRetriever()) {
-      mediaMetadataRetriever.setDataSource(data.uri.toString(), new HashMap<String, String>());
-      bitmap = mediaMetadataRetriever.getFrameAtTime();
-    } catch (Exception e) {
-      e.printStackTrace();
-      throw new IOException();
-    }
-    return new Result(bitmap, Picasso.LoadedFrom.NETWORK);
+
+    return new Result((Bitmap) null, Picasso.LoadedFrom.NETWORK);
   }
 
   public static Picasso picassoWithVideoSupport(Context context) {

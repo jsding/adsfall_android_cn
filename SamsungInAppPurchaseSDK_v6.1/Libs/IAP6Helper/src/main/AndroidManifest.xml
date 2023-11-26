@@ -1,6 +1,5 @@
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.samsung.android.sdk.iap.lib"
     android:versionCode="601000004"
     android:versionName="6.1.0">
     <!-- version code [Major/Minor/Bug fix release/Build number ] : x xx xxx xxx -->

@@ -49,9 +49,7 @@ public class ThemeUtils {
   }
 
   public static int getPrimaryDarkColor(final Context context) {
-    final TypedValue value = new TypedValue();
-    context.getTheme().resolveAttribute(R.attr.colorPrimaryDark, value, true);
-    return value.data;
+    return 16843828;
   }
 
   public static void setTheme(Activity activity) {
@@ -116,19 +114,4 @@ public class ThemeUtils {
     item.setTitle(spanString);
   }
 
-  private static void tintShareIconIfPresent(int color, MenuItem item) {
-    if (item.getActionView() != null) {
-      final View actionView = item.getActionView();
-      final View expandActivitiesButton = actionView.findViewById(R.id.expand_activities_button);
-      if (expandActivitiesButton != null) {
-        final ImageView image = expandActivitiesButton.findViewById(R.id.image);
-        if (image != null) {
-          final Drawable drawable = image.getDrawable();
-          final Drawable wrapped = DrawableCompat.wrap(drawable);
-          DrawableCompat.setTint(wrapped, color);
-          image.setImageDrawable(wrapped);
-        }
-      }
-    }
-  }
 }

@@ -23,12 +23,12 @@ public class NonRewardedAdManager extends FullpageAdManager<InterstitialConfig> 
     super(activity, configurationParser, adSelector, adProviderList, uiHandler, mHandler, IvyAdType.INTERSTITIAL, eventHandler, adSummaryEventHandler);
   }
 
-  public Class<InterstitialConfig> getManagerConfigClass() {
-    return InterstitialConfig.class;
+  public String getManagerConfigClass() {
+    return "full";
   }
 
   public List<JSONObject> getGridProviderList() {
-    InterstitialConfig config = getManagerConfig();
+    InterstitialConfig config = (InterstitialConfig) getManagerConfig();
     if (config != null) {
       return config.fullPageAdProviders;
     }

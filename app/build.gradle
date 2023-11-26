@@ -1,6 +1,8 @@
 apply plugin: 'com.android.application'
 
 android {
+    namespace "com.adsfall.demo"
+
     compileSdkVersion 33
 
     defaultConfig {
@@ -73,7 +75,7 @@ android {
 
 dependencies {
     implementation project(":ivysdk-core")
-    implementation project(':xiaomi')
+    implementation project(':amazon')
 }
 
 apply plugin: 'com.google.gms.google-services'

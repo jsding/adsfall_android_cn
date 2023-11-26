@@ -136,8 +136,6 @@ public class VideoDetailActivity extends DetailActivity {
       finish();
       return true;
     } else if (itemId == R.id.menu_share) {
-      String applicationName = getResources()
-        .getString(R.string.app_name);
       Intent sendIntent = new Intent();
       sendIntent.setAction(Intent.ACTION_SEND);
 
@@ -150,7 +148,7 @@ public class VideoDetailActivity extends DetailActivity {
       // this is the text that will be shared
       sendIntent.putExtra(Intent.EXTRA_TEXT, (urlvalue
         + video.getLink() + seenvalue
-        + applicationName + appvalue));
+        +  appvalue));
       sendIntent.putExtra(Intent.EXTRA_SUBJECT, video.getTitle());
       sendIntent.setType("text/plain");
       startActivity(Intent.createChooser(sendIntent, getResources()

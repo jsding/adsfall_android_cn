@@ -37,8 +37,6 @@ public class ClipConfig extends BaseConfig {
     public boolean rewardedClipRestartWaterfallAfterVolatileClip = true;
     public boolean rewardedClipUseVolatileClips = true;
     public long rewardedClipVolatileWaitSeconds = 5;
-    public Map<String, Cap> rewardedClipsCaps = new HashMap<>();
-    public boolean s2sRewardedClipsInLandscape = true;
     public boolean useVideoClipPreloading = false;
 
     public void fillFromJson(@NonNull JSONObject jsonObject) {
@@ -57,21 +55,7 @@ public class ClipConfig extends BaseConfig {
       if (jsonObject.has("useVideoClipPreloading")) {
         this.useVideoClipPreloading = jsonObject.optBoolean("useVideoClipPreloading");
       }
-
     }
 
-    public class Cap {
-      public float intervalHours;
-      public int maxImpressions;
-
-      @NonNull
-      public String toString() {
-        return "" + this.maxImpressions + ":" + this.intervalHours + "h(" + intervalAsMillis() + "ms)";
-      }
-
-      long intervalAsMillis() {
-        return (long) (((this.intervalHours * 60.0f) * 60.0f) * 1000.0f);
-      }
-    }
   }
 }

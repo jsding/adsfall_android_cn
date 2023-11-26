@@ -60,7 +60,7 @@ public class IvyAds {
       if (mIsProvidersRegistered) {
         if (!mIsInitialized) {
           mAdSummaryEventHandler.init(activity, eventLogger);
-          mManager = new ManagerRegistry(activity, new ConfigurationParser(activity.getApplicationContext()), mAdProvidersRegistry, eventLogger, mAdSummaryEventHandler);
+          mManager = new ManagerRegistry(activity, new ConfigurationParser(), mAdProvidersRegistry, eventLogger, mAdSummaryEventHandler);
           mManager.setupAdProviders(null, true);
           mIsInitialized = true;
         }

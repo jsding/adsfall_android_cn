@@ -10,7 +10,7 @@
             android:value="com.ivy.vivo.VivoProviderFacade" />
         <meta-data
             android:name="adsfall.vivoAppId"
-            android:value="" />
+            android:value="${vivoAppId}" />
         <meta-data
             android:name="adsfall.appstore"
             android:value="vivo" />

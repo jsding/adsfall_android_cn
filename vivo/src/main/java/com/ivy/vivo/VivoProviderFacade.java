@@ -18,9 +18,10 @@ import com.vivo.unionpay.sdk.open.VivoUnionSDK;
 
 import org.json.JSONObject;
 
-    public class VivoProviderFacade implements IProviderFacade {
+public class VivoProviderFacade implements IProviderFacade {
   private static final String TAG = "Vivo";
   private static final String PLATFORM = "Vivo";
+
   @Override
   public void onInitialize(@NonNull Activity activity, @NonNull JSONObject gridData) {
   }

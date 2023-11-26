@@ -87,12 +87,8 @@ public class PurchaseManagerImpl implements PurchaseManager, EventListener, OnGe
 
       mIapHelper = IapHelper.getInstance(context.getApplicationContext());
 
-      if (IvySdk.isDebugMode()) {
-        mIapHelper.setOperationMode(HelperDefine.OperationMode.OPERATION_MODE_PRODUCTION);
-      } else {
-        mIapHelper.setOperationMode(HelperDefine.OperationMode.OPERATION_MODE_TEST);
-      }
-
+      mIapHelper.setOperationMode(HelperDefine.OperationMode.OPERATION_MODE_PRODUCTION);
+      mIapHelper.setShowErrorDialog(true);
       this.eventTracker = eventLogger;
       eventBus.addListener(CommonEvents.BILLING_PURCHASE_STATE_CHANGE, this);
     } catch (Throwable t) {

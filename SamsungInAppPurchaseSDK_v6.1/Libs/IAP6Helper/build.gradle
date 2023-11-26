@@ -1,19 +1,23 @@
 apply plugin: 'com.android.library'
 
-apply plugin: 'maven'
 apply plugin: 'maven-publish'
 
 version '1.0.1'
 
 android {
-    compileSdkVersion 33
+    namespace "com.samsung.android.sdk.iap.lib"
+
 
     defaultConfig {
+        compileSdk 33
         minSdkVersion 21
-        compileSdkVersion 33
         targetSdkVersion 33
         versionCode 1
         versionName "1.0"
+    }
+
+    buildFeatures {
+        aidl=true
     }
 
     buildTypes {
@@ -27,18 +31,36 @@ android {
           abortOnError false
       }
 
+    publishing {
+        // Publishes "fullRelease" build variant with "fullRelease" component created by
+        // Android Gradle plugin
+        singleVariant("release")
+    }
+
 }
 
 dependencies {
 }
 
-group 'com.adsfall.samsung'
-
-uploadArchives {
+publishing {
     repositories {
-        mavenDeployer {
-            repository(url: nexusUrl) {
-                authentication(userName: nexusUserName, password: nexusPassword)
+        maven {
+            credentials {
+                username nexusUserName
+                password nexusPassword
+            }
+            url nexusUrl
+            allowInsecureProtocol true
+        }
+    }
+    publications {
+        release(MavenPublication) {
+            groupId = 'com.adsfall.samsung'
+            artifactId = 'samsungIAP6Helper'
+            version = "${project.adapterVersion}"
+
+            afterEvaluate {
+                from components.release
             }
         }
     }

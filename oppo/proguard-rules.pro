@@ -21,3 +21,4 @@
 #-renamesourcefileattribute SourceFile
 
 -keep class com.ivy.oppo.** {*;}
+-keep class com.nearme.** { *; }

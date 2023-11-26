@@ -1,14 +1,13 @@
 apply plugin: 'com.android.library'
 
-apply plugin: 'maven'
 apply plugin: 'maven-publish'
 
 android {
-    compileSdkVersion 33
+    namespace "com.adsfall.mi.xiaomi"
 
     defaultConfig {
+        compileSdk 33
         minSdkVersion 21
-        compileSdkVersion 33
         targetSdkVersion 33
         versionCode 1
         versionName "1.0"
@@ -19,11 +18,11 @@ android {
         }
     }
 
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+    publishing {
+        // Publishes "fullRelease" build variant with "fullRelease" component created by
+        // Android Gradle plugin
+        singleVariant("release")
     }
-
 
     lintOptions {
         abortOnError true
@@ -37,14 +36,25 @@ dependencies {
     api project(":ivysdk-core")
 }
 
-group 'com.adsfall.mi'
-version "${project.adapterVersion}"
-
-uploadArchives {
+publishing {
     repositories {
-        mavenDeployer {
-            repository(url: nexusUrl) {
-                authentication(userName: nexusUserName, password: nexusPassword)
+        maven {
+            credentials {
+                username nexusUserName
+                password nexusPassword
+            }
+            url nexusUrl
+            allowInsecureProtocol true
+        }
+    }
+    publications {
+        release(MavenPublication) {
+            groupId = 'com.adsfall.mi'
+            artifactId = 'xiaomi'
+            version = "${project.adapterVersion}"
+
+            afterEvaluate {
+                from components.release
             }
         }
     }

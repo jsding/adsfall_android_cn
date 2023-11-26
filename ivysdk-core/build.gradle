@@ -1,14 +1,14 @@
 apply plugin: 'com.android.library'
 
-apply plugin: 'maven'
 apply plugin: 'maven-publish'
 
 android {
-    compileSdkVersion 33
+
+    namespace "com.adsfall"
 
     defaultConfig {
+        compileSdk 33
         minSdkVersion 19
-        compileSdkVersion 33
         targetSdkVersion 33
         versionCode 1
         versionName "1.0"
@@ -21,14 +21,14 @@ android {
         }
     }
 
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-
-
     lintOptions {
         abortOnError true
+    }
+
+    publishing {
+        // Publishes "fullRelease" build variant with "fullRelease" component created by
+        // Android Gradle plugin
+        singleVariant("release")
     }
 }
 
@@ -39,7 +39,7 @@ dependencies {
     implementation 'androidx.multidex:multidex:2.0.1'
     implementation 'com.squareup.okhttp3:okhttp:4.11.0'
 
-    implementation 'com.tencent:mmkv:1.3.1'
+    implementation 'com.tencent:mmkv:1.3.2'
 
     implementation platform('com.google.firebase:firebase-bom:32.3.1')
 
@@ -55,28 +55,26 @@ dependencies {
     implementation 'com.alibaba:fastjson:1.1.72.android'
 
     // Google Admob
-    implementation "com.google.android.gms:play-services-ads:22.4.0"
+    implementation "com.google.android.gms:play-services-ads:22.5.0"
 
     // admob bidding
-    implementation 'com.unity3d.ads:unity-ads:4.8.0'
+    implementation 'com.unity3d.ads:unity-ads:4.9.2'
     implementation 'com.google.ads.mediation:facebook:6.16.0.0'
     implementation 'com.google.ads.mediation:applovin:11.11.3.0'
-    implementation 'com.google.ads.mediation:ironsource:7.4.0.0'
-    implementation 'com.google.ads.mediation:unity:4.8.0.0'
-    implementation 'com.google.ads.mediation:pangle:5.4.1.1.0'
-    implementation 'com.google.ads.mediation:mintegral:16.5.11.0'
+    implementation 'com.google.ads.mediation:ironsource:7.5.2.0'
+    implementation 'com.google.ads.mediation:unity:4.9.1.0'
+    implementation 'com.google.ads.mediation:pangle:5.5.0.6.0'
+    implementation 'com.google.ads.mediation:mintegral:16.5.31.0'
     implementation 'com.google.ads.mediation:fyber:8.2.4.0'
 
     // applovin max
-    implementation 'com.applovin:applovin-sdk:11.11.3'
-    implementation 'com.applovin.mediation:google-adapter:22.4.0.0'
-    implementation 'com.applovin.mediation:mintegral-adapter:16.5.21.0'
-
-    // russia, we use yandex mediation
-    implementation 'com.yandex.android:mobileads:5.10.0'
+    implementation 'com.applovin:applovin-sdk:12.0.0'
+    implementation 'com.applovin.mediation:google-adapter:22.5.0.0'
+    implementation 'com.applovin.mediation:mintegral-adapter:16.5.51.0'
+    implementation 'com.applovin.mediation:yandex-adapter:6.1.0.0'
 
     // google sign in
-    implementation 'com.google.android.gms:play-services-auth:20.4.0'
+    implementation 'com.google.android.gms:play-services-auth:20.4.1'
     // google games service
     implementation 'com.google.android.gms:play-services-games-v2:17.0.0'
 
@@ -101,14 +99,26 @@ dependencies {
     implementation 'com.appsflyer:af-android-sdk:6.12.2'
 }
 
-group 'com.adsfall.common'
-version "${project.adapterVersion}"
-
-uploadArchives {
+publishing {
     repositories {
-        mavenDeployer {
-            repository(url: nexusUrl) {
-                authentication(userName: nexusUserName, password: nexusPassword)
+        maven {
+            credentials {
+                username nexusUserName
+                password nexusPassword
+            }
+            url nexusUrl
+            allowInsecureProtocol true
+        }
+    }
+
+    publications {
+        release(MavenPublication) {
+            groupId = 'com.adsfall.common'
+            artifactId = 'ivysdk-core'
+            version = "${project.adapterVersion}"
+
+            afterEvaluate {
+                from components.release
             }
         }
     }

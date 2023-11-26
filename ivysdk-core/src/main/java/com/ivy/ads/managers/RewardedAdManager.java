@@ -24,14 +24,14 @@ public class RewardedAdManager extends FullpageAdManager<ClipConfig> {
     super(activity, configurationParser, adSelector, adProvidersRegistry, uiHandler, handler, IvyAdType.REWARDED, eventHandler, adSummaryEventHandler);
   }
 
-  public Class<ClipConfig> getManagerConfigClass() {
-    return ClipConfig.class;
+  public String getManagerConfigClass() {
+    return "rewarded";
   }
 
   public List<JSONObject> getGridProviderList() {
-    ClipConfig clipConfig = getManagerConfig();
+    ClipConfig clipConfig = (ClipConfig) getManagerConfig();
     if (clipConfig != null) {
-      return getManagerConfig().adRewardsProviders;
+      return clipConfig.adRewardsProviders;
     }
     return new ArrayList<>();
   }

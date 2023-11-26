@@ -62,7 +62,7 @@ public abstract class CommonAdManager<T extends BaseConfig> implements IvyAd {
 
   public abstract List<JSONObject> getGridProviderList();
 
-  public abstract Class<T> getManagerConfigClass();
+  public abstract String getManagerConfigClass();
 
 
   public void onResume(Activity activity) {
@@ -204,7 +204,7 @@ public abstract class CommonAdManager<T extends BaseConfig> implements IvyAd {
     return this.mConfigurationParser;
   }
 
-  protected T getManagerConfig() {
+  protected BaseConfig getManagerConfig() {
     return getConfigurationParser().getConfig(getManagerConfigClass());
   }
 

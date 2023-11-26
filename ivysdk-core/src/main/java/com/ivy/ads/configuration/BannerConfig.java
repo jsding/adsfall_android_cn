@@ -1,5 +1,7 @@
 package com.ivy.ads.configuration;
 
+import androidx.annotation.NonNull;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -20,14 +22,14 @@ public class BannerConfig extends BaseConfig {
   public int adParallelWaitTime = 5;
 
   // 所有
-  public List<JSONObject> adProviderPriority = new ArrayList();
+  public List<JSONObject> adProviderPriority = new ArrayList<>();
 
   public int adRefreshInterval = ((int) (AD_REFRESH_INTERVAL / 1000));
 
   public int adAutoLoadSeconds = 60;
 
   @Override
-  public BaseConfig fillFromJson(JSONObject jsonObject) {
+  public BaseConfig fillFromJson(@NonNull JSONObject jsonObject) {
     super.fillFromJson(jsonObject);
     if (jsonObject.has("adFullScreenTimespan")) {
       this.adFullScreenTimespan = jsonObject.optInt("adFullScreenTimespan");
@@ -49,16 +51,18 @@ public class BannerConfig extends BaseConfig {
 
     if (jsonObject.has("banner")) {
       JSONArray arr = jsonObject.optJSONArray("banner");
-      for (int i = 0; i < arr.length(); i++) {
-        Object o = arr.opt(i);
-        if (o instanceof String) {
-          try {
-            this.adProviderPriority.add(new JSONObject(String.valueOf(o)));
-          } catch (JSONException ex) {
-            ex.printStackTrace();
+      if (arr != null) {
+        for (int i = 0; i < arr.length(); i++) {
+          Object o = arr.opt(i);
+          if (o instanceof String) {
+            try {
+              this.adProviderPriority.add(new JSONObject(String.valueOf(o)));
+            } catch (JSONException ex) {
+              ex.printStackTrace();
+            }
+          } else {
+            this.adProviderPriority.add((JSONObject) o);
           }
-        } else {
-          this.adProviderPriority.add((JSONObject) o);
         }
       }
     }
@@ -66,11 +70,9 @@ public class BannerConfig extends BaseConfig {
   }
 
   public static class Ad extends BaseConfig.Ad {
-    public boolean UCB_personalizedWaterfallActive = false;
     public long adDelayFirstInterstitialCallSec = 30;
     public int adInitialLoadInterval = -1;
     public int adNextLoadInterval = -1;
-    public List<String> adSkipInitially = new ArrayList();
     public int bannerLoadTimeoutSeconds = 10;
     public int sleepBeforeNextCycle = -1;
     public U u = new U();

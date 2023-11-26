@@ -64,7 +64,7 @@ public class BannerAdManager extends CommonAdManager<BannerConfig> implements Iv
 
     public BannerAdManager(Activity activity, ConfigurationParser configurationParser, AdSelector adSelector, AdProvidersRegistry adProvidersRegistry, Handler uiHandler, Handler mHandler, BaseEventHandler eventHandler, AdSummaryEventHandler adSummaryEventHandler) {
         super(activity, configurationParser, adSelector, adProvidersRegistry, uiHandler, mHandler, IvyAdType.BANNER, eventHandler, adSummaryEventHandler);
-        this.mAdRoller = new BannerAdRoller(HandlerFactory.createHandler(BannerAdRoller.class), uiHandler, this, getManagerConfig(), getAdSelector());
+        this.mAdRoller = new BannerAdRoller(HandlerFactory.createHandler(BannerAdRoller.class), uiHandler, this, (BannerConfig) getManagerConfig(), getAdSelector());
         try {
             this.mIVYAdViewContainer = (ViewGroup) LayoutInflater.from(activity).inflate(R.layout.adsfall_banner_adcontainer, null);
         } catch(Exception ex) {
@@ -73,13 +73,13 @@ public class BannerAdManager extends CommonAdManager<BannerConfig> implements Iv
         this.fadeInAnimation = AnimationUtils.loadAnimation(activity, R.anim.fade_in);
     }
 
-    public Class<BannerConfig> getManagerConfigClass() {
-        return BannerConfig.class;
+    public String getManagerConfigClass() {
+        return "banner";
     }
 
 
     public List<JSONObject> getGridProviderList() {
-        BannerConfig bannerConfig = getManagerConfig();
+        BannerConfig bannerConfig = (BannerConfig) getManagerConfig();
         if (bannerConfig != null) {
             return bannerConfig.adProviderPriority;
         }
@@ -88,7 +88,7 @@ public class BannerAdManager extends CommonAdManager<BannerConfig> implements Iv
 
     public void setupAdProviders() {
         super.setupAdProviders();
-        this.mAdRoller.setConfig(getManagerConfig());
+        this.mAdRoller.setConfig((BannerConfig) getManagerConfig());
     }
 
     public void show(final Activity activity, FrameLayout container) {
@@ -105,7 +105,8 @@ public class BannerAdManager extends CommonAdManager<BannerConfig> implements Iv
         }
         Logger.debug(TAG, "onBannerLoaded : " + adapter.getAdType() + ", provider: " + adapter.getName());
         this.mIVYAdViewContainer.setVisibility(View.VISIBLE);
-        boolean adLabel = getManagerConfig().adLabel;
+        BannerConfig bannerConfig = (BannerConfig) getManagerConfig();
+        boolean adLabel = bannerConfig.adLabel;
         this.mIVYAdViewContainer.findViewById(R.id.adLabelContainer).setVisibility(adLabel ? View.VISIBLE : View.INVISIBLE);
         Logger.debug(TAG, "Showing adLabel: %s", adLabel);
         ViewGroup bannerContainer = this.mIVYAdViewContainer.findViewById(R.id.activead);

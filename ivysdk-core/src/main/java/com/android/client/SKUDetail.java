@@ -26,6 +26,10 @@ public class SKUDetail {
     this.usd = usd;
   }
 
+  public double getUsd() {
+    return usd;
+  }
+
 
   public String getSku() {
     return mSku;

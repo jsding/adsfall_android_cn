@@ -11,33 +11,24 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ConfigurationParser {
-  private static final String TAG = ConfigurationParser.class.getCanonicalName();
-
-  private static final Map<Class, BaseConfig> configCache = new HashMap<>();
-
-  public ConfigurationParser(Context applicationContext) {
-  }
-
-  public static void clearCache() {
-    configCache.clear();
-  }
-
+  private static final Map<String, BaseConfig> configCache = new HashMap<>();
 
   @NonNull
-  public <T extends BaseConfig> T getConfig(Class<T> configClass) {
-    T config = null;
-    try {
-      if (configCache.containsKey(configClass)) {
-        return (T) (configCache.get(configClass));
-      }
-
-      config = configClass.newInstance();
-      config.fillFromJson(GridManager.getGridData());
-
-      configCache.put(configClass, config);
-    } catch (InstantiationException | IllegalAccessException ex) {
-      Logger.error(TAG, "Error occurred while trying to get grid JSON ", ex);
+  public BaseConfig getConfig(String configType) {
+    BaseConfig config;
+    if (configCache.containsKey(configType)) {
+      return configCache.get(configType);
     }
+
+    if ("banner".equals(configType)) {
+      config = new BannerConfig();
+    } else if ("full".equals(configType)) {
+      config = new InterstitialConfig();
+    } else {
+      config = new ClipConfig();
+    }
+    config.fillFromJson(GridManager.getGridData());
+    configCache.put(configType, config);
     return config;
   }
 }

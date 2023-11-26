@@ -28,7 +28,6 @@ import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
 
-import com.adsfall.BuildConfig;
 import com.adsfall.R;
 
 import org.json.JSONArray;
@@ -49,7 +48,7 @@ import java.util.List;
 
 public class Helper {
 
-  private static final boolean DISPLAY_DEBUG = BuildConfig.DEBUG;
+  private static final boolean DISPLAY_DEBUG = false;
 
   /**
    * Shows a 'no connection' dialog if the user is not online, or a general error if the user is online.
